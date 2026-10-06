@@ -41,6 +41,19 @@
       padding: 88px 32px 120px;
     }
 
+    .head-top { display: flex; gap: 28px; align-items: flex-start; justify-content: space-between; }
+    .head-main { flex: 1; min-width: 0; }
+    .profile { width: 120px; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 6px; flex-shrink: 0; }
+    .photos { display: flex; gap: 10px; margin-top: 12px; }
+    .photos img { flex: 1; min-width: 0; width: 50%; height: 170px; object-fit: cover; border-radius: 6px; border: 1px solid #e5e7eb; }
+    @media (max-width: 560px) {
+      .head-top { flex-direction: column-reverse; gap: 16px; }
+      .profile { width: 96px; }
+      .photos { flex-direction: column; }
+      .photos img { width: 100%; height: auto; }
+    }
+    @media print { .photos img { height: 120px; } }
+
     /* ---- header ---- */
     header {
       margin-bottom: 56px;
@@ -534,17 +547,21 @@
 <body>
   <div class="wrap">
     <header>
+      <div class="head-top">
+      <div class="head-main">
       <div class="name-row">
         <h1>박진혁</h1>
         <div class="contact">
           <a href="mailto:wlsgurlek@gmail.com">wlsgurlek@gmail.com</a>
-          <span>010-0000-0000</span>
           <a href="https://github.com/jinhyukkk">github.com/jinhyukkk</a>
-          <a href="https://blog.jinhyukkk.dev">blog.jinhyukkk.dev</a>
+          <a href="https://jh-p.tistory.com/">jh-p.tistory.com</a>
           <a href="https://jinhyukkk.github.io">포트폴리오</a>
         </div>
       </div>
-      <p class="role">Backend Engineer · 총 경력 5년 10개월 (Java/Spring 3년+ · Python AI 1년+) · 성능 최적화 · 데이터 정합성 · AI 연동</p>
+      <p class="role">Backend Engineer · 6년차</p>
+      </div>
+      <img class="profile" src="images/profile.jpg" alt="박진혁 증명사진">
+      </div>
       <p class="summary">
         "느리다"와 "맞지 않는다"를 <b>측정과 구조 설계</b>로 해결해 온 백엔드 엔지니어입니다.
         일 1,000건+ 주문 커머스, 4개국 글로벌 결제, 임직원 500명 인사 시스템을 개발·운영하며
@@ -679,7 +696,7 @@
         <div class="when">2025.03 — 2026.08</div>
         <div>
           <h3>국민대학교 소프트웨어융합대학원</h3>
-          <div class="org">석사 · 인공지능전공 · 졸업 · 학점 4.19 / 4.5 · 재직 병행(야간 과정)</div>
+          <div class="org">석사 · 인공지능전공 · 졸업 · 학점 4.19 / 4.5</div>
         </div>
       </div>
 
@@ -687,7 +704,7 @@
         <div class="when">2021.03 — 2023.08</div>
         <div>
           <h3>한국방송통신대학교</h3>
-          <div class="org">학사 · 컴퓨터과학과(3학년 편입) · 졸업 · 학점 3.1 / 4.5 · 재직 병행</div>
+          <div class="org">학사 · 컴퓨터과학과(3학년 편입) · 졸업 · 학점 3.1 / 4.5</div>
         </div>
       </div>
 
@@ -713,22 +730,6 @@
       <div class="sec-label">Certifications</div>
 
       <div class="item">
-        <div class="when">2025.04</div>
-        <div>
-          <h3>AWS Certified Solutions Architect – Associate</h3>
-          <div class="org">Amazon Web Services</div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="when">2022.06</div>
-        <div>
-          <h3>SQLD (SQL 개발자)</h3>
-          <div class="org">한국데이터산업진흥원</div>
-        </div>
-      </div>
-
-      <div class="item">
         <div class="when">2026.09</div>
         <div>
           <h3>정보처리기사</h3>
@@ -737,26 +738,6 @@
       </div>
     </section>
 
-    <!-- =============== 어학·병역 =============== -->
-    <section>
-      <div class="sec-label">Language &amp; Military</div>
-
-      <div class="item">
-        <div class="when">2025.05</div>
-        <div>
-          <h3>TOEIC 905점</h3>
-          <div class="org">ETS · OPIc IH (2024.11)</div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="when">2013.04 — 2015.01</div>
-        <div>
-          <h3>병역</h3>
-          <div class="org">육군 병장 만기 전역</div>
-        </div>
-      </div>
-    </section>
 
     <!-- =============== 보유 기술 =============== -->
     <section>
@@ -819,6 +800,10 @@
         <div>
           <h3>AX REAL 2026 웍스AI 컨퍼런스 발표 — "MCP를 오케스트레이터로 활용한 투자심의 에이전트"</h3>
           <div class="org">유진그룹 AX 여정(유진GPT 도입~그룹 확산)과 투자심의 워크플로우 엔진 사례 발표 · 에이전트 활용 비율 8%→48%, MCP 엔진/LLM 역할 분리, HITL·근거 반려 설계 공유 · 발표자 · 청중 약 300명 · 실제 시연 영상 포함</div>
+          <div class="photos">
+            <img src="images/talk-1.jpg" alt="AX REAL 2026 컨퍼런스 현장" loading="lazy">
+            <img src="images/talk-2.jpg" alt="AX REAL 2026 발표 장면" loading="lazy">
+          </div>
         </div>
       </div>
 
@@ -827,14 +812,6 @@
         <div>
           <h3>그룹 전사 AI 활용 교육 · 팀장급 도입 효과 발표</h3>
           <div class="org">계열사 대상 오프라인 교육 5회 (누적 수강 약 150명), 사내 기술 세미나 발표 (참석 80명)</div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="when">2024</div>
-        <div>
-          <h3>기술 블로그 운영</h3>
-          <div class="org">성능 튜닝·Elasticsearch·인증/인가 주제 18편, 누적 조회 3만+</div>
         </div>
       </div>
 
