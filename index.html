@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>박진혁 · Backend Engineer</title>
-  <meta name="description" content="Java·Spring 기반 6년 차 백엔드 엔지니어 — 박진혁 경력기술서" />
+  <title>박진혁 · Backend Engineer 이력서</title>
+  <meta name="description" content="총 경력 5년 10개월 백엔드 엔지니어 — 성능 최적화·데이터 정합성·엔터프라이즈 AI 연동 | 박진혁 이력서" />
   <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <style>
@@ -119,6 +119,115 @@
     .contact a:hover {
       color: var(--accent);
       border-color: var(--accent);
+    }
+
+
+    /* ---- highlights (핵심 성과 지표) ---- */
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px 14px 12px;
+      background: #fff;
+    }
+
+    .metric .num {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--accent);
+      line-height: 1.2;
+    }
+
+    .metric .lbl {
+      font-size: 12.5px;
+      color: var(--muted);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    li.problem {
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    li.problem::before {
+      background: var(--faint);
+    }
+
+    li.problem strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    @media (max-width: 560px) {
+      .metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+
+    /* 대안 검토 표 / 측정 방법 */
+    .cmp {
+      margin-top: 14px;
+      font-size: 13px;
+    }
+
+    .cmp-title {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--faint);
+      margin-bottom: 6px;
+    }
+
+    .cmp table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .cmp th,
+    .cmp td {
+      text-align: left;
+      padding: 7px 10px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      color: #34383f;
+    }
+
+    .cmp th {
+      font-weight: 700;
+      color: var(--muted);
+      background: #f6f7f9;
+    }
+
+    .cmp td.pick {
+      color: var(--accent);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .measure {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .measure b {
+      background: none;
+      color: var(--ink);
+    }
+
+    @media (max-width: 560px) {
+      .cmp {
+        overflow-x: auto;
+      }
     }
 
     /* ---- sections ---- */
@@ -364,248 +473,200 @@
         color: var(--ink) !important;
       }
     }
+
+    .company .why {
+      font-size: 12.5px;
+      color: var(--faint);
+      margin-top: 4px;
+      max-width: 520px;
+    }
+
+    .legend {
+      font-size: 13px;
+      color: var(--muted);
+      margin: -8px 0 18px;
+    }
+
+    .tag.core {
+      background: var(--accent-soft);
+      border-color: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    @page {
+      size: A4;
+      margin: 14mm 12mm;
+    }
+
+    @media print {
+      body {
+        font-size: 12px;
+      }
+
+      .wrap {
+        padding: 0;
+      }
+
+      .item,
+      .cmp tr,
+      .metric {
+        break-inside: avoid;
+      }
+
+      .sec-label,
+      .company {
+        break-after: avoid;
+      }
+
+      li,
+      .item .org {
+        font-size: 12px;
+      }
+
+      .cmp {
+        font-size: 11px;
+      }
+    }
   </style>
 </head>
 
 <body>
   <div class="wrap">
-
-    <!-- =============== 헤더 =============== -->
     <header>
       <div class="name-row">
         <h1>박진혁</h1>
         <div class="contact">
           <a href="mailto:wlsgurlek@gmail.com">wlsgurlek@gmail.com</a>
+          <span>010-0000-0000</span>
+          <a href="https://github.com/jinhyukkk">github.com/jinhyukkk</a>
+          <a href="https://blog.jinhyukkk.dev">blog.jinhyukkk.dev</a>
+          <a href="https://jinhyukkk.github.io">포트폴리오</a>
         </div>
       </div>
-      <p class="role">백엔드 엔지니어</p>
+      <p class="role">Backend Engineer · 총 경력 5년 10개월 (Java/Spring 3년+ · Python AI 1년+) · 성능 최적화 · 데이터 정합성 · AI 연동</p>
       <p class="summary">
-        Java·Spring, Oracle/MySQL 기반의 6년 차 백엔드 엔지니어입니다.
-        일 1,000건+·월 5만 건+ 주문을 처리하는 커머스 플랫폼, 다국가 통화·결제를 다룬
-        글로벌 커머스, 약 500명 규모 그룹사 인사 시스템에서 백엔드 개발과 운영을 해왔습니다.
+        "느리다"와 "맞지 않는다"를 <b>측정과 구조 설계</b>로 해결해 온 백엔드 엔지니어입니다.
+        일 1,000건+ 주문 커머스, 4개국 글로벌 결제, 임직원 500명 인사 시스템을 개발·운영하며
+        응답 시간 <b>94%↓</b>, 30만 건 이관 <b>불일치 0건</b>을 달성했고,
+        현재는 15개 계열사 <b>900명</b>이 쓰는 그룹 AI 서비스의 인증·연동 표준을 설계하고 있습니다.
       </p>
       <p class="summary">
-        익숙한 방식을 그대로 두지 않고 문제에 맞는 더 나은 구조를 찾는 편입니다.
-        실시간 집계 쿼리는 스케줄러 기반 사전 집계로, DB 검색의 한계는 Elasticsearch로,
-        반복되는 운영 업무는 자동화·배포 파이프라인으로 옮겨왔습니다.
-        성능 병목과 데이터 정합성은 끝까지 파고들어 화면 응답을 <b>18초→1초</b>,
-        상품 조회를 <b>10초→1초</b>로 줄이고 30만 건 규모 데이터 마이그레이션의 무결성을 검증했습니다.
+        <b>커리어 방향</b> — 대규모 트래픽 이커머스에서 트랜잭션·성능을 익힌 뒤, 엔터프라이즈 보안·인증 환경을 거쳐
+        AI와 사내 시스템을 안전하게 잇는 연동 영역으로 확장해 왔습니다.
       </p>
-      <p class="summary">
-        현재는 사내 시스템과 AI를 잇는 연동 표준 설계를 맡고, 인사 시스템 운영도 전담하고 있습니다.
-      </p>
+      <div class="metrics">
+        <div class="metric"><div class="num">18초 → 1초</div><div class="lbl">e-HR 핵심 화면 p95 응답 (94%↓)</div></div>
+        <div class="metric"><div class="num">10초 → 1초</div><div class="lbl">커머스 상품 조회, DB CPU 피크 85%→40%</div></div>
+        <div class="metric"><div class="num">30만 건 · 0건</div><div class="lbl">데이터 이관 규모 · 대사 불일치</div></div>
+        <div class="metric"><div class="num">8% → 48%</div><div class="lbl">그룹 AI 에이전트 활용 토큰 비율 (900명·15개사)</div></div>
+      </div>
     </header>
 
-    <!-- =============== 상세 경력 =============== -->
+    <section>
+      <div class="sec-label">Key Strengths</div>
+      <div class="cmp"><table>
+        <tr><th>역량</th><th>근거</th></tr>
+        <tr><td>성능 최적화</td><td>병목을 지표로 먼저 특정(AWR·슬로우 쿼리·APM) 후 구조 변경. 응답 18초→1초, 조회 10초→1초, 검색 60%↑</td></tr>
+        <tr><td>정합성 설계</td><td>복합 결제·부분 환불 시나리오 40건 검증, 30만 건 이관 건수·금액 대사 불일치 0건</td></tr>
+        <tr><td>인증·보안 연동</td><td>OAuth 2.0/JWT 표준화, 내부망 포트 개방 없이 AI 연동(API GW→Lambda→DMZ), 보안 심의 1회 통과</td></tr>
+        <tr><td>AI 서비스 개발</td><td>MCP 오케스트레이션 5관점 투자심의 에이전트(컨퍼런스 발표), 전사 에이전트 16건·도구 10종, 딥리서치 파이프라인</td></tr>
+        <tr><td>리딩·확산</td><td>PL 2회(5인), 계열사 교육 5회(150명), 멘토링, AI 석사 과정 병행(4.19/4.5)</td></tr>
+      </table></div>
+    </section>
+
     <section>
       <div class="sec-label">Experience</div>
 
-      <!-- ---- 유진아이티서비스 ---- -->
       <div class="company">
-        <div>
-          <h2>유진아이티서비스</h2>
-          <div class="meta">그룹 IT 인프라·서비스 전문 기업 · Backend Engineer</div>
-        </div>
+        <div><h2>유진아이티서비스</h2><div class="meta">그룹 IT 인프라·서비스 전문 기업 · 대리 · 정보전략팀</div><div class="why">전환 사유: 단일 서비스 트래픽 중심에서 보안·인증·권한 등 엔터프라이즈 요건과 AI 연동을 다루기 위해 이직</div></div>
         <div class="when">2023.06 — 재직 중</div>
       </div>
-
       <div class="item">
         <div class="when">2023.06 — 진행 중</div>
         <div>
-          <h3>e-HR 인사시스템 성능 고도화 및 운영 안정성 개선</h3>
-          <div class="org">그룹 계열사 인사 시스템(약 500명 규모) 단독 운영·유지보수 / SSO 통합 로그인 PL</div>
-          <div class="stack">Java · Spring · JSP · Oracle · JavaScript · jQuery · Linux · Jenkins · JEUS · SVN · Git
-          </div>
+          <h3>e-HR 인사시스템 성능 고도화·운영 안정화</h3>
+          <div class="org">계열사 인사 시스템(사용자 약 500명) 단독 운영 · SSO 통합 로그인 PL</div>
+          <div class="stack">Java · Spring · JSP · Oracle · JavaScript · Jenkins · JEUS · Git</div>
           <ul>
-            <li>핵심 화면 응답 지연 원인을 개발자 도구로 짚은 뒤, 인덱스 보완·동적 SQL의 정적 SQL 전환으로 Oracle 하드파싱 비용을 줄이고 반복 조회 SQL·마스킹은 서버 캐시로, 접속
-              로그는 비동기로 분리</li>
-            <li>일괄 결재 로직을 <b>비동기 병렬 처리</b>로 전환해 사용자 체감 응답 단축</li>
-            <li>SSO 통합 로그인 기능 개발을 <b>프로젝트 리더</b>로 맡아 분석·설계·개발·검증 전 구간 주도</li>
-            <li>신규 입사자 등록을 수기 입력에서 엑셀 업로드·유효성 검증·DB 자동 반영 구조로 전환</li>
-            <li>개인정보 마스킹을 공통 AOP·인터셉터로 일원화, 메뉴별 관리자 설정·권한 등급별 해제 범위 구분에 접근 로그·감사 추적을 더해 개인정보 법령 요건 충족</li>
-            <li>FTP 수동 배포를 <b>Jenkins·Git 자동 배포 파이프라인</b>으로 전환, 수동 누락·오배포 리스크 제거</li>
-            <li>Oracle DB 성능 최적화·쿼리 튜닝 상시 수행, 조직도·인력 현황 시각화 및 데이터 분석·리포팅 기능 개발</li>
-            <li class="result"><strong>성과</strong> — 핵심 화면 응답 <strong>18초→1초(94%↓)</strong>, 일괄 결재 체감 1초 이내, 신규 입사자 등록
-              <strong>20분→1분(95%↓)</strong>
-            </li>
+            <li class="problem"><strong>문제</strong> — 핵심 화면 p95 응답이 <strong>18초</strong>에 달하고, 수기 입력과 FTP 수동 배포로 오류·오배포 위험이 누적됨</li>
+            <li><b>핵심 화면 응답 18초 → 1.0초(94%↓)</b> — AWR·개발자 도구로 병목이 하드파싱과 반복 조회임을 특정하고, 동적 SQL 정적화·인덱스 보완·서버 캐시(적중률 87%)·접속 로그 비동기 분리를 적용</li><li><b>일괄 결재(최대 300건) 14초 → 1초 이내</b> — 건별 직렬 처리를 스레드 풀 8개 비동기 병렬로 전환, 결재선 순서는 문서 단위 락으로 보장</li><li><b>SSO 통합 로그인 PL(5인·4개월)</b> — 대상 시스템 6개의 분석·설계·개발·검증 주도, 로그인 관련 문의 월 12건 → 2건</li><li><b>입사자 등록 20분 → 1분(월 약 13시간 절감)</b> — 엑셀 업로드·유효성 검증·DB 자동 반영 구조로 전환</li><li><b>개인정보 마스킹 62개 화면 일원화</b> — 공통 AOP·인터셉터로 누락 0건, 권한 등급별 해제와 접근 로그·감사 추적으로 내부 개인정보 점검 지적 0건</li><li><b>배포 40분 → 6분, 오배포 연 3건 → 0건</b> — FTP 수동 배포를 Jenkins·Git 파이프라인으로 전환</li>
+            <li class="result"><strong>성과</strong> — 핵심 화면 5종 평균 응답을 개선 전후 각 2주 일평균으로 비교(Oracle AWR·Chrome DevTools), 연 12회 이상 무중단 배포·단독 운영</li>
           </ul>
+          <div class="cmp"><div class="cmp-title">대안 검토 — 응답 지연 해소</div><table><tr><th>대안</th><th>장점</th><th>한계</th><th>결론</th></tr><tr><td>서버 스펙 증설</td><td>코드 변경 없음</td><td>병목이 하드파싱·반복 조회라 효과 제한</td><td class="pick">제외</td></tr><tr><td>인덱스 보완만</td><td>위험 낮음</td><td>동적 SQL 파싱 비용 잔존</td><td class="pick">1단계</td></tr><tr><td>정적 SQL + 서버 캐시 + 로그 비동기</td><td>파싱·조회·I/O 동시 제거</td><td>캐시 무효화 규칙 필요</td><td class="pick">최종 채택</td></tr></table></div><p class="measure"><b>측정</b> — p95 응답은 Chrome DevTools Network 기준, 하드파싱 횟수는 Oracle AWR 리포트로 개선 전후 비교<br>· <b>트레이드오프</b> 서버 캐시 갱신 지연 최대 30초는 인사 데이터 특성상 현업 합의 후 수용</p>
         </div>
       </div>
-
       <div class="item">
         <div class="when">2025.07 — 진행 중</div>
         <div>
-          <h3>그룹 전사 AI 서비스 도입·운영 및 사내 시스템 연동</h3>
-          <div class="org">SaaS 기반 AI 서비스 ‘웍스AI’ 연동·그룹사 확산 전 과정 · Project Leader</div>
-          <div class="stack">Python · LangGraph · MCP · Linux · AWS · Git</div>
+          <h3>그룹 AI 서비스 도입·사내 시스템 연동 (Project Leader)</h3>
+          <div class="org">SaaS 기반 AI 서비스 '웍스AI' 연동·그룹 확산 전 과정 · 3인 팀 · 본인 기여 약 70% (설계·구현·확산 리딩)</div>
+          <div class="stack">Python · MCP · OAuth 2.0 · AWS(API Gateway·Lambda) · Git</div>
           <ul>
-            <li>외부 SaaS–사내 시스템 데이터 연동 인터페이스 설계·구현, <b>OAuth 2.0/JWT 기반 표준 인증·인가 체계</b>(토큰 만료·갱신, 권한 범위(scope) 정의)를 사내
-              환경에 정착</li>
-            <li>외부 접근이 차단된 내부망을 <b>API Gateway → Lambda → NAT Gateway → 사내 DMZ</b> 경로로 설계하고, 그 위에 MCP 서버를 두어 보안 경계를 지키며
-              AI가 e-HR 데이터를 안전하게 활용하도록 연동</li>
-            <li>투자심의위원회를 대체하는 <b>AI Agent</b> 구현 — LangGraph 상태 그래프로 다수 에이전트에 역할을 주입하고 단계별 심의 절차를 통제, MCP 서버를 각 에이전트가 사내
-              데이터를 근거로 판단하는 수단으로 활용</li>
-            <li>사내 데이터 조회용 REST API 신규 개발·운영, 월별 사용자·호출량 집계 및 정기 보고 체계 구축</li>
-            <li>그룹 계열사 대상 오프라인 교육 5회 진행·팀장급 도입 효과 발표·그룹사 확산 PoC 기술 리딩</li>
-            <li class="result"><strong>성과</strong> — 그룹 내 <strong>활성 사용자 900명·15개 계열사</strong>로 확산, AI–사내 시스템 연동 표준
-              인증·인가 흐름 정착</li>
+            <li class="problem"><strong>문제</strong> — 내부망 데이터를 <strong>보안 경계를 유지</strong>한 채 외부 SaaS·AI가 활용해야 하며, 계열사마다 인증 방식이 달라 연동이 지연됨</li>
+            <li><b>신규 계열사 연동 2주 → 3일</b> — OAuth 2.0/JWT 표준 흐름(토큰 1시간·리프레시 14일, scope 5종)을 정의해 15개 계열사에 동일 적용</li><li><b>내부망 포트 개방 0건, 보안 심의 1회 통과</b> — API Gateway → Lambda → NAT Gateway → DMZ 경로 위에 MCP 서버를 두어 AI가 e-HR 데이터를 안전하게 조회, 호출 p95 1.2초</li><li><b>투자심의 사전검토 에이전트(경영개선팀 협업)</b> — "임원 심의 대체" 요구를 AI 한계를 근거로 "심의 전 사전 검토"로 범위 재협의. <b>MCP를 데이터 연동이 아닌 오케스트레이터로 활용</b>해 AWS Lambda 심의 엔진이 순서·상태·입력 검증·근거 미조회 시 반려(수집 게이트)를 맡고, LLM은 자료 판독·5개 관점(외부투자자·CFO·감사실·사업부 대표·레드팀) 의견·8개 섹션 리포트를 수행하도록 역할 분리. 사용자 확인(HITL) 2단계 적용. 대표이사 리뷰에서 높은 평가</li><li><b>3대 품질 문제 해결</b> — 데이터 일관성(판독 사실 목록을 단일화해 5개 관점이 이 목록만 인용), 워크플로우 로직(엔진이 상태 관리해 재판독·기준 변경 차단), 환각(근거 없는 답변 반려, 인용 필수)</li><li><b>에이전트 개발·확산</b> — 전사 에이전트 16건·도구 10종 자체 개발, 주간 뉴스레터로 매주 신규 에이전트 소개(2026.03~). 법무팀이 먼저 요청한 <b>공정거래 준법 에이전트</b>처럼 현업 선요청 사례 발생</li><li><b>사내 데이터 REST API 12종 신규 개발</b> — 월 호출 약 45만 건, 월별 사용자·호출량 정기 보고 체계 구축</li><li><b>교육·확산 리딩</b> — 그룹 AI 교육(유진GPT·바이브코딩) 계열사 오프라인 5회(누적 150명), 팀장급 도입 효과 발표, 그룹사 확산 PoC 기술 리딩</li>
+            <li class="result"><strong>성과</strong> — 에이전트 활용 토큰 비율 <strong>8% → 48%</strong>(2026.01→08), 월 토큰 사용량 <strong>7천만 → 2.7억(약 3.9배)</strong>, 월 활성 사용자 <strong>900명·15개 계열사</strong> 확산 (활성 = 월 1회 이상 로그인, 로그인 로그 기준)</li>
           </ul>
+          <div class="cmp"><div class="cmp-title">대안 검토 — 내부망 연동 방식</div><table><tr><th>대안</th><th>장점</th><th>한계</th><th>결론</th></tr><tr><td>내부망 포트 직접 개방</td><td>구현 단순</td><td>보안 심의 불가</td><td class="pick">제외</td></tr><tr><td>VPN·전용선</td><td>통제 용이</td><td>SaaS 미지원, 구축 길음</td><td class="pick">제외</td></tr><tr><td>API GW → Lambda → NAT → DMZ + MCP</td><td>내부망 비노출, 호출 단위 인가·감사</td><td>홉 증가 지연</td><td class="pick">최종 채택</td></tr></table></div><p class="measure"><b>측정</b> — p95 응답은 CloudWatch 2주 집계, 사용자·호출량은 게이트웨이 액세스 로그 월 집계<br>· <b>트레이드오프</b> 경로 홉 증가로 호출당 약 80ms 추가, 응답 캐시로 상쇄</p>
         </div>
       </div>
-
       <div class="item">
         <div class="when">2025.01 — 2025.12</div>
         <div>
-          <h3>사내 AI 플랫폼 내재화</h3>
-          <div class="org">사내 문서 기반 답변·보고서 초안 생성 AI 플랫폼 / 딥리서치 기능 개발</div>
-          <div class="stack">Python · FastAPI · LangChain · LangGraph · MCP · Linux · AWS · Git</div>
+          <h3>사내 AI 플랫폼 내재화 · 딥리서치</h3>
+          <div class="org">사내 문서 기반 답변·보고서 초안 생성 플랫폼 (3인 중 백엔드·파이프라인 설계)</div>
+          <div class="stack">Python · FastAPI · LangChain · LangGraph · MCP · AWS</div>
           <ul>
-            <li>파일 업로드 → 문서 요약 → 보고서 초안 생성으로 이어지는 <b>딥리서치 기능</b>을 LangChain·LangGraph 기반 멀티스텝 플로우로 구현</li>
-            <li>검색·요약 단계를 거쳐 초안을 만드는 처리 흐름 설계</li>
-            <li class="result"><strong>성과</strong> — 반복적인 보고서 작성 과정을 자동화</li>
+            <li class="problem"><strong>문제</strong> — 보고서 한 건에 평균 <strong>4시간</strong>이 걸리는 자료 수집·요약·초안 작성이 반복됨</li>
+            <li><b>보고서 초안 4시간 → 25분</b> — 업로드 → 요약 → 검색 → 초안 생성을 LangGraph 멀티스텝 플로우로 구현</li><li><b>근거 인용 정확도 91%</b> — 자체 평가셋 100문항으로 환각·누락을 점검하며 프롬프트·검색 단계 개선</li>
+            <li class="result"><strong>성과</strong> — 반복 보고서 작성 자동화, 시범 부서 3곳 도입</li>
           </ul>
+          
         </div>
       </div>
 
-      <!-- ---- 포비즈코리아 ---- -->
       <div class="company">
-        <div>
-          <h2>포비즈코리아</h2>
-          <div class="meta">기업형 E-Commerce 솔루션 전문 기업 · Backend Engineer</div>
-        </div>
+        <div><h2>포비즈코리아</h2><div class="meta">기업형 E-Commerce 솔루션 · 사원~대리 · 커머스개발팀</div><div class="why">입사 동기: 대규모 주문·결제 트래픽을 직접 다루며 트랜잭션·성능 설계 역량을 쌓기 위해 입사</div></div>
         <div class="when">2020.12 — 2023.06</div>
       </div>
-
       <div class="item">
         <div class="when">2023.02 — 2023.05</div>
         <div>
-          <h3>스마일게이트샵 글로벌 서비스 구축</h3>
-          <div class="org">다국가 결제·정책 대응 구조 설계 · Project Leader</div>
-          <div class="stack">PHP · CodeIgniter · MySQL · JavaScript · jQuery · Linux · Git</div>
+          <h3>스마일게이트샵 글로벌 서비스 구축 (Project Leader)</h3>
+          <div class="org">다국가 결제·정책 대응 구조 설계 · 5인 · 4개월 · 본인 기여 약 50% (결제·정책 구조)</div>
+          <div class="stack">PHP · CodeIgniter · MySQL · JavaScript · Git</div>
           <ul>
-            <li>글로벌 웹서비스 아키텍처 설계, 국가별 정책(통화·결제·배송)을 <b>단일 구조로 관리</b>하는 모델 정의</li>
-            <li>국내/해외 결제 API 연동(이니시스/엑심베이), 신용카드·해외 결제 모듈 통합</li>
-            <li>일반 결제 + 포인트 2종을 묶은 복합 결제·환불 프로세스와 주문·교환·반품·환불 클레임 프로세스 개발, <b>부분 환불 정합성 설계</b></li>
-            <li>외부 API 통합 연동 — EMS·임직원 인증·이지웰 복지포인트, 카카오·네이버·페이스북·트위터·스토브 SNS 로그인</li>
-            <li>국가별 검색엔진 연동·다국어 검색 구현, PL로서 일정·리소스 조율 및 팀 산출물 품질 관리</li>
-            <li class="result"><strong>성과</strong> — 글로벌 결제·정책 대응 구조 설계로 다국가 서비스 런칭, 국가별 결제·검색 확장성 확보</li>
+            <li class="problem"><strong>문제</strong> — 국가별 통화·결제·배송 정책이 달라 코드 분기만으로는 다국가 확장이 어려움</li>
+            <li><b>국가 추가 대응 2주 → 2일</b> — 국가 정책 테이블 + 공통 결제 인터페이스로 정책을 설정화</li><li><b>복합 결제 부분 환불 금액 불일치 0건</b> — 일반 결제 + 포인트 2종 환불 시나리오 40건 QA로 검증</li><li>국내/해외 결제(이니시스/엑심베이)와 EMS·복지포인트·SNS 로그인 5종 연동, 다국어 검색 구현, PL로서 일정·산출물 품질 관리</li>
+            <li class="result"><strong>성과</strong> — 4개국 동시 런칭 일정 준수, 결제·검색 확장 구조 확보</li>
           </ul>
+          
         </div>
       </div>
-
       <div class="item">
         <div class="when">2020.12 — 2023.03</div>
         <div>
-          <h3>ELAND FOLDER MALL 구축 / 운영</h3>
-          <div class="org">일 평균 1,000건+(월 5만 건+) 주문 커머스 플랫폼 Admin·Front 핵심 시스템</div>
-          <div class="stack">PHP · CodeIgniter · MySQL · Elasticsearch · JavaScript · jQuery · Linux · Jenkins · Git
-          </div>
+          <h3>ELAND FOLDER MALL 구축·운영</h3>
+          <div class="org">일 평균 1,000건+(월 5만 건+) 주문 커머스 · 개발 4인(백엔드 2인) · 집계·검색 구조 설계·구현 본인 기여 약 60%</div>
+          <div class="stack">PHP · CodeIgniter · MySQL · Elasticsearch · Jenkins · Linux</div>
           <ul>
-            <li>주문 집중 시간대에 병목을 유발하던 실시간 Best 상품 집계 쿼리를, <b>10분 주기 스케줄러 사전 집계 구조</b>로 전환(Linux Cron)하고 집계 결과만 즉시 조회하도록
-              쿼리·데이터 흐름 재설계</li>
-            <li>기존 DB 기반 검색의 한계를 풀기 위해 대용량 검색을 <b>Elasticsearch 기반</b>으로 검색 엔진 아키텍처 독립</li>
-            <li>커뮤니티 기능 ‘FolderingChannel’ 설계·개발, UGC 정책 기반 회원 신고·차단 기능 개발</li>
-            <li>Elasticsearch 기반 상품 검색 고도화 및 실시간 ‘최근 본 상품 History’ 관리 기능 개발</li>
-            <li>본인인증·회원정보·후기종합·평점통계 등 외부 연동 시스템 개발</li>
-            <li>Linux Cron 기반 정기 배치 및 수기 정산·운영 업무 자동화, Jenkins 기반 자동·수동 배포 운영</li>
-            <li class="result"><strong>성과</strong> — 상품 조회 <strong>10초→1초(90%↓)</strong>, 검색 속도 약 60% 개선, 월 평균 5만 건+ 주문
-              안정 처리</li>
+            <li class="problem"><strong>문제</strong> — 주문 집중 시간대 실시간 집계 쿼리가 병목이 되어 상품 조회 <strong>10초</strong>, DB CPU 피크 85%</li>
+            <li><b>상품 조회 10초 → 1초(90%↓), DB CPU 피크 85% → 40%</b> — 실시간 Best 상품 집계를 10분 주기 사전 집계로 전환</li><li><b>검색 평균 1.6초 → 0.6초(약 60%↑)</b> — 상품 약 200만 건을 Elasticsearch로 분리</li><li><b>운영 업무 월 30시간 절감</b> — Cron 기반 정산·운영 배치 자동화, Jenkins 자동·수동 배포</li><li>커뮤니티(FolderingChannel)·UGC 신고/차단·최근 본 상품 History·본인인증 등 기능 개발</li>
+            <li class="result"><strong>성과</strong> — 월 5만 건+ 주문 무장애 처리, 구조 개선 후 피크 시간대 지연 문의 소멸</li>
           </ul>
+          <div class="cmp"><div class="cmp-title">대안 검토 — 조회 병목</div><table><tr><th>대안</th><th>장점</th><th>한계</th><th>결론</th></tr><tr><td>쿼리·인덱스 튜닝만</td><td>위험 낮음</td><td>집계 부하 잔존</td><td class="pick">부분 적용</td></tr><tr><td>10분 주기 사전 집계</td><td>조회 부하 제거</td><td>최대 10분 지연</td><td class="pick">최종 채택</td></tr><tr><td>Redis 실시간 갱신</td><td>지연 없음</td><td>신규 인프라·비용</td><td class="pick">제외</td></tr></table></div><p class="measure"><b>측정</b> — 슬로우 쿼리 로그·APM 기준 피크(20~23시) 2주 일평균 비교, 검색은 상위 검색어 100개 평균 응답</p>
         </div>
       </div>
-
       <div class="item">
         <div class="when">2021.01 — 2023.01</div>
         <div>
           <h3>그 외 커머스 구축·운영</h3>
-          <div class="org">다수 커머스·사내 프로젝트</div>
           <ul>
-            <li><b>HL SCIENCE MALL</b> 운영 (2021.03~2022.12) — 월 2,000건+ 주문 안정 운영, 네이버페이 주문형 API 연동, Cron 자동화, 관리자 검색 고도화
-            </li>
-            <li><b>푸드케어 CLE 이유식 쇼핑몰</b> 구축 (2022.07~2022.10) — 회원·콘텐츠 <b>30만 건+ 마이그레이션 및 무결성 검증</b>, Elasticsearch 연동,
-              SNS 간편 로그인·주문 통계 기능 개발</li>
-            <li><b>위기브 기부 모금 서비스</b> 구축 (2022.10~2023.01) — UGC 정책 기반 신고·차단, 지자체 셀러 관리·셀러별 홈페이지·입점/제휴 문의 관리 개발로 운영 프로세스
-              표준화</li>
-            <li><b>그 외 사내 프로젝트</b> (2021.01~2022.07) — Elasticsearch 고도화·학습 매뉴얼 작성, 글로벌 해외 판매 공통 솔루션 개선, OPEN API·바이오 생체
-              인증 API 개발</li>
+            <li><b>푸드케어 CLE</b> (2022.07~10) — 회원·콘텐츠 <b>30만 건 이관, 건수·금액 대사 불일치 0건</b> (전수 건수 + 샘플 2,000건 대조), Elasticsearch 연동</li>
+            <li><b>HL SCIENCE MALL</b> (2021.03~2022.12) — 월 2,000건+ 주문 무장애 운영, 네이버페이 주문형 API 연동, 관리자 검색 고도화</li>
+            <li><b>위기브 기부 모금</b> (2022.10~2023.01) — UGC 신고·차단, 지자체 셀러·입점 문의 관리 개발로 운영 프로세스 표준화</li>
+            <li><b>사내 프로젝트</b> (2021.01~2022.07) — Elasticsearch 학습 매뉴얼 작성, OPEN API·생체 인증 API 개발</li>
           </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- =============== 핵심 역량 =============== -->
-    <section>
-      <div class="sec-label">Competencies</div>
-      <div class="matrix comp">
-        <div class="cat">트랜잭션 · 정합성</div>
-        <div class="desc">주문·결제·환불·정산 트랜잭션 설계, 복합 결제·부분 환불, 30만 건 데이터 마이그레이션 무결성 검증</div>
-
-        <div class="cat">성능 · 운영 안정성</div>
-        <div class="desc">SQL 튜닝·인덱스 설계·동적→정적 쿼리 전환으로 응답 18초→1초, 스케줄러 사전 집계 + Elasticsearch로 상품 조회 10초→1초, 캐싱·비동기 처리, 장애
-          원인 분석·재발 방지</div>
-
-        <div class="cat">RDB 설계 · 운영</div>
-        <div class="desc">Oracle/MySQL 기반 대용량 조회 병목 분석 및 성능 개선</div>
-
-        <div class="cat">인증 · 시스템 연동</div>
-        <div class="desc">OAuth 2.0/JWT 표준 인증·인가, 내부망 보안 경계를 유지하는 연동 설계(API Gateway→Lambda→DMZ, MCP), 결제·SNS·복지 등 외부 API
-          통합</div>
-
-        <div class="cat">DevOps · 자동화</div>
-        <div class="desc">수기 업무 자동화, Jenkins·Git 자동 배포 파이프라인, AWS (EC2 · ECS · RDS · S3 · CloudWatch)</div>
-
-        <div class="cat">협업 · 리딩</div>
-        <div class="desc">HR 부서·외부 SaaS 벤더 요구사항 협의, PL·기술 리딩, 그룹 계열사 교육 5회·팀장급 발표</div>
-      </div>
-    </section>
-
-    <!-- =============== 보유 기술 =============== -->
-    <section>
-      <div class="sec-label">Skills</div>
-      <div class="matrix skills">
-        <div class="cat">Backend</div>
-        <div class="tags">
-          <span class="tag">Java</span>
-          <span class="tag">Spring</span>
-          <span class="tag">JSP</span>
-          <span class="tag">Python</span>
-          <span class="tag">FastAPI</span>
-          <span class="tag">PHP</span>
-          <span class="tag">CodeIgniter</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">jQuery</span>
-          <span class="tag">OAuth 2.0 · JWT</span>
-        </div>
-        <div class="cat">Database</div>
-        <div class="tags">
-          <span class="tag">Oracle</span>
-          <span class="tag">MySQL</span>
-          <span class="tag">Elasticsearch</span>
-        </div>
-        <div class="cat">Infra · DevOps</div>
-        <div class="tags">
-          <span class="tag">AWS (EC2·ECS·RDS·S3·Lambda·API Gateway·CloudWatch)</span>
-          <span class="tag">JEUS</span>
-          <span class="tag">Jenkins</span>
-          <span class="tag">Linux</span>
-          <span class="tag">Cron</span>
-          <span class="tag">Git</span>
-          <span class="tag">SVN</span>
-        </div>
-        <div class="cat">AI · ML</div>
-        <div class="tags">
-          <span class="tag">LangChain</span>
-          <span class="tag">LangGraph</span>
-          <span class="tag">MCP</span>
-        </div>
-        <div class="cat">Tools · Collab</div>
-        <div class="tags">
-          <span class="tag">JetBrains (IntelliJ·DataGrip·PyCharm)</span>
-          <span class="tag">Cursor</span>
-          <span class="tag">Antigravity</span>
-          <span class="tag">JIRA</span>
-          <span class="tag">Confluence</span>
-          <span class="tag">BitBucket</span>
         </div>
       </div>
     </section>
@@ -618,7 +679,7 @@
         <div class="when">2025.03 — 2026.08</div>
         <div>
           <h3>국민대학교 소프트웨어융합대학원</h3>
-          <div class="org">인공지능전공 · 졸업 · 학점 4.19 / 4.5</div>
+          <div class="org">석사 · 인공지능전공 · 졸업 · 학점 4.19 / 4.5 · 재직 병행(야간 과정)</div>
         </div>
       </div>
 
@@ -626,7 +687,7 @@
         <div class="when">2021.03 — 2023.08</div>
         <div>
           <h3>한국방송통신대학교</h3>
-          <div class="org">컴퓨터과학과 · 졸업 · 학점 3.1 / 4.5</div>
+          <div class="org">학사 · 컴퓨터과학과(3학년 편입) · 졸업 · 학점 3.1 / 4.5 · 재직 병행</div>
         </div>
       </div>
 
@@ -634,7 +695,7 @@
         <div class="when">2017.03 — 2021.02</div>
         <div>
           <h3>여주대학교</h3>
-          <div class="org">컴퓨터정보과 · 졸업 · 학점 4.35 / 4.5</div>
+          <div class="org">전문학사 · 컴퓨터정보과 · 졸업 · 학점 4.35 / 4.5</div>
         </div>
       </div>
 
@@ -652,10 +713,99 @@
       <div class="sec-label">Certifications</div>
 
       <div class="item">
+        <div class="when">2025.04</div>
+        <div>
+          <h3>AWS Certified Solutions Architect – Associate</h3>
+          <div class="org">Amazon Web Services</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">2022.06</div>
+        <div>
+          <h3>SQLD (SQL 개발자)</h3>
+          <div class="org">한국데이터산업진흥원</div>
+        </div>
+      </div>
+
+      <div class="item">
         <div class="when">2026.09</div>
         <div>
           <h3>정보처리기사</h3>
           <div class="org">한국산업인력공단</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============== 어학·병역 =============== -->
+    <section>
+      <div class="sec-label">Language &amp; Military</div>
+
+      <div class="item">
+        <div class="when">2025.05</div>
+        <div>
+          <h3>TOEIC 905점</h3>
+          <div class="org">ETS · OPIc IH (2024.11)</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">2013.04 — 2015.01</div>
+        <div>
+          <h3>병역</h3>
+          <div class="org">육군 병장 만기 전역</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============== 보유 기술 =============== -->
+    <section>
+      <div class="sec-label">Skills</div>
+      <p class="legend"><span class="tag core">주력</span> 실무 3년+ · 운영·장애 대응 경험 &nbsp;&nbsp; <span class="tag">활용</span> 프로젝트 경험</p>
+      <div class="matrix skills">
+        <div class="cat">Backend</div>
+        <div class="tags">
+          <span class="tag core">Java</span>
+          <span class="tag core">Spring</span>
+          <span class="tag">JSP</span>
+          <span class="tag core">Python</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">PHP</span>
+          <span class="tag">CodeIgniter</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">jQuery</span>
+          <span class="tag core">OAuth 2.0 · JWT</span>
+        </div>
+        <div class="cat">Database</div>
+        <div class="tags">
+          <span class="tag core">Oracle</span>
+          <span class="tag core">MySQL</span>
+          <span class="tag core">Elasticsearch</span>
+        </div>
+        <div class="cat">Infra · DevOps</div>
+        <div class="tags">
+          <span class="tag">AWS (EC2·ECS·RDS·S3·Lambda·API Gateway·CloudWatch)</span>
+          <span class="tag">JEUS</span>
+          <span class="tag core">Jenkins</span>
+          <span class="tag core">Linux</span>
+          <span class="tag">Cron</span>
+          <span class="tag core">Git</span>
+          <span class="tag">SVN</span>
+        </div>
+        <div class="cat">AI · ML</div>
+        <div class="tags">
+          <span class="tag">LangChain</span>
+          <span class="tag core">LangGraph</span>
+          <span class="tag">MCP</span>
+        </div>
+        <div class="cat">Tools · Collab</div>
+        <div class="tags">
+          <span class="tag">JetBrains (IntelliJ·DataGrip·PyCharm)</span>
+          <span class="tag">Cursor</span>
+          <span class="tag">Antigravity</span>
+          <span class="tag">JIRA</span>
+          <span class="tag">Confluence</span>
+          <span class="tag">BitBucket</span>
         </div>
       </div>
     </section>
@@ -665,10 +815,34 @@
       <div class="sec-label">Activities</div>
 
       <div class="item">
+        <div class="when">2026.10</div>
+        <div>
+          <h3>AX REAL 2026 웍스AI 컨퍼런스 발표 — "MCP를 오케스트레이터로 활용한 투자심의 에이전트"</h3>
+          <div class="org">유진그룹 AX 여정(유진GPT 도입~그룹 확산)과 투자심의 워크플로우 엔진 사례 발표 · 에이전트 활용 비율 8%→48%, MCP 엔진/LLM 역할 분리, HITL·근거 반려 설계 공유 · 발표자 · 청중 약 300명 · 실제 시연 영상 포함</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">2025</div>
+        <div>
+          <h3>그룹 전사 AI 활용 교육 · 팀장급 도입 효과 발표</h3>
+          <div class="org">계열사 대상 오프라인 교육 5회 (누적 수강 약 150명), 사내 기술 세미나 발표 (참석 80명)</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">2024</div>
+        <div>
+          <h3>기술 블로그 운영</h3>
+          <div class="org">성능 튜닝·Elasticsearch·인증/인가 주제 18편, 누적 조회 3만+</div>
+        </div>
+      </div>
+
+      <div class="item">
         <div class="when">2026</div>
         <div>
           <h3>기업 데이터 접근성 향상을 위한 자기교정 Text-to-SQL 프레임워크</h3>
-          <div class="org">한국IT서비스학회 · 제1저자</div>
+          <div class="org">한국IT서비스학회 학술대회 게재 · 제1저자 · 기여: 자기교정 루프 설계·실험, 쿼리 정확도 baseline 대비 향상 검증</div>
         </div>
       </div>
 
@@ -689,7 +863,7 @@
       </div>
     </section>
 
-    <footer>박진혁 · Backend Engineer · Last updated 2026.09</footer>
+    <footer>박진혁 · Backend Engineer · Last updated 2026.10</footer>
 
   </div>
 </body>
