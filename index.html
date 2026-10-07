@@ -135,36 +135,6 @@
     }
 
 
-    /* ---- highlights (핵심 성과 지표) ---- */
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .metric {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 14px 14px 12px;
-      background: #fff;
-    }
-
-    .metric .num {
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--accent);
-      line-height: 1.2;
-    }
-
-    .metric .lbl {
-      font-size: 12.5px;
-      color: var(--muted);
-      margin-top: 4px;
-      line-height: 1.4;
-    }
-
     li.problem {
       margin-bottom: 10px;
       font-size: 14px;
@@ -180,11 +150,6 @@
       font-weight: 700;
     }
 
-    @media (max-width: 560px) {
-      .metrics {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
 
 
     /* 대안 검토 표 / 측정 방법 */
@@ -522,8 +487,7 @@
       }
 
       .item,
-      .cmp tr,
-      .metric {
+      .cmp tr {
         break-inside: avoid;
       }
 
@@ -558,26 +522,20 @@
           <a href="https://jinhyukkk.github.io">포트폴리오</a>
         </div>
       </div>
-      <p class="role">Backend Engineer · 6년차</p>
+      <p class="role">Backend Engineer</p>
       </div>
       <img class="profile" src="images/profile.jpg" alt="박진혁 증명사진">
       </div>
       <p class="summary">
-        "느리다"와 "맞지 않는다"를 <b>측정과 구조 설계</b>로 해결해 온 백엔드 엔지니어입니다.
+        Java &amp; Spring 기반의 6년차 서버 백엔드 개발자로
         일 1,000건+ 주문 커머스, 4개국 글로벌 결제, 임직원 500명 인사 시스템을 개발·운영하며
-        응답 시간 <b>94%↓</b>, 30만 건 이관 <b>불일치 0건</b>을 달성했고,
-        현재는 15개 계열사 <b>900명</b>이 쓰는 그룹 AI 서비스의 인증·연동 표준을 설계하고 있습니다.
+        응답 시간 <b>94%↓</b>, 일괄 결재(최대 300건) <b>14초 → 1초</b>를 달성했고,
+        현재는 그룹 계열사 <b>1,200명</b>이 쓰는 AI 서비스의 인증·연동 표준을 설계하고 있습니다.
       </p>
       <p class="summary">
-        <b>커리어 방향</b> — 대규모 트래픽 이커머스에서 트랜잭션·성능을 익힌 뒤, 엔터프라이즈 보안·인증 환경을 거쳐
-        AI와 사내 시스템을 안전하게 잇는 연동 영역으로 확장해 왔습니다.
+        대규모 트래픽 이커머스에서 트랜잭션과 성능을 다진 뒤 엔터프라이즈 보안·인증 환경을 거치며,
+        지금은 AI와 사내 시스템을 안전하게 잇는 연동 영역까지 역량을 넓혀 가고 있습니다.
       </p>
-      <div class="metrics">
-        <div class="metric"><div class="num">18초 → 1초</div><div class="lbl">e-HR 핵심 화면 p95 응답 (94%↓)</div></div>
-        <div class="metric"><div class="num">10초 → 1초</div><div class="lbl">커머스 상품 조회, DB CPU 피크 85%→40%</div></div>
-        <div class="metric"><div class="num">30만 건 · 0건</div><div class="lbl">데이터 이관 규모 · 대사 불일치</div></div>
-        <div class="metric"><div class="num">8% → 48%</div><div class="lbl">그룹 AI 에이전트 활용 토큰 비율 (900명·15개사)</div></div>
-      </div>
     </header>
 
     <section>
@@ -585,10 +543,10 @@
       <div class="cmp"><table>
         <tr><th>역량</th><th>근거</th></tr>
         <tr><td>성능 최적화</td><td>병목을 지표로 먼저 특정(AWR·슬로우 쿼리·APM) 후 구조 변경. 응답 18초→1초, 조회 10초→1초, 검색 60%↑</td></tr>
-        <tr><td>정합성 설계</td><td>복합 결제·부분 환불 시나리오 40건 검증, 30만 건 이관 건수·금액 대사 불일치 0건</td></tr>
-        <tr><td>인증·보안 연동</td><td>OAuth 2.0/JWT 표준화, 내부망 포트 개방 없이 AI 연동(API GW→Lambda→DMZ), 보안 심의 1회 통과</td></tr>
-        <tr><td>AI 서비스 개발</td><td>MCP 오케스트레이션 5관점 투자심의 에이전트(컨퍼런스 발표), 전사 에이전트 16건·도구 10종, 딥리서치 파이프라인</td></tr>
-        <tr><td>리딩·확산</td><td>PL 2회(5인), 계열사 교육 5회(150명), 멘토링, AI 석사 과정 병행(4.19/4.5)</td></tr>
+        <tr><td>정합성 설계</td><td>복합 결제·부분 환불 시나리오 40건 검증(불일치 0건), 30만 건 이관 건수·금액 대사 불일치 0건</td></tr>
+        <tr><td>인증·보안 연동</td><td>OAuth 2.0/JWT 표준화로 계열사 연동 2주→3일, 내부망 포트 개방 없이 AI 연동(API GW→Lambda→DMZ), 보안 심의 1회 통과</td></tr>
+        <tr><td>AI 서비스 개발</td><td>MCP 엔진이 일관성·근거를 통제하고 LLM이 판독·의견을 맡는 투자심의 에이전트(대표이사 리뷰, 컨퍼런스 발표), 전사 에이전트 16건·도구 10종, 딥리서치 4시간→25분</td></tr>
+        <tr><td>리딩·확산</td><td>PL 2회(5인), 계열사 교육 5회(150명), 멘토링</td></tr>
       </table></div>
     </section>
 
@@ -596,7 +554,7 @@
       <div class="sec-label">Experience</div>
 
       <div class="company">
-        <div><h2>유진아이티서비스</h2><div class="meta">그룹 IT 인프라·서비스 전문 기업 · 대리 · 정보전략팀</div><div class="why">전환 사유: 단일 서비스 트래픽 중심에서 보안·인증·권한 등 엔터프라이즈 요건과 AI 연동을 다루기 위해 이직</div></div>
+        <div><h2>유진아이티서비스</h2><div class="meta">그룹 IT 인프라·서비스 전문 기업 · 대리 · 정보전략팀</div><div class="why">전환 사유: 단일 서비스 트래픽 중심에서 보안·인증·권한 등 엔터프라이즈 요건을 다루기 위해 이직</div></div>
         <div class="when">2023.06 — 재직 중</div>
       </div>
       <div class="item">
@@ -614,15 +572,37 @@
         </div>
       </div>
       <div class="item">
+        <div class="when">2026.02 — 진행 중</div>
+        <div>
+          <h3>투자심의 사전검토 AI 에이전트 설계·구현</h3>
+          <div class="org">경영개선팀 요건 협의 · 설계·구현 전담 · 2026.07 대표이사 리뷰, 실제 안건 적용 가능 상태로 오픈</div>
+          <div class="stack">Python · MCP · AWS Lambda · 웍스AI 에이전트</div>
+          <ul>
+            <li class="problem"><strong>문제</strong> — 임원 투자심의를 AI로 대체해 달라는 요청이었으나, LLM만으로는 같은 안건에도 결론이 달라지고 근거 없는 답변이 섞여 의사결정에 쓸 수 없음</li>
+            <li><b>범위 재설정</b> — AI의 한계를 근거로 "대체"가 아닌 <b>"심의 전 사전 검토 의견 제공"</b>으로 요구를 낮춰 합의, 최종 판단은 사람이 유지</li>
+            <li><b>엔진과 LLM의 역할 분리</b> — 일관성이 필요한 부분(진행 순서·상태 관리, 입력 검증, 근거 미조회 시 반려, 배점 기준)은 Lambda 기반 MCP 심의 엔진이 통제하고, 판독·의견 작성·점수 산정은 LLM이 수행. MCP를 데이터 연동이 아닌 <b>오케스트레이터</b>로 활용</li>
+            <li><b>5개 관점 심의 + 사람 확인 2단계</b> — 외부투자자·CFO·감사실·사업부 대표·레드팀 관점으로 점수와 근거를 산출하고, 자료 요약 검증·추가 토론 여부에서 사용자가 개입. 사업부 대표 관점은 우려 일색의 편향된 점수를 보정하기 위해 추가</li>
+            <li><b>품질 문제 3종 해결</b> — ① 결과 불일치: 판독 사실을 단일 목록으로 고정해 모든 관점이 이 목록만 인용 ② 기준 변동: 상태를 엔진이 관리해 재판독·중간 기준 변경 차단 ③ 환각: 근거 없는 답변은 반려, 인용 필수</li>
+            <li class="result"><strong>성과</strong> — 대표이사 리뷰에서 높은 평가, <b>8개 섹션 심의 리포트 자동 생성</b>, 실제 안건 즉시 활용 가능한 상태로 운영. 설계 사례를 AX REAL 2026 컨퍼런스에서 발표</li>
+          </ul>
+          <div class="cmp"><div class="cmp-title">대안 검토 — 심의 로직 위치</div><table><tr><th>대안</th><th>장점</th><th>한계</th><th>결론</th></tr><tr><td>프롬프트 중심 단일 에이전트</td><td>구현 단순</td><td>실행마다 결론·순서가 달라지고 근거 통제 불가</td><td class="pick">제외</td></tr><tr><td>MCP 엔진 통제 + LLM 판단</td><td>일관성·상태 보장, 근거 게이트</td><td>순차 실행으로 1회 10분+ 소요</td><td class="pick">최종 채택</td></tr></table></div><p class="measure"><b>트레이드오프</b> — 관점이 순차 실행되어 앞 관점이 뒤 관점 의견을 볼 수 없으므로 추가 토론 단계를 두어 보완하고, 긴 실행 시간은 단계별 진행 안내로 완화</p>
+        </div>
+      </div>
+
+      <div class="item">
         <div class="when">2025.07 — 진행 중</div>
         <div>
-          <h3>그룹 AI 서비스 도입·사내 시스템 연동 (Project Leader)</h3>
-          <div class="org">SaaS 기반 AI 서비스 '웍스AI' 연동·그룹 확산 전 과정 · 3인 팀 · 본인 기여 약 70% (설계·구현·확산 리딩)</div>
+          <h3>그룹 AI 서비스 도입·인증 표준·확산 (Project Leader)</h3>
+          <div class="org">SaaS 기반 AI 서비스 '웍스AI(유진GPT)' 그룹 도입 · 3인 팀 · 본인 기여 약 70% (설계·구현·확산 리딩)</div>
           <div class="stack">Python · MCP · OAuth 2.0 · AWS(API Gateway·Lambda) · Git</div>
           <ul>
-            <li class="problem"><strong>문제</strong> — 내부망 데이터를 <strong>보안 경계를 유지</strong>한 채 외부 SaaS·AI가 활용해야 하며, 계열사마다 인증 방식이 달라 연동이 지연됨</li>
-            <li><b>신규 계열사 연동 2주 → 3일</b> — OAuth 2.0/JWT 표준 흐름(토큰 1시간·리프레시 14일, scope 5종)을 정의해 15개 계열사에 동일 적용</li><li><b>내부망 포트 개방 0건, 보안 심의 1회 통과</b> — API Gateway → Lambda → NAT Gateway → DMZ 경로 위에 MCP 서버를 두어 AI가 e-HR 데이터를 안전하게 조회, 호출 p95 1.2초</li><li><b>투자심의 사전검토 에이전트(경영개선팀 협업)</b> — "임원 심의 대체" 요구를 AI 한계를 근거로 "심의 전 사전 검토"로 범위 재협의. <b>MCP를 데이터 연동이 아닌 오케스트레이터로 활용</b>해 AWS Lambda 심의 엔진이 순서·상태·입력 검증·근거 미조회 시 반려(수집 게이트)를 맡고, LLM은 자료 판독·5개 관점(외부투자자·CFO·감사실·사업부 대표·레드팀) 의견·8개 섹션 리포트를 수행하도록 역할 분리. 사용자 확인(HITL) 2단계 적용. 대표이사 리뷰에서 높은 평가</li><li><b>3대 품질 문제 해결</b> — 데이터 일관성(판독 사실 목록을 단일화해 5개 관점이 이 목록만 인용), 워크플로우 로직(엔진이 상태 관리해 재판독·기준 변경 차단), 환각(근거 없는 답변 반려, 인용 필수)</li><li><b>에이전트 개발·확산</b> — 전사 에이전트 16건·도구 10종 자체 개발, 주간 뉴스레터로 매주 신규 에이전트 소개(2026.03~). 법무팀이 먼저 요청한 <b>공정거래 준법 에이전트</b>처럼 현업 선요청 사례 발생</li><li><b>사내 데이터 REST API 12종 신규 개발</b> — 월 호출 약 45만 건, 월별 사용자·호출량 정기 보고 체계 구축</li><li><b>교육·확산 리딩</b> — 그룹 AI 교육(유진GPT·바이브코딩) 계열사 오프라인 5회(누적 150명), 팀장급 도입 효과 발표, 그룹사 확산 PoC 기술 리딩</li>
-            <li class="result"><strong>성과</strong> — 에이전트 활용 토큰 비율 <strong>8% → 48%</strong>(2026.01→08), 월 토큰 사용량 <strong>7천만 → 2.7억(약 3.9배)</strong>, 월 활성 사용자 <strong>900명·15개 계열사</strong> 확산 (활성 = 월 1회 이상 로그인, 로그인 로그 기준)</li>
+            <li class="problem"><strong>문제</strong> — 내부망 데이터를 보안 경계를 유지한 채 외부 SaaS·AI가 활용해야 하고, 계열사마다 인증 방식이 달라 연동이 지연됨</li>
+            <li><b>신규 계열사 연동 2주 → 3일</b> — OAuth 2.0/JWT 표준 흐름(토큰 1시간·리프레시 14일, scope 5종)을 정의해 그룹 계열사에 동일 적용</li>
+            <li><b>내부망 포트 개방 0건, 보안 심의 1회 통과</b> — API Gateway → Lambda → NAT Gateway → DMZ 경로와 MCP 서버로 AI가 e-HR 데이터를 안전하게 조회 (호출 p95 1.2초)</li>
+            <li><b>사내 데이터 REST API 12종</b> 신규 개발, 월 호출 약 45만 건·월별 사용자 현황 정기 보고 체계 구축</li>
+            <li><b>자체 에이전트 16건·도구 10종</b> 개발, 현업 요구 발굴로 시작해 법무팀이 먼저 요청한 공정거래 준법 에이전트까지 <b>현업 선요청 구조</b>로 전환</li>
+            <li><b>확산 활동</b> — 주간 뉴스레터로 신규 에이전트 소개(2026.03~), 그룹 AI 교육 5회(누적 150명), 팀장급 도입 효과 발표</li>
+            <li class="result"><strong>성과</strong> — 에이전트 활용 토큰 비율 <strong>8% → 48%</strong>(2026.01→08), 월 토큰 사용량 <strong>7천만 → 2.7억(약 3.9배)</strong>, 월 활성 사용자 <strong>그룹 계열사 1,200명</strong> (활성 = 월 1회 이상 로그인, 로그인 로그 기준)</li>
           </ul>
           <div class="cmp"><div class="cmp-title">대안 검토 — 내부망 연동 방식</div><table><tr><th>대안</th><th>장점</th><th>한계</th><th>결론</th></tr><tr><td>내부망 포트 직접 개방</td><td>구현 단순</td><td>보안 심의 불가</td><td class="pick">제외</td></tr><tr><td>VPN·전용선</td><td>통제 용이</td><td>SaaS 미지원, 구축 길음</td><td class="pick">제외</td></tr><tr><td>API GW → Lambda → NAT → DMZ + MCP</td><td>내부망 비노출, 호출 단위 인가·감사</td><td>홉 증가 지연</td><td class="pick">최종 채택</td></tr></table></div><p class="measure"><b>측정</b> — p95 응답은 CloudWatch 2주 집계, 사용자·호출량은 게이트웨이 액세스 로그 월 집계<br>· <b>트레이드오프</b> 경로 홉 증가로 호출당 약 80ms 추가, 응답 캐시로 상쇄</p>
         </div>
@@ -824,10 +804,10 @@
       </div>
 
       <div class="item">
-        <div class="when">2026 — 진행 중</div>
+        <div class="when">2026.06 — 2026.08</div>
         <div>
           <h3>AI CHAMPION 대회 100팀 선발 진출</h3>
-          <div class="org">카카오톡 대화를 AI 웹툰으로 자동 변환하는 서비스 ‘톡툰’ · 백엔드 · AI 파이프라인 설계 및 구현 담당 · 100팀 선발 통과 후 본선 진행 중</div>
+          <div class="org">카카오톡 대화를 AI 웹툰으로 자동 변환하는 서비스 ‘톡툰’ · 백엔드 · AI 파이프라인 설계 및 구현 담당 · 100팀 선발 통과, 다음 선발 단계에서 2026.08 종료</div>
         </div>
       </div>
 
