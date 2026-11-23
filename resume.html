@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>박진혁 · Backend Engineer 이력서</title>
+  <meta name="description" content="총 경력 5년 10개월 백엔드 엔지니어 — 성능 최적화·데이터 정합성·엔터프라이즈 AI 연동 | 박진혁 이력서" />
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    :root {
+      --ink: #16181d;
+      --muted: #6b7280;
+      --faint: #9aa1ab;
+      --line: #e7e9ed;
+      --bg: #fcfcfd;
+      --accent: #2f4bd8;
+      --accent-soft: #eef1fe;
+      --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Pretendard Variable", Pretendard, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      font-feature-settings: "tnum";
+    }
+
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 88px 32px 120px;
+    }
+
+    .head-top { display: flex; gap: 28px; align-items: flex-start; justify-content: space-between; }
+    .head-main { flex: 1; min-width: 0; }
+    .profile { width: 120px; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 6px; flex-shrink: 0; }
+    .photos { display: flex; gap: 10px; margin-top: 12px; }
+    .photos img { flex: 1; min-width: 0; width: 50%; height: 170px; object-fit: cover; border-radius: 6px; border: 1px solid #e5e7eb; }
+    @media (max-width: 560px) {
+      .head-top { flex-direction: column-reverse; gap: 16px; }
+      .profile { width: 96px; }
+      .photos { flex-direction: column; }
+      .photos img { width: 100%; height: auto; }
+    }
+    @media print { .photos img { height: 120px; } }
+
+    /* ---- header ---- */
+    header {
+      margin-bottom: 56px;
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      margin-bottom: 18px;
+      display: inline-block;
+      padding: 4px 10px;
+      background: var(--accent-soft);
+      border-radius: 4px;
+    }
+
+    .name-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .name-row .contact {
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: 44px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+    }
+
+    .role {
+      font-size: 17px;
+      color: var(--muted);
+      margin-top: 12px;
+      font-weight: 500;
+    }
+
+    .summary {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #3a3e46;
+      max-width: 100%;
+    }
+
+    .summary+.summary {
+      margin-top: 12px;
+    }
+
+    .contact {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      font-family: var(--mono);
+      font-size: 13px;
+    }
+
+    .contact a,
+    .contact span {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .contact a {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 1px;
+      transition: border-color .15s, color .15s;
+    }
+
+    .contact a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+
+    li.problem {
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    li.problem::before {
+      background: var(--faint);
+    }
+
+    li.problem strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+
+
+    /* 대안 검토 표 / 측정 방법 */
+    .cmp {
+      margin-top: 14px;
+      font-size: 13px;
+    }
+
+    .cmp-title {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--faint);
+      margin-bottom: 6px;
+    }
+
+    .cmp table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .cmp th,
+    .cmp td {
+      text-align: left;
+      padding: 7px 10px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      color: #34383f;
+    }
+
+    .cmp th {
+      font-weight: 700;
+      color: var(--muted);
+      background: #f6f7f9;
+    }
+
+    .cmp td.pick {
+      color: var(--accent);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .measure {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .measure b {
+      background: none;
+      color: var(--ink);
+    }
+
+    @media (max-width: 560px) {
+      .cmp {
+        overflow-x: auto;
+      }
+    }
+
+    /* ---- sections ---- */
+    section {
+      margin-bottom: 48px;
+    }
+
+    .sec-label {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding-bottom: 12px;
+      margin-bottom: 24px;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    /* company group */
+    .company {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .company:not(:first-of-type) {
+      margin-top: 42px;
+    }
+
+    .company h2 {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .company .meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .company .when {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--faint);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* experience row: date rail + body */
+    .item {
+      display: grid;
+      grid-template-columns: 132px 1fr;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item .when {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--faint);
+      padding-top: 3px;
+    }
+
+    .item h3 {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .item .org {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 3px;
+      margin-bottom: 12px;
+    }
+
+    .item .stack {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--faint);
+      margin-top: 2px;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 7px;
+      font-size: 15px;
+      color: #34383f;
+    }
+
+    li::before {
+      content: "";
+      position: absolute;
+      left: 2px;
+      top: 11px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--line);
+    }
+
+    li b {
+      color: var(--ink);
+      font-weight: 700;
+      background: linear-gradient(transparent 62%, var(--accent-soft) 62%);
+      padding: 0 1px;
+    }
+
+    li.result {
+      margin-top: 10px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    li.result::before {
+      background: var(--accent);
+      width: 6px;
+      height: 6px;
+      top: 9px;
+    }
+
+    li.result strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    /* matrix grid (skills / competencies) */
+    .matrix {
+      display: grid;
+      grid-template-columns: 132px 1fr;
+      gap: 22px 24px;
+      align-items: baseline;
+    }
+
+    .matrix .cat {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--faint);
+    }
+
+    .matrix.comp .cat,
+    .matrix.skills .cat {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .matrix .desc {
+      font-size: 15px;
+      color: #34383f;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .tag {
+      font-size: 13px;
+      padding: 3px 11px;
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      color: #34383f;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--faint);
+    }
+
+    /* responsive */
+    @media (max-width: 560px) {
+      .wrap {
+        padding: 56px 22px 80px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .item,
+      .matrix {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .item .when {
+        padding-top: 0;
+      }
+
+      .company {
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .matrix {
+        gap: 4px 0;
+      }
+
+      .matrix .cat {
+        margin-top: 14px;
+      }
+    }
+
+    /* print / PDF */
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .wrap {
+        padding: 24px 0;
+        max-width: 100%;
+      }
+
+      .contact a {
+        border: none;
+      }
+
+      li b {
+        background: none;
+      }
+
+      a {
+        color: var(--ink) !important;
+      }
+    }
+
+    .company .why {
+      font-size: 12.5px;
+      color: var(--faint);
+      margin-top: 4px;
+      max-width: 520px;
+    }
+
+    .legend {
+      font-size: 13px;
+      color: var(--muted);
+      margin: -8px 0 18px;
+    }
+
+    .tag.core {
+      background: var(--accent-soft);
+      border-color: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    @page {
+      size: A4;
+      margin: 14mm 12mm;
+    }
+
+    @media print {
+      body {
+        font-size: 12px;
+      }
+
+      .wrap {
+        padding: 0;
+      }
+
+      .item,
+      .cmp tr {
+        break-inside: avoid;
+      }
+
+      .sec-label,
+      .company {
+        break-after: avoid;
+      }
+
+      li,
+      .item .org {
+        font-size: 12px;
+      }
+
+      .cmp {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="head-top">
+      <div class="head-main">
+      <div class="name-row">
+        <h1>박진혁</h1>
+        <div class="contact">
+          <a href="mailto:wlsgurlek@gmail.com">wlsgurlek@gmail.com</a>
+          <a href="https://github.com/jinhyukkk">github.com/jinhyukkk</a>
+          <a href="https://jh-p.tistory.com/">jh-p.tistory.com</a>
+          <a href="https://jinhyukkk.github.io">포트폴리오</a>
+        </div>
+      </div>
+      <p class="role">Backend Engineer</p>
+      </div>
+      <img class="profile" src="images/profile.jpg" alt="박진혁 증명사진">
+      </div>
+      <p class="summary">
+        Java &amp; Spring 기반의 6년차 서버 백엔드 개발자로
+        일 1,000건+ 주문 커머스, 4개국 글로벌 결제, 임직원 500명 인사 시스템을 개발·운영하며
+        응답 시간 <b>94%↓</b>, 일괄 결재(최대 300건) <b>14초 → 1초</b>를 달성했고,
+        현재는 그룹 계열사 <b>1,200명</b>이 쓰는 AI 서비스의 인증·연동 표준을 설계하고 있습니다.
+      </p>
+      <p class="summary">
+        대규모 트래픽 이커머스에서 트랜잭션과 성능을 다진 뒤 엔터프라이즈 보안·인증 환경을 거치며,
+        지금은 AI와 사내 시스템을 안전하게 잇는 연동 영역까지 역량을 넓혀 가고 있습니다.
+      </p>
+    </header>
+
+    <section>
+      <div class="sec-label">Key Strengths</div>
+      <div class="cmp"><table>
+        <tr><th>역량</th><th>근거</th></tr>
+        <tr><td>성능 최적화</td><td>병목을 지표로 먼저 특정(AWR·슬로우 쿼리·APM) 후 구조 변경. 응답 18초→1초, 조회 10초→1초, 검색 60%↑</td></tr>
+        <tr><td>정합성 설계</td><td>복합 결제·부분 환불 시나리오 40건 검증(불일치 0건), 30만 건 이관 건수·금액 대사 불일치 0건</td></tr>
+        <tr><td>인증·보안 연동</td><td>OAuth 2.0/JWT 표준화로 계열사 연동 2주→3일, 내부망 포트 개방 없이 AI 연동(API GW→Lambda→DMZ), 보안 심의 1회 통과</td></tr>
+        <tr><td>AI 서비스 개발</td><td>MCP 엔진이 일관성·근거를 통제하고 LLM이 판독·의견을 맡는 투자심의 에이전트(대표이사 리뷰, 컨퍼런스 발표), 전사 에이전트 16건·도구 10종, 딥리서치 4시간→25분</td></tr>
+        <tr><td>리딩·확산</td><td>PL 2회(5인), 계열사 교육 5회(150명), 멘토링</td></tr>
+      </table></div>
+    </section>
+
+    <section>
+      <div class="sec-label">Experience</div>
+
+      <div class="company">
+        <div><h2>유진아이티서비스</h2><div class="meta">그룹 IT 인프라·서비스 전문 기업 · 대리 · 정보전략팀</div><div class="why">전환 사유: 단일 서비스 트래픽 중심에서 보안·인증·권한 등 엔터프라이즈 요건을 다루기 위해 이직</div></div>
+        <div class="when">2023.06 — 재직 중</div>
+      </div>
+      <div class="item">
+        <div class="when">2023.06 — 진행 중</div>
+        <div>
+          <h3>e-HR 인사시스템 성능 고도화·운영 안정화</h3>
+          <div class="org">계열사 인사 시스템(사용자 약 500명) 단독 운영 · SSO 통합 로그인 PL</div>
+          <div class="stack">Java · Spring · JSP · Oracle · JavaScript · Jenkins · JEUS · Git</div>
+          <ul>
+            <li class="problem"><strong>문제</strong> — 핵심 화면 p95 응답이 <strong>18초</strong>에 달하고, 수기 입력과 FTP 수동 배포로 오류·오배포 위험이 누적됨</li>
+            <li><b>핵심 화면 응답 18초 → 1.0초(94%↓)</b> — AWR·개발자 도구로 병목이 하드파싱과 반복 조회임을 특정하고, 동적 SQL 정적화·인덱스 보완·서버 캐시(적중률 87%)·접속 로그 비동기 분리를 적용</li><li><b>일괄 결재(최대 300건) 14초 → 1초 이내</b> — 건별 직렬 처리를 스레드 풀 8개 비동기 병렬로 전환, 결재선 순서는 문서 단위 락으로 보장</li><li><b>SSO 통합 로그인 PL(5인·4개월)</b> — 대상 시스템 6개의 분석·설계·개발·검증 주도, 로그인 관련 문의 월 12건 → 2건</li><li><b>입사자 등록 20분 → 1분(월 약 13시간 절감)</b> — 엑셀 업로드·유효성 검증·DB 자동 반영 구조로 전환</li><li><b>개인정보 마스킹 62개 화면 일원화</b> — 공통 AOP·인터셉터로 누락 0건, 권한 등급별 해제와 접근 로그·감사 추적으로 내부 개인정보 점검 지적 0건</li><li><b>배포 40분 → 6분, 오배포 연 3건 → 0건</b> — FTP 수동 배포를 Jenkins·Git 파이프라인으로 전환</li>
+            <li class="result"><strong>성과</strong> — 핵심 화면 5종 평균 응답을 개선 전후 각 2주 일평균으로 비교(Oracle AWR·Chrome DevTools), 연 12회 이상 무중단 배포·단독 운영</li>
+          </ul>
+          <div class="cmp"><div class="cmp-title">대안 검토 — 응답 지연 해소</div><table><tr><th>대안</th><th>장점</th><th>한계</th><th>결론</th></tr><tr><td>서버 스펙 증설</td><td>코드 변경 없음</td><td>병목이 하드파싱·반복 조회라 효과 제한</td><td class="pick">제외</td></tr><tr><td>인덱스 보완만</td><td>위험 낮음</td><td>동적 SQL 파싱 비용 잔존</td><td class="pick">1단계</td></tr><tr><td>정적 SQL + 서버 캐시 + 로그 비동기</td><td>파싱·조회·I/O 동시 제거</td><td>캐시 무효화 규칙 필요</td><td class="pick">최종 채택</td></tr></table></div><p class="measure"><b>측정</b> — p95 응답은 Chrome DevTools Network 기준, 하드파싱 횟수는 Oracle AWR 리포트로 개선 전후 비교<br>· <b>트레이드오프</b> 서버 캐시 갱신 지연 최대 30초는 인사 데이터 특성상 현업 합의 후 수용</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="when">2026.02 — 진행 중</div>
+        <div>
+          <h3>투자심의 사전검토 AI 에이전트 설계·구현</h3>
+          <div class="org">경영개선팀 요건 협의 · 설계·구현 전담 · 2026.07 대표이사 리뷰, 실제 안건 적용 가능 상태로 오픈</div>
+          <div class="stack">Python · MCP · AWS Lambda · 웍스AI 에이전트</div>
+          <ul>
+            <li class="problem"><strong>문제</strong> — 임원 투자심의를 AI로 대체해 달라는 요청이었으나, LLM만으로는 같은 안건에도 결론이 달라지고 근거 없는 답변이 섞여 의사결정에 쓸 수 없음</li>
+            <li><b>범위 재설정</b> — AI의 한계를 근거로 "대체"가 아닌 <b>"심의 전 사전 검토 의견 제공"</b>으로 요구를 낮춰 합의, 최종 판단은 사람이 유지</li>
+            <li><b>엔진과 LLM의 역할 분리</b> — 일관성이 필요한 부분(진행 순서·상태 관리, 입력 검증, 근거 미조회 시 반려, 배점 기준)은 Lambda 기반 MCP 심의 엔진이 통제하고, 판독·의견 작성·점수 산정은 LLM이 수행. MCP를 데이터 연동이 아닌 <b>오케스트레이터</b>로 활용</li>
+            <li><b>5개 관점 심의 + 사람 확인 2단계</b> — 외부투자자·CFO·감사실·사업부 대표·레드팀 관점으로 점수와 근거를 산출하고, 자료 요약 검증·추가 토론 여부에서 사용자가 개입. 사업부 대표 관점은 우려 일색의 편향된 점수를 보정하기 위해 추가</li>
+            <li><b>품질 문제 3종 해결</b> — ① 결과 불일치: 판독 사실을 단일 목록으로 고정해 모든 관점이 이 목록만 인용 ② 기준 변동: 상태를 엔진이 관리해 재판독·중간 기준 변경 차단 ③ 환각: 근거 없는 답변은 반려, 인용 필수</li>
+            <li class="result"><strong>성과</strong> — 대표이사 리뷰에서 높은 평가, <b>8개 섹션 심의 리포트 자동 생성</b>, 실제 안건 즉시 활용 가능한 상태로 운영. 설계 사례를 AX REAL 2026 컨퍼런스에서 발표</li>
+          </ul>
+          <div class="cmp"><div class="cmp-title">대안 검토 — 심의 로직 위치</div><table><tr><th>대안</th><th>장점</th><th>한계</th><th>결론</th></tr><tr><td>프롬프트 중심 단일 에이전트</td><td>구현 단순</td><td>실행마다 결론·순서가 달라지고 근거 통제 불가</td><td class="pick">제외</td></tr><tr><td>MCP 엔진 통제 + LLM 판단</td><td>일관성·상태 보장, 근거 게이트</td><td>순차 실행으로 1회 10분+ 소요</td><td class="pick">최종 채택</td></tr></table></div><p class="measure"><b>트레이드오프</b> — 관점이 순차 실행되어 앞 관점이 뒤 관점 의견을 볼 수 없으므로 추가 토론 단계를 두어 보완하고, 긴 실행 시간은 단계별 진행 안내로 완화</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">2025.07 — 진행 중</div>
+        <div>
+          <h3>그룹 AI 서비스 도입·인증 표준·확산 (Project Leader)</h3>
+          <div class="org">SaaS 기반 AI 서비스 '웍스AI(유진GPT)' 그룹 도입 · 3인 팀 · 본인 기여 약 70% (설계·구현·확산 리딩)</div>
+          <div class="stack">Python · MCP · OAuth 2.0 · AWS(API Gateway·Lambda) · Git</div>
+          <ul>
+            <li class="problem"><strong>문제</strong> — 내부망 데이터를 보안 경계를 유지한 채 외부 SaaS·AI가 활용해야 하고, 계열사마다 인증 방식이 달라 연동이 지연됨</li>
+            <li><b>신규 계열사 연동 2주 → 3일</b> — OAuth 2.0/JWT 표준 흐름(토큰 1시간·리프레시 14일, scope 5종)을 정의해 그룹 계열사에 동일 적용</li>
+            <li><b>내부망 포트 개방 0건, 보안 심의 1회 통과</b> — API Gateway → Lambda → NAT Gateway → DMZ 경로와 MCP 서버로 AI가 e-HR 데이터를 안전하게 조회 (호출 p95 1.2초)</li>
+            <li><b>사내 데이터 REST API 12종</b> 신규 개발, 월 호출 약 45만 건·월별 사용자 현황 정기 보고 체계 구축</li>
+            <li><b>자체 에이전트 16건·도구 10종</b> 개발, 현업 요구 발굴로 시작해 법무팀이 먼저 요청한 공정거래 준법 에이전트까지 <b>현업 선요청 구조</b>로 전환</li>
+            <li><b>확산 활동</b> — 주간 뉴스레터로 신규 에이전트 소개(2026.03~), 그룹 AI 교육 5회(누적 150명), 팀장급 도입 효과 발표</li>
+            <li class="result"><strong>성과</strong> — 에이전트 활용 토큰 비율 <strong>8% → 48%</strong>(2026.01→08), 월 토큰 사용량 <strong>7천만 → 2.7억(약 3.9배)</strong>, 월 활성 사용자 <strong>그룹 계열사 1,200명</strong> (활성 = 월 1회 이상 로그인, 로그인 로그 기준)</li>
+          </ul>
+          <div class="cmp"><div class="cmp-title">대안 검토 — 내부망 연동 방식</div><table><tr><th>대안</th><th>장점</th><th>한계</th><th>결론</th></tr><tr><td>내부망 포트 직접 개방</td><td>구현 단순</td><td>보안 심의 불가</td><td class="pick">제외</td></tr><tr><td>VPN·전용선</td><td>통제 용이</td><td>SaaS 미지원, 구축 길음</td><td class="pick">제외</td></tr><tr><td>API GW → Lambda → NAT → DMZ + MCP</td><td>내부망 비노출, 호출 단위 인가·감사</td><td>홉 증가 지연</td><td class="pick">최종 채택</td></tr></table></div><p class="measure"><b>측정</b> — p95 응답은 CloudWatch 2주 집계, 사용자·호출량은 게이트웨이 액세스 로그 월 집계<br>· <b>트레이드오프</b> 경로 홉 증가로 호출당 약 80ms 추가, 응답 캐시로 상쇄</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="when">2025.01 — 2025.12</div>
+        <div>
+          <h3>사내 AI 플랫폼 내재화 · 딥리서치</h3>
+          <div class="org">사내 문서 기반 답변·보고서 초안 생성 플랫폼 (3인 중 백엔드·파이프라인 설계)</div>
+          <div class="stack">Python · FastAPI · LangChain · LangGraph · MCP · AWS</div>
+          <ul>
+            <li class="problem"><strong>문제</strong> — 보고서 한 건에 평균 <strong>4시간</strong>이 걸리는 자료 수집·요약·초안 작성이 반복됨</li>
+            <li><b>보고서 초안 4시간 → 25분</b> — 업로드 → 요약 → 검색 → 초안 생성을 LangGraph 멀티스텝 플로우로 구현</li><li><b>근거 인용 정확도 91%</b> — 자체 평가셋 100문항으로 환각·누락을 점검하며 프롬프트·검색 단계 개선</li>
+            <li class="result"><strong>성과</strong> — 반복 보고서 작성 자동화, 시범 부서 3곳 도입</li>
+          </ul>
+          
+        </div>
+      </div>
+
+      <div class="company">
+        <div><h2>포비즈코리아</h2><div class="meta">기업형 E-Commerce 솔루션 · 사원~대리 · 커머스개발팀</div><div class="why">입사 동기: 대규모 주문·결제 트래픽을 직접 다루며 트랜잭션·성능 설계 역량을 쌓기 위해 입사</div></div>
+        <div class="when">2020.12 — 2023.06</div>
+      </div>
+      <div class="item">
+        <div class="when">2023.02 — 2023.05</div>
+        <div>
+          <h3>스마일게이트샵 글로벌 서비스 구축 (Project Leader)</h3>
+          <div class="org">다국가 결제·정책 대응 구조 설계 · 5인 · 4개월 · 본인 기여 약 50% (결제·정책 구조)</div>
+          <div class="stack">PHP · CodeIgniter · MySQL · JavaScript · Git</div>
+          <ul>
+            <li class="problem"><strong>문제</strong> — 국가별 통화·결제·배송 정책이 달라 코드 분기만으로는 다국가 확장이 어려움</li>
+            <li><b>국가 추가 대응 2주 → 2일</b> — 국가 정책 테이블 + 공통 결제 인터페이스로 정책을 설정화</li><li><b>복합 결제 부분 환불 금액 불일치 0건</b> — 일반 결제 + 포인트 2종 환불 시나리오 40건 QA로 검증</li><li>국내/해외 결제(이니시스/엑심베이)와 EMS·복지포인트·SNS 로그인 5종 연동, 다국어 검색 구현, PL로서 일정·산출물 품질 관리</li>
+            <li class="result"><strong>성과</strong> — 4개국 동시 런칭 일정 준수, 결제·검색 확장 구조 확보</li>
+          </ul>
+          
+        </div>
+      </div>
+      <div class="item">
+        <div class="when">2020.12 — 2023.03</div>
+        <div>
+          <h3>ELAND FOLDER MALL 구축·운영</h3>
+          <div class="org">일 평균 1,000건+(월 5만 건+) 주문 커머스 · 개발 4인(백엔드 2인) · 집계·검색 구조 설계·구현 본인 기여 약 60%</div>
+          <div class="stack">PHP · CodeIgniter · MySQL · Elasticsearch · Jenkins · Linux</div>
+          <ul>
+            <li class="problem"><strong>문제</strong> — 주문 집중 시간대 실시간 집계 쿼리가 병목이 되어 상품 조회 <strong>10초</strong>, DB CPU 피크 85%</li>
+            <li><b>상품 조회 10초 → 1초(90%↓), DB CPU 피크 85% → 40%</b> — 실시간 Best 상품 집계를 10분 주기 사전 집계로 전환</li><li><b>검색 평균 1.6초 → 0.6초(약 60%↑)</b> — 상품 약 200만 건을 Elasticsearch로 분리</li><li><b>운영 업무 월 30시간 절감</b> — Cron 기반 정산·운영 배치 자동화, Jenkins 자동·수동 배포</li><li>커뮤니티(FolderingChannel)·UGC 신고/차단·최근 본 상품 History·본인인증 등 기능 개발</li>
+            <li class="result"><strong>성과</strong> — 월 5만 건+ 주문 무장애 처리, 구조 개선 후 피크 시간대 지연 문의 소멸</li>
+          </ul>
+          <div class="cmp"><div class="cmp-title">대안 검토 — 조회 병목</div><table><tr><th>대안</th><th>장점</th><th>한계</th><th>결론</th></tr><tr><td>쿼리·인덱스 튜닝만</td><td>위험 낮음</td><td>집계 부하 잔존</td><td class="pick">부분 적용</td></tr><tr><td>10분 주기 사전 집계</td><td>조회 부하 제거</td><td>최대 10분 지연</td><td class="pick">최종 채택</td></tr><tr><td>Redis 실시간 갱신</td><td>지연 없음</td><td>신규 인프라·비용</td><td class="pick">제외</td></tr></table></div><p class="measure"><b>측정</b> — 슬로우 쿼리 로그·APM 기준 피크(20~23시) 2주 일평균 비교, 검색은 상위 검색어 100개 평균 응답</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="when">2021.01 — 2023.01</div>
+        <div>
+          <h3>그 외 커머스 구축·운영</h3>
+          <ul>
+            <li><b>푸드케어 CLE</b> (2022.07~10) — 회원·콘텐츠 <b>30만 건 이관, 건수·금액 대사 불일치 0건</b> (전수 건수 + 샘플 2,000건 대조), Elasticsearch 연동</li>
+            <li><b>HL SCIENCE MALL</b> (2021.03~2022.12) — 월 2,000건+ 주문 무장애 운영, 네이버페이 주문형 API 연동, 관리자 검색 고도화</li>
+            <li><b>위기브 기부 모금</b> (2022.10~2023.01) — UGC 신고·차단, 지자체 셀러·입점 문의 관리 개발로 운영 프로세스 표준화</li>
+            <li><b>사내 프로젝트</b> (2021.01~2022.07) — Elasticsearch 학습 매뉴얼 작성, OPEN API·생체 인증 API 개발</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============== 학력 =============== -->
+    <section>
+      <div class="sec-label">Education</div>
+
+      <div class="item">
+        <div class="when">2025.03 — 2026.08</div>
+        <div>
+          <h3>국민대학교 소프트웨어융합대학원</h3>
+          <div class="org">석사 · 인공지능전공 · 졸업 · 학점 4.19 / 4.5</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">2021.03 — 2023.08</div>
+        <div>
+          <h3>한국방송통신대학교</h3>
+          <div class="org">학사 · 컴퓨터과학과(3학년 편입) · 졸업 · 학점 3.1 / 4.5</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">2017.03 — 2021.02</div>
+        <div>
+          <h3>여주대학교</h3>
+          <div class="org">전문학사 · 컴퓨터정보과 · 졸업 · 학점 4.35 / 4.5</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">2020.09 — 2020.11</div>
+        <div>
+          <h3>SoftSquared 10기 Server Session</h3>
+          <div class="org">서버 개발 교육 과정 수료</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============== 자격증 =============== -->
+    <section>
+      <div class="sec-label">Certifications</div>
+
+      <div class="item">
+        <div class="when">2026.09</div>
+        <div>
+          <h3>정보처리기사</h3>
+          <div class="org">한국산업인력공단</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =============== 보유 기술 =============== -->
+    <section>
+      <div class="sec-label">Skills</div>
+      <p class="legend"><span class="tag core">주력</span> 실무 3년+ · 운영·장애 대응 경험 &nbsp;&nbsp; <span class="tag">활용</span> 프로젝트 경험</p>
+      <div class="matrix skills">
+        <div class="cat">Backend</div>
+        <div class="tags">
+          <span class="tag core">Java</span>
+          <span class="tag core">Spring</span>
+          <span class="tag">JSP</span>
+          <span class="tag core">Python</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">PHP</span>
+          <span class="tag">CodeIgniter</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">jQuery</span>
+          <span class="tag core">OAuth 2.0 · JWT</span>
+        </div>
+        <div class="cat">Database</div>
+        <div class="tags">
+          <span class="tag core">Oracle</span>
+          <span class="tag core">MySQL</span>
+          <span class="tag core">Elasticsearch</span>
+        </div>
+        <div class="cat">Infra · DevOps</div>
+        <div class="tags">
+          <span class="tag">AWS (EC2·ECS·RDS·S3·Lambda·API Gateway·CloudWatch)</span>
+          <span class="tag">JEUS</span>
+          <span class="tag core">Jenkins</span>
+          <span class="tag core">Linux</span>
+          <span class="tag">Cron</span>
+          <span class="tag core">Git</span>
+          <span class="tag">SVN</span>
+        </div>
+        <div class="cat">AI · ML</div>
+        <div class="tags">
+          <span class="tag">LangChain</span>
+          <span class="tag core">LangGraph</span>
+          <span class="tag">MCP</span>
+        </div>
+        <div class="cat">Tools · Collab</div>
+        <div class="tags">
+          <span class="tag">JetBrains (IntelliJ·DataGrip·PyCharm)</span>
+          <span class="tag">Cursor</span>
+          <span class="tag">Antigravity</span>
+          <span class="tag">JIRA</span>
+          <span class="tag">Confluence</span>
+          <span class="tag">BitBucket</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============== 활동 =============== -->
+    <section>
+      <div class="sec-label">Activities</div>
+
+      <div class="item">
+        <div class="when">2026.10</div>
+        <div>
+          <h3>AX REAL 2026 웍스AI 컨퍼런스 발표 — "MCP를 오케스트레이터로 활용한 투자심의 에이전트"</h3>
+          <div class="org">유진그룹 AX 여정(유진GPT 도입~그룹 확산)과 투자심의 워크플로우 엔진 사례 발표 · 에이전트 활용 비율 8%→48%, MCP 엔진/LLM 역할 분리, HITL·근거 반려 설계 공유 · 발표자 · 청중 약 300명 · 실제 시연 영상 포함</div>
+          <div class="photos">
+            <img src="images/talk-1.jpg" alt="AX REAL 2026 컨퍼런스 현장" loading="lazy">
+            <img src="images/talk-2.jpg" alt="AX REAL 2026 발표 장면" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">2025</div>
+        <div>
+          <h3>그룹 전사 AI 활용 교육 · 팀장급 도입 효과 발표</h3>
+          <div class="org">계열사 대상 오프라인 교육 5회 (누적 수강 약 150명), 사내 기술 세미나 발표 (참석 80명)</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">2026</div>
+        <div>
+          <h3>기업 데이터 접근성 향상을 위한 자기교정 Text-to-SQL 프레임워크</h3>
+          <div class="org">한국IT서비스학회 학술대회 게재 · 제1저자 · 기여: 자기교정 루프 설계·실험, 쿼리 정확도 baseline 대비 향상 검증</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">2026.06 — 2026.08</div>
+        <div>
+          <h3>AI CHAMPION 대회 100팀 선발 진출</h3>
+          <div class="org">카카오톡 대화를 AI 웹툰으로 자동 변환하는 서비스 ‘톡툰’ · 백엔드 · AI 파이프라인 설계 및 구현 담당 · 100팀 선발 통과, 다음 선발 단계에서 2026.08 종료</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">2021.01 — 2021.05</div>
+        <div>
+          <h3>SoftSquared Server Session 멘토</h3>
+          <div class="org">1:1 서버 개발 멘토링</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>박진혁 · Backend Engineer · Last updated 2026.10</footer>
+
+  </div>
+</body>
+
+</html>
