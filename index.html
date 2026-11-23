@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>박진혁 · Forward Deployed Engineer</title>
-<meta name="description" content="현업의 요청을 AI 에이전트와 MCP 서버로 만들어 쓰이게 하는 엔지니어 박진혁의 포트폴리오. 백엔드 6년 차." />
+<title>박진혁 · Backend Engineer</title>
+<meta name="description" content="백엔드 6년 차 엔지니어 박진혁의 포트폴리오. 지금은 현업의 요청을 AI 에이전트와 MCP 서버로 만들어 사용하게 하는 Forward Deployed 역할까지 맡고 있습니다." />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Noto+Serif+KR:wght@400;500;600&display=swap" />
 <script>
   try { var L = localStorage.getItem('lang') || ((navigator.language || 'ko').slice(0, 2) === 'ko' ? 'ko' : 'en');
@@ -55,10 +55,6 @@
   #intro { padding-top: 0; }
   #intro h2 { font-size: 60px; line-height: 69px; font-weight: 400; color: var(--ink); letter-spacing: -0.01em; }
   #intro .sub { font-style: italic; font-size: 24px; color: var(--accent); margin-top: 4px; }
-  /* 직함이 바뀔 때: 흐려졌다가 다음 글자로 또렷해진다 */
-  #role, #roleSub { transition: opacity .35s, filter .35s, transform .35s; }
-  #role { min-height: 69px; }
-  #role.out, #roleSub.out { opacity: 0; filter: blur(6px); transform: translateY(6px); }
   #intro .bio { font-size: 18px; line-height: 1.75; color: var(--muted); margin-top: 18px; max-width: 560px; }
   #intro .now { margin-top: 32px; font-size: 17px; }
   #intro .now b { color: var(--ink); font-weight: 500; }
@@ -98,8 +94,6 @@
   .cohead p { font-size: 14.5px; margin-top: 4px; }
   .cohead .why { color: var(--faint); font-size: 13.5px; }
   .it .rl { color: var(--faint); }
-  /* 검토 모드: 주소 끝에 ?review 를 붙이면 초안으로 지어 쓴 부분에 파란 점선이 표시된다 */
-  .review .g { outline: 1px dashed #5aa9ff; outline-offset: 4px; }
   /* 상위 프로젝트에 딸린 하위 과제 */
   .it.sub { margin-left: 28px; padding-left: 24px; border-left: 1px solid var(--accent); }
   .sublab { color: var(--accent); letter-spacing: 0.08em; margin-bottom: 6px; }
@@ -167,7 +161,7 @@
     .side nav { display: none; }
     .side .out { margin-top: 0; }
     main { padding-top: 40px; }
-    #intro h2 { font-size: 40px; line-height: 1.2; min-height: 96px; }
+    #intro h2 { font-size: 40px; line-height: 1.2; }
     .head h2 { font-size: 34px; line-height: 1.2; }
     .rw { grid-template-columns: 1fr; gap: 4px; }
   }
@@ -191,9 +185,9 @@
   <aside class="side">
     <div>
       <h1>Jinhyuk<em>Park</em></h1>
-      <p class="meta mono" lang="ko">박진혁, Forward Deployed Engineer<br />유진아이티서비스</p>
-      <p class="meta mono" lang="en">Forward Deployed Engineer<br />Eugene IT Service</p>
-      <p class="tag" lang="ko">현업의 요청을 듣고, 만들고, 쓰이게 만듭니다. AI 연동, 인증, 성능.</p>
+      <p class="meta mono" lang="ko">박진혁<br />Backend Engineer<br />유진아이티서비스</p>
+      <p class="meta mono" lang="en">Backend Engineer<br />Eugene IT Service</p>
+      <p class="tag" lang="ko">현업의 요청을 듣고, 만들고, 사용하게 만듭니다. AI 연동, 인증, 성능.</p>
       <p class="tag" lang="en">I listen to a team's request, build it, and get it used. AI integration, auth, performance.</p>
       <div class="lang mono" role="group" aria-label="Language">
         <button type="button" data-l="ko">KO</button><span>/</span><button type="button" data-l="en">EN</button>
@@ -216,11 +210,11 @@
 
   <main>
     <section id="intro">
-      <h2 id="role">Forward deployed engineer</h2>
-      <p class="sub" id="roleSub">from a team's request to production</p>
-      <p class="bio" lang="ko">현업 팀 옆에서 문제를 듣고, 만들고, 쓰이게 만드는 엔지니어입니다. 백엔드 6년 차입니다. 유진그룹에 AI 서비스를 도입해 법무, 투자심의, 선물 영업, 보안 팀의 요청을 에이전트와 MCP 서버로 전달했습니다. 그 전에는 일 1,000건 이상의 주문을 처리하는 커머스에서 성능과 정합성을 다졌습니다.</p>
-      <p class="bio" lang="en">I am an engineer who sits next to business teams, listens to the problem, builds, and stays until it is used. I am in my sixth year of backend work. I brought an AI service to Eugene Group and delivered agents and MCP servers for legal, investment review, futures sales and security teams. Before that I learned performance and data integrity on an e-commerce store handling over 1,000 orders a day.</p>
-      <p class="now" lang="ko"><span class="mono">building</span>&nbsp; <b>투자심의 AI 에이전트</b>, 누적 가입자 1,130명의 그룹 AI 서비스 위에서.</p>
+      <h2 id="role">Backend engineer</h2>
+      <p class="sub" id="roleSub">now forward deployed, from a team's request to production</p>
+      <p class="bio" lang="ko">백엔드 6년 차 개발자입니다. 지금은 현업 가까이에서 문제를 듣고, 만들고, 사용하게 만드는 Forward Deployed 역할까지 맡고 있습니다. 유진그룹에 AI 서비스를 도입해 법무, 경영, 증권, 보안 분야의 요청을 에이전트와 MCP 서버로 전달했습니다. 그 전에는 일 1,000건 이상의 주문을 처리하는 커머스에서 성능과 정합성을 다졌습니다.</p>
+      <p class="bio" lang="en">I am a backend engineer in my sixth year. These days I also work forward deployed: I sit next to business teams, listen to the problem, build, and stay until it is used. I brought an AI service to Eugene Group and delivered agents and MCP servers for legal, management, securities and security work. Before that I learned performance and data integrity on an e-commerce store handling over 1,000 orders a day.</p>
+      <p class="now" lang="ko"><span class="mono">building</span>&nbsp; <b>투자심의 AI 에이전트</b>. 누적 가입자 1,130명이 쓰는 그룹 AI 서비스에서 만들고 있습니다.</p>
       <p class="now" lang="en"><span class="mono">building</span>&nbsp; <b>an investment review agent</b>, on a group AI service with 1,130 sign-ups.</p>
     </section>
 
@@ -228,10 +222,10 @@
       <div class="head rv"><h2>What I'm good at</h2></div>
       <dl class="rows rv">
         <div class="sr"><dt class="mono"><span lang="ko">요청을 범위로 바꾸기</span><span lang="en">Scoping with teams</span></dt><dd><p lang="ko">요청을 그대로 만들지 않고 실제로 필요한 것과 제약을 먼저 확인합니다. "투자심의를 AI로 대체"는 AI 사전 심의와 경영진 결재의 두 단계로, "상담사례 834건 실시간 크롤링"은 미리 모아 검색하는 방식으로 합의했습니다.</p><p lang="en">I do not build requests as stated. I check what is actually needed and what the constraints are. "Replace the investment review with AI" became AI pre-review plus management approval, and "crawl 834 cases live" became collect in advance and search.</p><div class="sl mono"><a href="projects/investment-review-agent.html">Review agent ↗</a><a href="projects/group-ai-platform.html">Group AI ↗</a></div></dd></div>
-        <div class="sr"><dt class="mono"><span lang="ko">빠르게 만들어 전달</span><span lang="en">Shipping fast</span></dt><dd><p lang="ko">공정거래 준법 에이전트는 요청 메일부터 배포까지 8일, 신문 클리핑은 첫 결과까지 10일, 계약서 검토는 하루가 걸렸습니다. Lambda와 API Gateway를 공통 패턴으로 묶어 MCP 서버 10개(도구 85개)를 냈습니다.</p><p lang="en">The fair-trade compliance agent took 8 days from request to deployment, newspaper clipping 10 days to a first result, and contract review one day. A shared Lambda and API Gateway pattern produced 10 MCP servers (85 tools).</p><div class="sl mono"><a href="projects/group-ai-platform.html">Group AI ↗</a></div></dd></div>
+        <div class="sr"><dt class="mono"><span lang="ko">빠르게 만들어 전달</span><span lang="en">Shipping fast</span></dt><dd><p lang="ko">공정거래 준법 에이전트는 요청 메일부터 배포까지 8일, 신문 클리핑은 첫 결과까지 10일, 계약서 검토는 하루가 걸렸습니다. Lambda와 API Gateway를 공통 패턴으로 묶어 MCP 서버 12개를 만들었습니다.</p><p lang="en">The fair-trade compliance agent took 8 days from request to deployment, newspaper clipping 10 days to a first result, and contract review one day. A shared Lambda and API Gateway pattern produced 12 MCP servers.</p><div class="sl mono"><a href="projects/group-ai-platform.html">Group AI ↗</a></div></dd></div>
         <div class="sr"><dt class="mono"><span lang="ko">제약 안에서 배포</span><span lang="en">Deploying within constraints</span></dt><dd><p lang="ko">플랫폼이 멀티에이전트를 지원하지 않아 에이전트 하나 안에서 다섯 관점을 차례로 이었습니다. 유료 단말에 API가 없어 공개 API로 시황 데이터를 대체했고, 연동할 수 없는 항목은 이유를 문서로 남기고 제외했습니다.</p><p lang="en">The platform had no multi-agent support, so I chained five viewpoints inside one agent. A paid terminal had no API, so I replaced the market data with public APIs and documented why some items had to be left out.</p><div class="sl mono"><a href="projects/investment-review-agent.html">Review agent ↗</a><a href="projects/group-ai-platform.html">Group AI ↗</a></div></dd></div>
         <div class="sr"><dt class="mono"><span lang="ko">정착과 측정</span><span lang="en">Adoption and measurement</span></dt><dd><p lang="ko">지표를 정의해 매월 보고하고, 사용자 10명을 인터뷰하고, 2026년 7월과 10월에 교육을 2회씩 직접 진행했습니다. 누적 가입자는 337명에서 1,130명이 됐습니다. 지표가 테스트 물량으로 부풀려졌을 때는 대표이사에게 먼저 보고했습니다.</p><p lang="en">I defined metrics and reported them monthly, interviewed 10 users, and taught two training sessions each in July and October 2026. Sign-ups went from 337 to 1,130. When a metric was inflated by test volume, I told the CEO first.</p><div class="sl mono"><a href="projects/group-ai-platform.html">Group AI ↗</a></div></dd></div>
-        <div class="sr g"><dt class="mono"><span lang="ko">고객사와 직접 일하기</span><span lang="en">Working with clients</span></dt><dd><p lang="ko">포비즈코리아에서 고객사 5곳의 구축과 운영을 맡아 고객사 담당자와 요구사항을 직접 조율했습니다. 스마일게이트샵에서는 PL로 고객사와 주간 회의를 진행했고, 일정에 맞지 않는 요구는 출시 이후 단계로 나눠 4개국 동시 출시 일정을 지켰습니다.</p><p lang="en">At Forbiz Korea I built and ran stores for 5 clients and settled requirements directly with their staff. On Smilegate Shop I ran weekly meetings with the client as PL, and moved requests that did not fit the schedule to a post-launch phase, which kept the 4-country launch on its date.</p><div class="sl mono"><a href="projects/smilegate-global.html">Smilegate Shop ↗</a><a href="projects/eland-folder-mall.html">FOLDER MALL ↗</a></div></dd></div>
+        <div class="sr"><dt class="mono"><span lang="ko">현업과 직접 일하기</span><span lang="en">Working with business teams</span></dt><dd><p lang="ko">법무, 경영, 증권, 보안 분야의 요청을 담당자에게 직접 듣고 에이전트로 만들었습니다. 투자심의 에이전트는 현업 팀과 리뷰 6회를 거쳐 범위를 정했고, 리포트의 "추가 확인 필요 항목"을 본 심의의 질의 목록으로 쓰는 운영 절차까지 함께 정리했습니다.</p><p lang="en">I heard requests in legal, management, securities and security directly from the people asking, and turned them into agents. For the investment review agent I set the scope with the team over 6 reviews, and agreed with them an operating procedure in which the report's "items needing follow-up" become the committee's question list.</p><div class="sl mono"><a href="projects/investment-review-agent.html">Review agent ↗</a><a href="projects/group-ai-platform.html">Group AI ↗</a></div></dd></div>
         <div class="sr"><dt class="mono"><span lang="ko">성능과 정합성</span><span lang="en">Performance and integrity</span></dt><dd><p lang="ko">병목을 지표로 먼저 특정한 뒤 구조를 바꿉니다. 화면 응답 18초 → 1초, 상품 조회 10초 → 1초. 복합 결제 환불 시나리오 40건을 검증했고, 30만 건 이관에서 불일치가 0건이었습니다.</p><p lang="en">I locate the bottleneck with metrics first, then change the structure. Screen response 18 s → 1 s, product listing 10 s → 1 s. I verified 40 mixed-payment refund scenarios and migrated 300,000 records with zero mismatches.</p><div class="sl mono"><a href="projects/ehr.html">e-HR ↗</a><a href="projects/eland-folder-mall.html">FOLDER MALL ↗</a><a href="projects/smilegate-global.html">Smilegate Shop ↗</a><a href="projects/foodcare-cle.html">Foodcare CLE ↗</a></div></dd></div>
       </dl>
     </section>
@@ -251,25 +245,21 @@
           <div class="when mono">2025.07 — <span lang="ko">진행 중</span><span lang="en">present</span> <span class="rl">/ <span lang="ko">Project Leader, 3인</span><span lang="en">Project Leader, team of 3</span></span></div>
           <h3><a class="more" href="projects/group-ai-platform.html"><span lang="ko">그룹 AI 서비스 도입과 확산</span><span lang="en">Group-wide AI rollout and adoption</span></a></h3>
           <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
-          <p lang="ko">SaaS AI 서비스를 그룹에 도입하고, 현업 팀의 요청을 에이전트로 만들어 전달하고, 실제로 쓰이게 만드는 일까지 맡았습니다.</p>
+          <p lang="ko">SaaS AI 서비스를 그룹에 도입하고, 현업 팀의 요청을 에이전트로 만들어 전달하고, 실제로 사용하게 만드는 일까지 맡았습니다.</p>
           <p lang="en">I brought a SaaS AI service to the group, turned requests from business teams into agents, and stayed until people actually used them.</p>
           <ul lang="ko">
-            <li>법무, 투자심의, 선물 영업, 보안 팀의 요청을 받아 <b>MCP 서버 10개(도구 85개)</b>를 만들어 전달. 공정거래 준법 에이전트는 사례 834건의 실시간 크롤링을 사전 수집과 검색으로 조정해 <b>요청 메일부터 배포까지 8일</b></li>
-            <li>Lambda와 API Gateway를 <b>공통 패턴</b>으로 묶어, 새 요청이 와도 같은 구조로 MCP 서버를 추가</li>
-            <li>API Gateway → Lambda → DMZ 경로로 <b>내부망 포트 개방 0건</b>, 보안 심의 1회 통과. OAuth 2.0 흐름을 표준화해 <b>신규 계열사 연동 2주 → 3일</b></li>
-            <li>6개 일간지 오피니언 클리핑을 자동화해 담당자의 작업을 <b>매일 40분 → 10분 이내</b>로</li>
-            <li>사용 빈도별로 다섯 그룹을 나눠 10명을 한 시간씩 인터뷰. 막고 있던 것이 기능이 아니라 <b>토큰 한도와 읽히지 않는 안내 메일</b>임을 확인하고, 교육 4회(2026년 7월, 10월 각 2회)와 뉴스레터로 정착을 지원</li>
-            <li class="g">인터뷰 뒤 한도 상향 절차를 안내 메일 첫 줄에 넣고 뉴스레터 제목 형식을 바꿔, <b>한도 관련 문의 월 20건 → 6건</b>, 뉴스레터 열람률 18% → 41%</li>
-            <li>누적 가입자 <b>337 → 1,130명</b>, 월 사용자 <b>43 → 359명</b>, 사용 계열사 <b>5 → 17곳</b>, 에이전트 활용 비율 8% → 31%(테스트 물량 제외)</li>
+            <li>법무, 경영, 증권, 보안 분야의 요청을 <b>MCP 서버 12개</b>로 만들어 전달. 공정거래 준법 에이전트는 <b>요청 메일부터 배포까지 8일</b></li>
+            <li>Lambda와 API Gateway 공통 패턴으로 <b>내부망 포트 개방 0건</b>, 보안 심의 1회 통과. OAuth 2.0 표준화로 <b>신규 계열사 연동 2주 → 3일</b></li>
+            <li>사용자 10명을 인터뷰해 쓰지 않는 이유가 <b>토큰 한도와 읽히지 않는 안내 메일</b>임을 확인하고, 교육 4회와 뉴스레터로 정착을 지원</li>
+            <li>누적 가입자 <b>337 → 1,130명</b>, 월 사용자 <b>43 → 356명</b>, 사용 계열사 <b>5 → 17곳</b></li>
+            <li>월 1회 이상 사용된 에이전트·워크플로우 <b>19 → 91개</b>, 에이전트 활용 비율 8% → 28%(2026년 10월)</li>
           </ul>
           <ul lang="en">
-            <li>Took requests from legal, investment review, futures sales and security teams and delivered <b>10 MCP servers (85 tools)</b>. For the fair-trade compliance agent I changed live crawling of 834 cases into collect-in-advance and search, and shipped it <b>8 days after the request email</b></li>
-            <li>Built <b>a shared Lambda and API Gateway pattern</b>, so each new request becomes an MCP server on the same structure</li>
-            <li>An API Gateway → Lambda → DMZ path with <b>zero internal ports opened</b> passed security review first time. A standard OAuth 2.0 flow cut <b>new affiliate onboarding from 2 weeks to 3 days</b></li>
-            <li>Automated opinion clipping from 6 dailies, cutting the owner's work <b>from 40 minutes a day to under 10</b></li>
-            <li>Split users into five groups by usage and interviewed 10 for an hour each. The blockers were not features but <b>the token limit and announcement emails nobody read</b>. Supported adoption with 4 training sessions (2 each in July and October 2026) and a newsletter</li>
-            <li class="g">After the interviews I put the limit-raise procedure on the first line of announcement emails and changed the newsletter subject format, taking <b>limit inquiries from 20 a month to 6</b> and newsletter open rate from 18% to 41%</li>
-            <li>Sign-ups <b>337 → 1,130</b>, monthly users <b>43 → 359</b>, affiliates using it <b>5 → 17</b>, usage through agents 8% → 31% (test volume excluded)</li>
+            <li>Turned requests in legal, management, securities and security into <b>12 MCP servers</b>. The fair-trade compliance agent shipped <b>8 days after the request email</b></li>
+            <li>A shared Lambda and API Gateway pattern with <b>zero internal ports opened</b> passed security review first time. A standard OAuth 2.0 flow cut <b>new affiliate onboarding from 2 weeks to 3 days</b></li>
+            <li>Interviewed 10 users and found the blockers were <b>the token limit and announcement emails nobody read</b>, then supported adoption with 4 training sessions and a newsletter</li>
+            <li>Sign-ups <b>337 → 1,130</b>, monthly users <b>43 → 356</b>, affiliates using it <b>5 → 17</b></li>
+            <li>Agents and workflows used at least once a month <b>19 → 91</b>, usage through agents 8% → 28% (October 2026)</li>
           </ul>
           <div class="tags mono"><span>Python</span><span>MCP</span><span>AWS Lambda</span><span>API Gateway</span><span>OAuth 2.0</span></div>
         </article>
@@ -283,19 +273,17 @@
           <p lang="en">It began as a request to replace the executive investment review with AI. I solved the same documents scoring 49 and 43 through the structure of the engine.</p>
           <ul lang="ko">
             <li>현업 팀과 리뷰 6회. "AI로 대체"를 <b>AI 사전 심의와 경영진 결재의 두 단계</b>로 합의</li>
-            <li>몇 주에서 몇 달 걸리던 심의 준비 앞단에 <b>한 건당 10~40분</b>의 AI 사전검토 리포트를 제공. 임원 회의 2회를 거쳐 2026년 9월 현업에 오픈</li>
-            <li class="g">리포트의 "추가 확인 필요 항목"을 본 심의의 질의 목록으로 쓰도록 현업과 운영 절차를 정리. 심의 전에 실무자가 보완할 항목을 미리 알게 됨</li>
-            <li><b>서버는 LLM을 부르지 않고</b> 지시문과 최소한의 검사만 주는 MCP 엔진. 다섯 관점은 ID가 붙은 근거 원장만 인용. 정답 16항목을 심은 가상 안건에서 16개 모두 탐지</li>
-            <li>엔진을 5세대에 걸쳐 재설계. v2 커밋 111건 중 73건이 수정으로 나오자 순서 강제를 포기하고 검증 단계를 걷어냄. <b>안건당 비용 62% 절감</b>, 코드 6,300줄 → 1,615줄</li>
+            <li>몇 주에서 몇 달 걸리던 심의 준비 앞단에 <b>한 건당 10~40분</b>의 사전검토 리포트를 제공. 2026년 9월 현업에 오픈</li>
+            <li><b>서버는 LLM을 부르지 않는</b> MCP 엔진. 다섯 관점은 ID가 붙은 근거 원장만 인용</li>
+            <li>엔진을 5세대에 걸쳐 재설계해 <b>안건당 비용 62% 절감</b>, 코드 6,300줄 → 1,615줄</li>
             <li><b>AX REAL 2026</b>에서 약 300명 앞에 발표</li>
           </ul>
           <ul lang="en">
-            <li>6 reviews with the requesting team. "Replace it with AI" became <b>two layers: AI pre-review, then management approval</b></li>
-            <li>Review preparation used to take weeks to months. The agent now produces a pre-review report in <b>10 to 40 minutes per deal</b>. Opened to the team in September 2026 after two executive meetings</li>
-            <li class="g">Agreed an operating procedure with the team in which the report's "items needing follow-up" become the question list for the committee, so staff know what to fix before the review</li>
-            <li>An MCP engine where <b>the server never calls an LLM</b> and only issues instructions and minimal checks. Five viewpoints cite only an evidence ledger with IDs. On a fictional deal with 16 planted answers it found all 16</li>
-            <li>Five generations of redesign. When 73 of 111 commits on v2 turned out to be fixes, I gave up enforcing step order and removed the validation steps, <b>cutting cost per deal by 62%</b> and taking the code from 6,300 lines to 1,615</li>
-            <li>Presented to about 300 people at <b>AX REAL 2026</b></li>
+            <li>6 reviews with the requesting team. "Replace it with AI" became <b>AI pre-review plus management approval</b></li>
+            <li>Review preparation used to take weeks to months. The agent now gives a pre-review report in <b>10 to 40 minutes per proposal</b>, open to the team since September 2026</li>
+            <li>An MCP engine where <b>the server never calls an LLM</b>. The five viewpoints cite only an evidence ledger with IDs</li>
+            <li>Redesigned the engine over 5 generations, cutting <b>cost per proposal by 62%</b> and code from 6,300 lines to 1,615</li>
+            <li>Presented at <b>AX REAL 2026</b> to about 300 people</li>
           </ul>
           <div class="tags mono"><span>Python</span><span>MCP</span><span>AWS Lambda</span><span>DynamoDB</span><span>FastAPI</span></div>
         </article>
@@ -304,8 +292,8 @@
           <div class="when mono">2025.01 — 2025.12 <span class="rl">/ <span lang="ko">백엔드와 파이프라인 설계, 3인</span><span lang="en">backend and pipeline, team of 3</span></span></div>
           <h3><a class="more" href="projects/deep-research.html"><span lang="ko">사내 AI 플랫폼 내재화와 딥리서치</span><span lang="en">In-house AI platform and deep research</span></a></h3>
           <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
-          <p lang="ko">보고서 한 건마다 자료 수집부터 초안까지 평균 4시간이 반복됐습니다. 이를 줄이는 플랫폼을 사내에서 직접 만들어 시범 부서 3곳에 도입했습니다. <span class="g">기획 부서의 반복 보고서 작성 부담에서 출발했고, 시범 부서 담당자와 격주로 초안 품질을 함께 검토했습니다.</span></p>
-          <p lang="en">Every report repeated an average of 4 hours of work, from gathering material to a first draft. We built a platform in-house to cut that and three pilot departments adopted it. <span class="g">It started from the planning department's load of repeated reports, and I reviewed draft quality with the pilot departments every two weeks.</span></p>
+          <p lang="ko">보고서 한 건마다 자료 수집부터 초안까지 평균 4시간이 반복됐습니다. 이를 줄이는 플랫폼을 사내에서 직접 만들어 시범 부서 3곳에 도입했습니다. 특정 부서의 요청이 아니라 그룹의 AI 프로젝트에서 출발했습니다.</p>
+          <p lang="en">Every report repeated an average of 4 hours of work, from gathering material to a first draft. We built a platform in-house to cut that and three pilot departments adopted it. It did not come from any one team's request; it started inside the group's AI project.</p>
           <ul lang="ko">
             <li>업로드, 요약, 검색, 초안 생성을 LangGraph 멀티스텝으로 구현해 <b>보고서 초안 4시간 → 25분</b></li>
             <li>자체 평가셋 100문항으로 환각과 누락을 점검, 근거 인용 정확도 91%</li>
@@ -346,49 +334,51 @@
           <p lang="en">An enterprise e-commerce solutions company. Commerce Development Team, from staff to assistant manager</p>
           <p class="why" lang="ko">입사한 이유: 대규모 주문과 결제 트래픽을 직접 다루며 트랜잭션과 성능 설계를 익히고 싶었습니다.</p>
           <p class="why" lang="en">Why I joined: I wanted to learn transaction and performance design by handling large order and payment traffic directly.</p>
-          <p class="g" lang="ko">고객사 5곳의 구축과 운영을 맡았습니다. 고객사 담당자와 직접 요구사항을 조율하고, 운영 중 문의와 장애에 1차로 대응했습니다.</p>
-          <p class="g" lang="en">I built and ran stores for 5 clients, settling requirements directly with their staff and acting as first responder for inquiries and incidents in operations.</p>
+          <p lang="ko">백엔드 개발자로 쇼핑몰 5곳의 구축과 운영을 맡아 주문, 결제, 검색, 데이터 이관을 개발했습니다.</p>
+          <p lang="en">As a backend developer I built and ran 5 online stores, working on orders, payments, search and data migration.</p>
         </div>
 
         <article class="it rv">
           <img class="plogo plogo-smilegate-global" src="images/projects/smilegate-global-logo.png" alt="" />
-          <div class="when mono">2023.02 — 2023.05 <span class="rl">/ <span lang="ko">5인, 4개월, 기여 약 50%</span><span lang="en">5 people, 4 months, about 50% mine</span></span></div>
-          <h3><a class="more" href="projects/smilegate-global.html"><span lang="ko">스마일게이트샵 글로벌 서비스 구축, Project Leader</span><span lang="en">Smilegate Shop global launch, Project Leader</span></a></h3>
+          <div class="when mono">2023.02 — 2023.05 <span class="rl">/ <span lang="ko">백엔드 설계와 개발 PL, 5인, 4개월, 기여 약 50%</span><span lang="en">backend design and development lead, 5 people, 4 months, about 50% mine</span></span></div>
+          <h3><a class="more" href="projects/smilegate-global.html"><span lang="ko">스마일게이트샵 글로벌 서비스 구축, 개발 PL</span><span lang="en">Smilegate Shop global launch, development lead</span></a></h3>
           <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
-          <p lang="ko">스마일게이트의 공식 굿즈샵을 여러 나라에 여는 프로젝트였습니다. PL로서 일정과 리소스를 조율하고, 국가별 정책과 결제 구조를 설계했습니다.</p>
-          <p lang="en">A project to open Smilegate's official goods store in several countries. As PL I coordinated schedule and resources, and designed the per-country policy and payment structure.</p>
+          <p lang="ko">스마일게이트의 공식 굿즈샵을 여러 나라에 여는 프로젝트였습니다. 국가별 언어, 통화, 결제를 담는 구조를 설계하고, 결제 프로세스의 복합 결제와 환불·교환 기능을 개발했습니다.</p>
+          <p lang="en">A project to open Smilegate's official goods store in several countries. I designed the structure for per-country language, currency and payment, and built mixed payments, refunds and exchanges in the payment flow.</p>
           <ul lang="ko">
-            <li>국가 정책 테이블과 공통 결제 인터페이스로 <b>국가 추가 대응 2주 → 2일</b></li>
-            <li>복합 결제 부분 환불 시나리오 40건 검증, 금액 불일치 0건으로 4개국 동시 출시</li>
-            <li>장바구니의 배송 국가 선택, 주문과 교환·반품·환불 클레임 프로세스 개발</li>
-            <li>국내·해외 결제(이니시스, 엑심베이), EMS, 복지포인트, SNS 로그인 5종 연동과 국가별 검색 구현</li>
-            <li class="g">고객사와 주간 회의를 진행하며 요구사항 변경 12건을 범위와 일정에 맞춰 조정. 4건은 출시 이후 단계로 분리해 출시일을 지킴</li>
+            <li>국가별 통화, 결제 수단, 배송, 언어를 <b>정책 테이블</b>로 옮기고 결제를 공통 인터페이스로 정의해 <b>국가 추가 대응 2주 → 2일</b></li>
+            <li>포인트 2종이 섞인 복합 결제의 부분 환불 시나리오 40건을 먼저 정의하고 구현. <b>금액 불일치 0건</b>으로 4개국 동시 출시</li>
+            <li>PG 부분 취소와 포인트 복원을 하나의 흐름으로 묶고, 실패하면 되돌리거나 재시도해 <b>결제와 포인트의 정합성</b>을 유지</li>
+            <li>교환은 환불과 재주문으로 나누지 않고 <b>차액만 정산</b>. 환율은 주문 시점에 고정해 금액 오차를 방지</li>
+            <li>국내·해외 결제(이니시스, 엑심베이), EMS, 복지포인트, SNS 로그인 5종 연동</li>
           </ul>
           <ul lang="en">
-            <li>Moved country rules into a policy table and a shared payment interface, cutting <b>the work to add a country from 2 weeks to 2 days</b></li>
-            <li>Verified 40 partial-refund scenarios for mixed payments and launched in 4 countries at once with zero amount mismatches</li>
-            <li>Built country selection in the cart and the order, exchange, return and refund claim flows</li>
-            <li>Integrated domestic and overseas payments (Inicis, Eximbay), EMS, welfare points and 5 social logins, and built per-country search</li>
-            <li class="g">Ran weekly meetings with the client and fitted 12 requirement changes into scope and schedule, moving 4 to a post-launch phase to keep the launch date</li>
+            <li>Moved each country's currency, payment methods, shipping and language into <b>a policy table</b> and put payments behind a shared interface. <b>Adding a country went from 2 weeks to 2 days</b></li>
+            <li>Defined 40 partial-refund scenarios for payments mixed with two kinds of points before building. Launched in 4 countries at once with <b>zero amount mismatches</b></li>
+            <li>The PG partial cancel and the point restore run as one flow that rolls back or retries on failure, keeping <b>payments and points consistent</b></li>
+            <li>Exchanges settle <b>only the price difference</b> instead of a refund and a new order. The exchange rate is locked at order time</li>
+            <li>Integrated domestic and overseas payments (Inicis, Eximbay), EMS, welfare points and 5 social logins</li>
           </ul>
           <div class="tags mono"><span>PHP</span><span>CodeIgniter</span><span>MySQL</span></div>
         </article>
 
         <article class="it rv">
           <img class="plogo plogo-wegive" src="images/projects/wegive-logo.svg" alt="" />
-          <div class="when mono">2022.10 — 2023.01 <span class="rl">/ <span lang="ko">백엔드 개발</span><span lang="en">backend</span></span></div>
+          <div class="when mono">2022.10 — 2023.01 <span class="rl">/ <span lang="ko">지자체 구조 설계와 백엔드 개발</span><span lang="en">local government structure and backend</span></span></div>
           <h3><a class="more" href="projects/wegive.html"><span lang="ko">위기브 기부 모금 플랫폼</span><span lang="en">Wegive donation platform</span></a></h3>
           <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
-          <p lang="ko">고향사랑기부제 플랫폼입니다. 지자체와 답례품 셀러가 함께 쓰는 운영 기능과 커뮤니티 기능을 4개월 동안 개발했습니다.</p>
-          <p lang="en">A platform for Korea's hometown donation program. Over four months I built the operations and community features used by local governments and gift sellers.</p>
+          <p lang="ko">고향사랑기부제 플랫폼입니다. 여러 지자체와 답례품 셀러를 담는 지자체 구조를 설계하고, 운영 기능과 커뮤니티 기능을 4개월 동안 개발했습니다.</p>
+          <p lang="en">A platform for Korea's hometown donation program. Over four months I designed the structure that holds many local governments and gift sellers, and built the operations and community features.</p>
           <ul lang="ko">
+            <li>지자체, 셀러, 답례품을 <b>계층 구조</b>로 설계하고, 지자체별로 권한과 데이터 접근 범위를 분리</li>
+            <li><b>지자체별 맞춤형 홈페이지</b>를 공통 템플릿 구조로 만들어, 새 지자체는 코드 수정 없이 관리자 등록만으로 추가</li>
             <li>UGC 정책에 맞춘 <b>회원 신고와 차단</b> 기능 개발</li>
-            <li>셀러와 지자체 관리 기능, <b>지자체별 맞춤형 홈페이지</b> 개발</li>
             <li>입점과 제휴 문의를 관리자 화면에서 처리하도록 만들어 운영 프로세스 표준화</li>
           </ul>
           <ul lang="en">
+            <li>Designed local governments, sellers and gifts as <b>a hierarchy</b>, with permissions and data access scoped per local government</li>
+            <li>Built <b>a home page per local government</b> on a shared template, so a new one is added from the admin screen with no code change</li>
             <li>Built <b>member reporting and blocking</b> to fit the user-content policy</li>
-            <li>Built seller and local government management and <b>a home page per local government</b></li>
             <li>Moved onboarding and partnership inquiries into the admin screens, standardizing operations</li>
           </ul>
           <div class="tags mono"><span>PHP</span><span>CodeIgniter</span><span>MySQL</span></div>
@@ -396,40 +386,44 @@
 
         <article class="it rv">
           <img class="plogo plogo-foodcare-cle" src="images/projects/foodcare-cle-logo.png" alt="" />
-          <div class="when mono">2022.07 — 2023.02 <span class="rl">/ <span lang="ko">데이터 이관과 검색</span><span lang="en">migration and search</span></span></div>
+          <div class="when mono">2022.07 — 2023.02 <span class="rl">/ <span lang="ko">데이터 이관과 일정 배송</span><span lang="en">migration and scheduled delivery</span></span></div>
           <h3><a class="more" href="projects/foodcare-cle.html"><span lang="ko">푸드케어 CLE 구축</span><span lang="en">Foodcare CLE build</span></a></h3>
           <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
-          <p lang="ko">유리병 이유식 브랜드의 쇼핑몰을 새 플랫폼으로 구축한 프로젝트입니다. 기존 데이터의 이관과 검색 연동을 맡았습니다.</p>
-          <p lang="en">A project to build a new platform for a glass-jar baby food brand's store. I owned the migration of existing data and the search integration.</p>
+          <p lang="ko">유리병 이유식 브랜드의 쇼핑몰을 새 플랫폼으로 구축한 프로젝트입니다. 레거시 데이터의 마이그레이션과 이유식 일정 배송 기능 개발을 맡았습니다.</p>
+          <p lang="en">A project to build a new platform for a glass-jar baby food brand's store. I owned the migration of legacy data and built scheduled delivery for the baby food plans.</p>
           <ul lang="ko">
-            <li>회원과 콘텐츠 <b>30만 건 이관, 건수와 금액 대사 불일치 0건</b> (전수 건수 대조와 샘플 2,000건 대조)</li>
-            <li>Elasticsearch 검색 연동, SNS 로그인과 공유 연동</li>
-            <li>주문 데이터를 주문별, 결제수단별, 상품별로 수집하는 기능과 게시판 관리, 이벤트 기능 개발</li>
+            <li>회원과 콘텐츠 <b>30만 건 이관, 불일치 0건</b>. 건수는 전수 비교, 금액은 회원별 합계와 샘플 2,000건으로 대조</li>
+            <li>본 이관 전에 리허설을 돌려 오류 유형과 변환 규칙을 먼저 정리</li>
+            <li>월령 단계별 이유식을 일정대로 보내는 <b>일정 배송</b> 개발. 배송일을 주문 시점에 생성하고 휴일과 배송 불가일을 피해 조정</li>
+            <li>배송일 변경, 건너뛰기, 일시 중지를 지원하고 출고 마감 이후의 변경은 차단</li>
           </ul>
           <ul lang="en">
-            <li><b>Migrated 300,000 member and content records with zero mismatches</b> in counts and amounts (full count check plus a 2,000-record sample)</li>
-            <li>Integrated Elasticsearch search, social login and sharing</li>
-            <li>Built order data collection by order, payment method and product, plus board management and event features</li>
+            <li><b>Migrated 300,000 member and content records with zero mismatches</b>. Counts compared in full, amounts by per-member totals and a 2,000-record sample</li>
+            <li>Ran a rehearsal before the real migration to sort out error types and conversion rules</li>
+            <li>Built <b>scheduled delivery</b> of baby food by age stage. Delivery dates are generated at order time and moved off holidays and no-delivery days</li>
+            <li>Customers can change, skip or pause a delivery, and changes after the shipping cut-off are blocked</li>
           </ul>
           <div class="tags mono"><span>PHP</span><span>MySQL</span><span>Elasticsearch</span></div>
         </article>
 
         <article class="it rv">
           <img class="plogo plogo-hl-science-mall" src="images/projects/hl-science-mall-logo.png" alt="" />
-          <div class="when mono">2021.03 — 2021.12 <span class="rl">/ <span lang="ko">운영과 기능 개발</span><span lang="en">operations and features</span></span></div>
+          <div class="when mono">2021.03 — 2021.12 <span class="rl">/ <span lang="ko">네이버페이 연동과 운영</span><span lang="en">Naver Pay integration and operations</span></span></div>
           <h3><a class="more" href="projects/hl-science-mall.html"><span lang="ko">HL SCIENCE MALL 운영</span><span lang="en">HL SCIENCE MALL operations</span></a></h3>
           <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
-          <p lang="ko">건강기능식품 자사몰의 운영과 기능 개발을 맡았습니다.</p>
-          <p lang="en">I ran and extended the direct store of a health supplement brand.</p>
+          <p lang="ko">건강기능식품 자사몰에 네이버페이 결제를 연동하고, 운영과 기능 개발을 맡았습니다.</p>
+          <p lang="en">I integrated Naver Pay into a health supplement brand's own online store, and ran and extended the store.</p>
           <ul lang="ko">
+            <li><b>네이버페이 주문형 API 연동</b>. 주문 번호 기준으로 중복 생성을 막고, 수집이 실패하면 다음 주기에 이어서 받음</li>
+            <li>뒤늦게 바뀌는 취소·반품 상태를 주기적으로 다시 동기화</li>
+            <li>관리자 주문 검색 조건을 넓히고, 자주 쓰는 조건에 맞춰 인덱스 정리</li>
             <li><b>월 2,000건 이상</b> 주문을 장애 없이 운영</li>
-            <li>네이버페이 주문형 API 연동, 관리자 검색 고도화</li>
-            <li>SNS 간편 로그인과 회원가입 개발, 크론 자동화 프로그램 운영</li>
           </ul>
           <ul lang="en">
-            <li>Ran a store with over 2,000 orders a month without an outage</li>
-            <li>Integrated the Naver Pay order API and improved admin search</li>
-            <li>Built social login and sign-up, and ran the cron automation programs</li>
+            <li><b>Integrated the Naver Pay order API</b>. Orders are deduplicated by order number, and a failed collection resumes on the next cycle</li>
+            <li>Late cancel and return statuses are re-synced periodically</li>
+            <li>Widened admin order search and tuned indexes for the most used conditions</li>
+            <li>Ran a store with <b>over 2,000 orders a month</b> without an outage</li>
           </ul>
           <div class="tags mono"><span>PHP</span><span>MySQL</span><span>Naver Pay API</span></div>
         </article>
@@ -439,23 +433,21 @@
           <div class="when mono">2020.12 — 2023.03 <span class="rl">/ <span lang="ko">백엔드, 개발 4인 중 기여 약 60%</span><span lang="en">backend, about 60% of a 4-developer team</span></span></div>
           <h3><a class="more" href="projects/eland-folder-mall.html"><span lang="ko">ELAND FOLDER MALL 구축과 운영</span><span lang="en">ELAND FOLDER MALL build and operations</span></a></h3>
           <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
-          <p lang="ko">이랜드의 슈즈 편집숍 폴더(FOLDER)의 공식 온라인 스토어입니다. 구축 6개월과 운영 1년 10개월 동안 월 5만 건 이상의 주문을 다뤘습니다.</p>
-          <p lang="en">The official online store of FOLDER, E-Land's multi-brand shoe shop. Over 6 months of build and 22 months of operations it handled more than 50,000 orders a month.</p>
+          <p lang="ko">이랜드의 슈즈 편집숍 폴더(FOLDER)의 공식 온라인 스토어입니다. 구축 6개월과 운영 1년 10개월 동안 월 5만 건 이상의 주문을 다루며 성능 개선, 검색 개선, 신규 기능(폴더 SNS, 최근 본 상품) 개발을 맡았습니다.</p>
+          <p lang="en">The official online store of FOLDER, E-Land's multi-brand shoe shop. Over 6 months of build and 22 months of operations it handled more than 50,000 orders a month, and I worked on performance, search and new features (the FOLDER social feed and recently viewed products).</p>
           <ul lang="ko">
             <li>실시간 집계를 10분 주기 사전 집계로 바꿔 <b>상품 조회 10초 → 1초</b>, DB CPU 피크 85% → 40%</li>
-            <li>상품 약 200만 건을 Elasticsearch로 분리, 검색 평균 1.6초 → 0.6초</li>
-            <li>Cron으로 정산과 운영 배치를 자동화하고 Jenkins로 배포를 구성해 <b>운영 업무 월 30시간 절감</b></li>
-            <li>커뮤니티 팔로우, UGC 신고와 차단, 최근 본 상품, 초성퀴즈와 TimeSale 이벤트 개발</li>
-            <li>회원정보, 후기종합, 평점통계 외부 시스템 연동</li>
-            <li class="g">실시간 순위를 10분 지연으로 바꾸는 안을 고객사 기획 담당자에게 설명해 합의. 그 정도 지연은 구매에 영향을 주지 않는다는 점을 근거로 제시</li>
+            <li>집계 테이블을 한 번에 교체해, 집계 도중의 불완전한 순위가 노출되지 않게 함</li>
+            <li>상품 약 200만 건을 Elasticsearch로 분리하고 변경분만 색인해 <b>검색 평균 1.6초 → 0.6초</b></li>
+            <li><b>폴더 SNS</b>의 팔로우 피드를 미리 만들어 두는 방식으로 구현. <b>최근 본 상품</b>은 비회원 쿠키와 회원 테이블을 로그인할 때 병합</li>
+            <li>Cron 배치와 Jenkins 배포로 <b>운영 업무 월 30시간 절감</b></li>
           </ul>
           <ul lang="en">
             <li>Replaced live aggregation with a 10-minute pre-aggregation, cutting <b>product listing from 10 s to 1 s</b> and peak DB CPU from 85% to 40%</li>
-            <li>Moved about 2 million products to Elasticsearch, cutting average search time from 1.6 s to 0.6 s</li>
-            <li>Automated settlement and operations batches with cron and set up deploys with Jenkins, <b>saving 30 hours of operations work a month</b></li>
-            <li>Built community follow, reporting and blocking for user content, recently viewed products, and quiz and TimeSale events</li>
-            <li>Connected member data, combined reviews and rating statistics with outside systems</li>
-            <li class="g">Got the client's planning owner to agree to a ranking that is 10 minutes stale instead of live, by showing that a delay of that size does not affect purchases</li>
+            <li>Swapped the aggregate table in one step, so a half-built ranking is never shown</li>
+            <li>Moved about 2 million products to Elasticsearch and re-indexed only what changed, cutting <b>average search time from 1.6 s to 0.6 s</b></li>
+            <li>Built the follow feed of <b>the FOLDER social feed</b> ahead of time instead of joining at read time. <b>Recently viewed products</b> merge a guest cookie and a member table at login</li>
+            <li>Cron batches and Jenkins deploys <b>saved 30 hours of operations work a month</b></li>
           </ul>
           <div class="tags mono"><span>PHP</span><span>MySQL</span><span>Elasticsearch</span><span>Jenkins</span></div>
         </article>
@@ -476,30 +468,6 @@
             <li>Built a biometric authentication API</li>
           </ul>
           <div class="tags mono"><span>PHP</span><span>CodeIgniter</span><span>MySQL</span><span>Elasticsearch</span></div>
-        </article>
-
-        <div class="cohead rv">
-          <div><h3>Freelance</h3><span class="mono">2021.06 — 2021.07</span></div>
-          <p lang="ko">관리자 페이지 기능 개선, Backend Developer</p>
-          <p lang="en">Admin page improvements, Backend Developer</p>
-        </div>
-
-        <article class="it rv">
-          <div class="when mono">2021.06 — 2021.07 <span class="rl">/ <span lang="ko">단독 수행, 2개월</span><span lang="en">solo, 2 months</span></span></div>
-          <h3><span lang="ko">관리자 페이지 기능 개선과 개발</span><span lang="en">Admin page improvements</span></h3>
-          <p class="g" lang="ko">의뢰인에게 직접 요구사항을 듣고, 범위와 일정을 정해 혼자 끝까지 전달한 첫 프로젝트입니다.</p>
-          <p class="g" lang="en">My first project where I took requirements straight from a client, set the scope and schedule, and delivered it alone.</p>
-          <ul lang="ko">
-            <li>쿼리 튜닝과 리팩토링으로 <b>데이터 로딩 5초 → 1초 이내</b>(80% 단축)</li>
-            <li>DB 구조를 개선해 데이터 처리 속도 향상</li>
-            <li>파일 다중 첨부 기능 개선</li>
-          </ul>
-          <ul lang="en">
-            <li>Query tuning and refactoring cut <b>data loading from 5 s to under 1 s</b> (80% faster)</li>
-            <li>Improved the database structure to speed up data processing</li>
-            <li>Improved multi-file attachment</li>
-          </ul>
-          <div class="tags mono"><span>PHP</span><span>MySQL</span></div>
         </article>
       </div>
     </section>
@@ -538,8 +506,8 @@
         <article class="it rv">
           <div class="when mono">Jan — Jun 2021</div>
           <h3><span lang="ko">SoftSquared Server Session 1:1 멘토</span><span lang="en">1:1 mentor, SoftSquared Server Session</span></h3>
-          <p lang="ko">서버 개발자 교육 과정에서 수강생을 1:1로 가르쳤습니다. <span class="g">과제 코드를 매주 리뷰하고, 막힌 부분을 수강생이 스스로 설명하게 한 뒤 함께 풀었습니다. 지금 사내 AI 교육에서 쓰는 방식의 출발점입니다.</span></p>
-          <p lang="en">I taught trainees one to one in a server developer course. <span class="g">I reviewed assignment code every week and had each trainee explain where they were stuck before we solved it together. It is where the way I teach AI at work today began.</span></p>
+          <p lang="ko">서버 개발자 교육 과정에서 수강생을 1:1로 가르쳤습니다. 과제 코드를 매주 리뷰하고, 막힌 부분을 수강생이 스스로 설명하게 한 뒤 함께 풀었습니다.</p>
+          <p lang="en">I taught trainees one to one in a server developer course. I reviewed assignment code every week and had each trainee explain where they were stuck before we solved it together.</p>
           <div class="tags mono"><span>#mentoring</span><span>#teaching</span></div>
         </article>
       </div>
@@ -620,7 +588,6 @@
   };
   document.querySelector('.lang').onclick = e => e.target.dataset.l && setLang(e.target.dataset.l);
   setLang(document.documentElement.dataset.lang);
-  if (location.search.includes('review')) document.documentElement.classList.add('review');   // 초안 내용 표시
   // GitHub 기여 그래프: 불러오지 못하면 영역을 숨긴 채로 둔다
   fetch('https://github-contributions-api.jogruber.de/v4/jinhyukkk?y=last').then(r => r.json()).then(d => {
     const days = d.contributions, pad = new Date(days[0].date + 'T00:00').getDay();
@@ -636,23 +603,6 @@
     document.querySelector('.g-total').textContent = d.total.lastYear.toLocaleString() + ' CONTRIBUTIONS';
     document.querySelector('.grass').hidden = false;
   }).catch(() => {});
-  // 첫 화면의 직함을 차례로 바꿔 보여 준다. 움직임을 줄이도록 설정한 사용자에게는 첫 직함만 보인다.
-  const ROLES = [
-    ['Forward deployed engineer', "from a team's request to production"],
-    ['Backend engineer', 'performance, auth and data integrity'],
-  ];
-  const roleEl = document.getElementById('role'), roleSub = document.getElementById('roleSub');
-  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    let ri = 0;
-    setInterval(() => {
-      roleEl.classList.add('out'); roleSub.classList.add('out');
-      setTimeout(() => {
-        ri = (ri + 1) % ROLES.length;
-        roleEl.textContent = ROLES[ri][0]; roleSub.textContent = ROLES[ri][1];
-        roleEl.classList.remove('out'); roleSub.classList.remove('out');
-      }, 350);
-    }, 3200);
-  }
   // 화면에 들어올 때 한 번만 나타남
   const rv = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rv.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.rv').forEach(el => rv.observe(el));
