@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>푸드케어 CLE 구축 · 박진혁</title>
+<meta name="description" content="기존 시스템의 회원과 콘텐츠를 새 플랫폼으로 옮겨야 했습니다. 누락이나 금액 오차가 생기면 회원의 포인트와 이력에 바로 문제가 됩니다." />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Noto+Serif+KR:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="project.css" />
+<script>
+  try { var L = localStorage.getItem('lang') || ((navigator.language || 'ko').slice(0, 2) === 'ko' ? 'ko' : 'en');
+    document.documentElement.dataset.lang = L; document.documentElement.lang = L; } catch (e) {}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="bar mono">
+    <a href="../index.html#experience">← BACK</a>
+    <div class="lang" role="group" aria-label="Language"><button type="button" data-l="ko">KO</button><span>/</span><button type="button" data-l="en">EN</button></div>
+  </header>
+
+  <a class="lg lg-foodcare-cle" href="https://foodcare-cle.com" target="_blank" rel="noopener"><img src="../images/projects/foodcare-cle-logo.png" alt="Foodcare CLE build" /></a>
+  <div class="when mono">2022.07 — 2022.10</div>
+  <h1><span lang="ko">푸드케어 CLE 구축</span><span lang="en">Foodcare CLE build</span></h1>
+  <p class="co"><span lang="ko">포비즈코리아</span><span lang="en">Forbiz Korea</span></p>
+  <p class="org g" lang="ko">새 플랫폼 구축에서 기존 데이터의 이관과 검색 연동을 맡았습니다.</p>
+    <p class="org g" lang="en">On the new platform build, I owned the migration of existing data and the search integration.</p>
+  <div class="tags mono"><span>PHP</span><span>MySQL</span><span>Elasticsearch</span></div>
+
+  <dl class="tl"><div><dt class="mono"><span lang="ko">문제</span><span lang="en">Problem</span></dt><dd><span lang="ko">회원과 콘텐츠 30만 건을 누락과 금액 오차 없이 새 플랫폼으로 옮겨야 했습니다.</span><span lang="en">300,000 member and content records had to move to a new platform with nothing missing and no amount errors.</span></dd></div><div><dt class="mono"><span lang="ko">접근</span><span lang="en">Approach</span></dt><dd><span lang="ko">전수 건수 대조와 샘플 2,000건 대조로 검증하며 이관했습니다.</span><span lang="en">I migrated them while verifying with a full count check and a 2,000-record sample check.</span></dd></div><div><dt class="mono"><span lang="ko">결과</span><span lang="en">Result</span></dt><dd><span lang="ko">건수와 금액 불일치 0건.</span><span lang="en">Zero mismatches in counts and amounts.</span></dd></div></dl>
+
+  <dl class="facts"><div><dt class="mono"><span lang="ko">역할</span><span lang="en">Role</span></dt><dd><span lang="ko">데이터 이관, 검색 연동</span><span lang="en">Data migration, search</span></dd></div><div><dt class="mono"><span lang="ko">이관</span><span lang="en">Migrated</span></dt><dd><span lang="ko">30만 건</span><span lang="en">300,000 records</span></dd></div><div><dt class="mono"><span lang="ko">샘플 대조</span><span lang="en">Sample check</span></dt><dd><span lang="ko">2,000건</span><span lang="en">2,000 records</span></dd></div><div><dt class="mono"><span lang="ko">불일치</span><span lang="en">Mismatches</span></dt><dd><span lang="ko">0건</span><span lang="en">0</span></dd></div></dl>
+
+  <figure class="shot"><a href="https://foodcare-cle.com" target="_blank" rel="noopener"><img src="../images/projects/foodcare-cle.jpg" alt="Foodcare CLE build" loading="lazy" /></a><figcaption class="mono"><a href="https://foodcare-cle.com" target="_blank" rel="noopener">foodcare-cle.com ↗</a><span><span lang="ko">현재 운영 중인 화면입니다. 2026년 11월에 캡처했고, 개발 당시와 다를 수 있습니다.</span><span lang="en">The live site, captured in November 2026. It may differ from when I worked on it.</span></span></figcaption></figure>
+
+  <section>
+    <h2>Service</h2>
+    <p lang="ko">유리병 이유식 브랜드 푸드케어 클레의 쇼핑몰입니다. 준비기부터 후기까지 아이의 월령에 맞춘 단계별 이유식과 유아식, 간식을 팔고, 정해진 식단을 주기적으로 받는 정기식단이 중심입니다. 회원의 주문 이력과 정기 배송 정보가 서비스의 핵심 데이터입니다.</p>
+    <p lang="en">The store of Foodcare CLE, a brand of baby food in glass jars. It sells stage-by-stage baby food from the first stage to the late stage, toddler meals and snacks, centered on a subscription meal plan delivered on a schedule. Members' order history and subscription delivery data are the core of the service.</p>
+  </section>
+
+  <section>
+    <h2>Problem</h2>
+    <p class="g" lang="ko">기존 시스템의 회원과 콘텐츠를 새 플랫폼으로 옮겨야 했습니다. 누락이나 금액 오차가 생기면 회원의 포인트와 이력에 바로 문제가 됩니다.</p>
+    <p class="g" lang="en">Members and content had to move from the old system to the new platform. Any missing record or amount error would show up directly in members' points and history.</p>
+  </section>
+
+  <section>
+    <h2>What I did</h2>
+    <figure class="fig g"><figcaption class="mono"><span lang="ko">이관 절차</span><span lang="en">Migration steps</span></figcaption><div class="flow"><div class="st"><b><span lang="ko">원본 추출</span><span lang="en">Extract</span></b><span lang="ko">회원, 콘텐츠</span><span lang="en">members, content</span></div><i class="ar"></i><div class="st"><b><span lang="ko">변환과 적재</span><span lang="en">Transform and load</span></b><span lang="ko">임시 테이블</span><span lang="en">staging tables</span></div><i class="ar"></i><div class="st"><b><span lang="ko">건수 대사</span><span lang="en">Count check</span></b><span lang="ko">전수</span><span lang="en">every record</span></div><i class="ar"></i><div class="st"><b><span lang="ko">샘플 대조</span><span lang="en">Sample check</span></b><span lang="ko">2,000건</span><span lang="en">2,000 records</span></div><i class="ar"></i><div class="st"><b><span lang="ko">전환</span><span lang="en">Cutover</span></b><span lang="ko">불일치 0건</span><span lang="en">zero mismatches</span></div></div></figure>
+    <dl>
+      <div class="pt"><dt><span lang="ko">회원과 콘텐츠 30만 건 이관, 건수와 금액 대사 불일치 0건</span><span lang="en">300,000 member and content records migrated with zero mismatches</span></dt><dd><span lang="ko">전수 건수 대조와 샘플 2,000건 대조로 검증했습니다.</span><span lang="en">Verified with a full count check and a 2,000-record sample check.</span></dd></div>
+      <div class="pt"><dt><span lang="ko">Elasticsearch 검색 연동</span><span lang="en">Elasticsearch search</span></dt><dd><span lang="ko">이관한 콘텐츠를 Elasticsearch로 검색할 수 있게 연동했습니다.</span><span lang="en">I connected the migrated content to Elasticsearch search.</span></dd></div>
+      <div class="pt g"><dt><span lang="ko">리허설 이관</span><span lang="en">Rehearsal run</span></dt><dd><span lang="ko">본 이관 전에 같은 절차를 리허설로 먼저 돌려, 형식이 맞지 않는 데이터와 중복 회원 같은 오류 유형을 정리했습니다.</span><span lang="en">Before the real migration I ran the same steps as a rehearsal and sorted out error types such as malformed data and duplicate members.</span></dd></div>
+      <div class="pt g"><dt><span lang="ko">대사 기준</span><span lang="en">How I reconciled</span></dt><dd><span lang="ko">건수는 테이블별로 원본과 전수 비교하고, 금액은 회원별 합계를 맞춘 뒤 샘플 2,000건을 항목 단위로 대조했습니다.</span><span lang="en">Counts were compared in full per table. Amounts were matched as per-member totals, then 2,000 sampled records were checked field by field.</span></dd></div>
+    </dl>
+  </section>
+
+  <section class="g">
+    <h2>Hard parts</h2>
+    <ul class="ls"><li><span lang="ko">원본 데이터에 형식이 제각각인 값이 많아, 옮기기 전에 변환 규칙부터 정리해야 했습니다.</span><span lang="en">The source data had many values in inconsistent formats, so the conversion rules had to be settled before moving anything.</span></li></ul>
+  </section>
+
+  <section>
+    <h2>Result</h2>
+    <p lang="ko">30만 건을 건수와 금액 불일치 없이 이관했습니다.</p>
+    <p lang="en">300,000 records were migrated with no mismatch in counts or amounts.</p>
+  </section>
+
+  <section class="g">
+    <h2>What I learned</h2>
+    <ul class="ls"><li><span lang="ko">이관은 옮기는 작업보다 맞는지 확인하는 방법을 먼저 정하는 일이 더 중요했습니다.</span><span lang="en">In a migration, deciding how to verify the result mattered more than the moving itself.</span></li></ul>
+  </section>
+
+  <nav class="pn" aria-label="Projects"><a href="wegive.html"><span class="mono">← PREV</span><span lang="ko">위기브 기부 모금 플랫폼</span><span lang="en">Wegive donation platform</span></a><a class="nx" href="hl-science-mall.html"><span class="mono">NEXT →</span><span lang="ko">HL SCIENCE MALL 운영</span><span lang="en">HL SCIENCE MALL operations</span></a></nav>
+</div>
+<script>
+  // 언어 전환: 메인 페이지와 같은 저장값을 쓴다
+  const setLang = l => {
+    document.documentElement.dataset.lang = document.documentElement.lang = l;
+    document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.l === l));
+    try { localStorage.setItem('lang', l); } catch (e) {}
+  };
+  document.querySelector('.lang').onclick = e => e.target.dataset.l && setLang(e.target.dataset.l);
+  setLang(document.documentElement.dataset.lang);
+  if (location.search.includes('review')) document.documentElement.classList.add('review');   // 추정 내용 표시
+</script>
+</body>
+</html>

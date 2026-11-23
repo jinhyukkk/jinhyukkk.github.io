@@ -55,6 +55,10 @@
   #intro { padding-top: 0; }
   #intro h2 { font-size: 60px; line-height: 69px; font-weight: 400; color: var(--ink); letter-spacing: -0.01em; }
   #intro .sub { font-style: italic; font-size: 24px; color: var(--accent); margin-top: 4px; }
+  /* 직함이 바뀔 때: 흐려졌다가 다음 글자로 또렷해진다 */
+  #role, #roleSub { transition: opacity .35s, filter .35s, transform .35s; }
+  #role { min-height: 69px; }
+  #role.out, #roleSub.out { opacity: 0; filter: blur(6px); transform: translateY(6px); }
   #intro .bio { font-size: 18px; line-height: 1.75; color: var(--muted); margin-top: 18px; max-width: 560px; }
   #intro .now { margin-top: 32px; font-size: 17px; }
   #intro .now b { color: var(--ink); font-weight: 500; }
@@ -78,8 +82,35 @@
   .it li b { color: var(--ink); font-weight: 500; }
   .it .tags { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 14px; color: var(--faint); }
   .it .go { position: absolute; right: 0; top: 24px; color: var(--muted); }
-  a.it { display: block; transition: background .2s; }
-  a.it:hover h3 { color: var(--accent); }
+  /* 강점: 라벨과 근거, 관련 프로젝트 링크 */
+  .sr { display: grid; grid-template-columns: 172px 1fr; gap: 16px; align-items: baseline; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .sr dt { letter-spacing: 0.15em; text-transform: uppercase; color: var(--faint); }
+  .sr dd p { color: var(--ink); font-size: 15.5px; }
+  .sl { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-top: 8px; letter-spacing: 0.08em; }
+  .sl a { color: var(--muted); }
+  .sl a:hover { color: var(--accent); }
+  /* 회사 머리글 */
+  .cohead { padding: 40px 0 18px; border-bottom: 1px solid var(--line); }
+  .list > .cohead:first-child { padding-top: 26px; }
+  .cohead > div { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  .cohead h3 { font-size: 28px; line-height: 1.3; font-weight: 500; color: var(--ink); letter-spacing: -0.5px; }
+  .cohead .mono { color: var(--faint); }
+  .cohead p { font-size: 14.5px; margin-top: 4px; }
+  .cohead .why { color: var(--faint); font-size: 13.5px; }
+  .it .rl { color: var(--faint); }
+  /* 상위 프로젝트에 딸린 하위 과제 */
+  .it.sub { margin-left: 28px; padding-left: 24px; border-left: 1px solid var(--accent); }
+  .sublab { color: var(--accent); letter-spacing: 0.08em; margin-bottom: 6px; }
+  @media (max-width: 1100px) { .it.sub { margin-left: 8px; padding-left: 16px; } }
+  @media (max-width: 1100px) { .sr { grid-template-columns: 1fr; gap: 4px; } }
+  /* 고객사 로고: 배경 없이 표시 */
+  .plogo { display: block; height: 22px; width: auto; margin-bottom: 12px; }
+  .plogo-eland-folder-mall { filter: invert(1); height: 26px; }   /* 검은 로고를 흰색으로 뒤집는다 */
+  .plogo-wegive { filter: brightness(2.2); height: 30px; }
+  /* 상세 페이지가 있는 항목: 제목 링크가 항목 전체를 덮는다 */
+  .it .more::after { content: ""; position: absolute; inset: 0; }
+  .it .more { transition: color .2s; }
+  .it:hover .more, .it:hover .go { color: var(--accent); }
 
   /* 기술·학력: 라벨과 값의 행 */
   .rows { margin-top: 36px; border-top: 1px solid var(--line); }
@@ -134,7 +165,7 @@
     .side nav { display: none; }
     .side .out { margin-top: 0; }
     main { padding-top: 40px; }
-    #intro h2 { font-size: 40px; line-height: 1.2; }
+    #intro h2 { font-size: 40px; line-height: 1.2; min-height: 96px; }
     .head h2 { font-size: 34px; line-height: 1.2; }
     .rw { grid-template-columns: 1fr; gap: 4px; }
   }
@@ -160,13 +191,14 @@
       <h1>Jinhyuk<em>Park</em></h1>
       <p class="meta mono" lang="ko">박진혁, Backend Engineer<br />유진아이티서비스</p>
       <p class="meta mono" lang="en">Backend Engineer<br />Eugene IT Service</p>
-      <p class="tag" lang="ko">성능 최적화, 인증과 보안 연동, 그리고 사내 AI 서비스 설계.</p>
-      <p class="tag" lang="en">Performance tuning, auth and security integration, and enterprise AI services.</p>
+      <p class="tag" lang="ko">현업의 요청을 듣고, 만들고, 쓰이게 만듭니다. AI 연동, 인증, 성능.</p>
+      <p class="tag" lang="en">I listen to a team's request, build it, and get it used. AI integration, auth, performance.</p>
       <div class="lang mono" role="group" aria-label="Language">
         <button type="button" data-l="ko">KO</button><span>/</span><button type="button" data-l="en">EN</button>
       </div>
     </div>
     <nav aria-label="Sections">
+      <a href="#strengths">Strengths</a>
       <a href="#experience">Experience</a>
       <a href="#talks">Talks</a>
       <a href="#skills">Skills</a>
@@ -182,60 +214,91 @@
 
   <main>
     <section id="intro">
-      <h2>Backend engineer</h2>
-      <p class="sub">performance, auth and AI integration</p>
-      <p class="bio" lang="ko">느린 지점을 지표로 먼저 찾고, 그다음에 구조를 바꿉니다. 커머스의 주문과 결제에서 시작해 응답 시간을 18초에서 1초로 줄였고, 지금은 사내 시스템과 AI를 보안 경계 안에서 잇고 있습니다.</p>
-      <p class="bio" lang="en">I find the slow spot with metrics first, then change the structure. I started in e-commerce orders and payments, cut a response time from 18 seconds to 1, and now connect internal systems to AI without crossing the security boundary.</p>
-      <p class="now" lang="ko"><span class="mono">building</span>&nbsp; <b>투자심의 AI 에이전트</b>, 그룹 계열사 1,200명이 쓰는 AI 서비스.</p>
-      <p class="now" lang="en"><span class="mono">building</span>&nbsp; <b>an investment review agent</b>, on an AI service used by 1,200 people across the group.</p>
+      <h2 id="role">Forward deployed engineer</h2>
+      <p class="sub" id="roleSub">from a team's request to production</p>
+      <p class="bio" lang="ko">현업 팀 옆에서 문제를 듣고, 만들고, 쓰이게 만드는 6년 차 백엔드 엔지니어입니다. 유진그룹에 AI 서비스를 도입해 법무, 투자심의, 선물 영업, 보안 팀의 요청을 에이전트와 MCP 서버로 전달했습니다. 그 전에는 일 1,000건 이상의 주문을 처리하는 커머스에서 성능과 정합성을 다졌습니다.</p>
+      <p class="bio" lang="en">I am a backend engineer in my sixth year who sits next to business teams, listens to the problem, builds, and stays until it is used. I brought an AI service to Eugene Group and delivered agents and MCP servers for legal, investment review, futures sales and security teams. Before that I learned performance and data integrity on an e-commerce store handling over 1,000 orders a day.</p>
+      <p class="now" lang="ko"><span class="mono">building</span>&nbsp; <b>투자심의 AI 에이전트</b>, 누적 가입자 1,130명의 그룹 AI 서비스 위에서.</p>
+      <p class="now" lang="en"><span class="mono">building</span>&nbsp; <b>an investment review agent</b>, on a group AI service with 1,130 sign-ups.</p>
+    </section>
+
+    <section id="strengths">
+      <div class="head rv"><h2>What I'm good at</h2></div>
+      <dl class="rows rv">
+        <div class="sr"><dt class="mono"><span lang="ko">요청을 범위로 바꾸기</span><span lang="en">Scoping with teams</span></dt><dd><p lang="ko">요청을 그대로 만들지 않고 실제로 필요한 것과 제약을 먼저 확인합니다. "투자심의를 AI로 대체"는 AI 사전 심의와 경영진 결재의 두 단계로, "상담사례 834건 실시간 크롤링"은 미리 모아 검색하는 방식으로 합의했습니다.</p><p lang="en">I do not build requests as stated. I check what is actually needed and what the constraints are. "Replace the investment review with AI" became AI pre-review plus management approval, and "crawl 834 cases live" became collect in advance and search.</p><div class="sl mono"><a href="projects/investment-review-agent.html">Review agent ↗</a><a href="projects/group-ai-platform.html">Group AI ↗</a></div></dd></div>
+        <div class="sr"><dt class="mono"><span lang="ko">빠르게 만들어 전달</span><span lang="en">Shipping fast</span></dt><dd><p lang="ko">공정거래 준법 에이전트는 요청 메일부터 배포까지 8일, 신문 클리핑은 첫 결과까지 10일, 계약서 검토는 하루가 걸렸습니다. Lambda와 API Gateway를 공통 패턴으로 묶어 MCP 서버 10개(도구 85개)를 냈습니다.</p><p lang="en">The fair-trade compliance agent took 8 days from request to deployment, newspaper clipping 10 days to a first result, and contract review one day. A shared Lambda and API Gateway pattern produced 10 MCP servers (85 tools).</p><div class="sl mono"><a href="projects/group-ai-platform.html">Group AI ↗</a></div></dd></div>
+        <div class="sr"><dt class="mono"><span lang="ko">제약 안에서 배포</span><span lang="en">Deploying within constraints</span></dt><dd><p lang="ko">플랫폼이 멀티에이전트를 지원하지 않아 에이전트 하나 안에서 다섯 관점을 차례로 이었습니다. 유료 단말에 API가 없어 공개 API로 시황 데이터를 대체했고, 연동할 수 없는 항목은 이유를 문서로 남기고 제외했습니다.</p><p lang="en">The platform had no multi-agent support, so I chained five viewpoints inside one agent. A paid terminal had no API, so I replaced the market data with public APIs and documented why some items had to be left out.</p><div class="sl mono"><a href="projects/investment-review-agent.html">Review agent ↗</a><a href="projects/group-ai-platform.html">Group AI ↗</a></div></dd></div>
+        <div class="sr"><dt class="mono"><span lang="ko">정착과 측정</span><span lang="en">Adoption and measurement</span></dt><dd><p lang="ko">지표를 정의해 매월 보고하고, 사용자 10명을 인터뷰하고, 2026년 7월과 10월에 교육을 2회씩 직접 진행했습니다. 누적 가입자는 337명에서 1,130명이 됐습니다. 지표가 테스트 물량으로 부풀려졌을 때는 대표이사에게 먼저 보고했습니다.</p><p lang="en">I defined metrics and reported them monthly, interviewed 10 users, and taught two training sessions each in July and October 2026. Sign-ups went from 337 to 1,130. When a metric was inflated by test volume, I told the CEO first.</p><div class="sl mono"><a href="projects/group-ai-platform.html">Group AI ↗</a></div></dd></div>
+        <div class="sr"><dt class="mono"><span lang="ko">성능과 정합성</span><span lang="en">Performance and integrity</span></dt><dd><p lang="ko">병목을 지표로 먼저 특정한 뒤 구조를 바꿉니다. 화면 응답 18초 → 1초, 상품 조회 10초 → 1초. 복합 결제 환불 시나리오 40건을 검증했고, 30만 건 이관에서 불일치가 0건이었습니다.</p><p lang="en">I locate the bottleneck with metrics first, then change the structure. Screen response 18 s → 1 s, product listing 10 s → 1 s. I verified 40 mixed-payment refund scenarios and migrated 300,000 records with zero mismatches.</p><div class="sl mono"><a href="projects/ehr.html">e-HR ↗</a><a href="projects/eland-folder-mall.html">FOLDER MALL ↗</a><a href="projects/smilegate-global.html">Smilegate Shop ↗</a><a href="projects/foodcare-cle.html">Foodcare CLE ↗</a></div></dd></div>
+      </dl>
     </section>
 
     <section id="experience">
       <div class="head rv"><h2>Where I've worked</h2><a class="mono" href="resume.pdf" download="박진혁_이력서.pdf">PDF <svg class="ic"><use href="#i-up" /></svg></a></div>
       <div class="list">
+        <div class="cohead rv">
+          <div><h3><span lang="ko">유진아이티서비스</span><span lang="en">Eugene IT Service</span></h3><span class="mono">2023.06 — <span lang="ko">재직 중</span><span lang="en">present</span></span></div>
+          <p lang="ko">그룹 IT 인프라와 서비스 전문 기업, 정보전략팀 대리</p>
+          <p lang="en">The group's IT infrastructure and services company. Assistant manager, Information Strategy Team</p>
+          <p class="why" lang="ko">옮긴 이유: 단일 서비스의 트래픽을 다루던 데서 나아가, 보안과 인증과 권한 같은 엔터프라이즈 요건을 다루고 싶었습니다.</p>
+          <p class="why" lang="en">Why I moved: beyond handling traffic for a single service, I wanted to work on enterprise requirements such as security, auth and permissions.</p>
+        </div>
+
         <article class="it rv">
-          <div class="when mono">2026.02 — <span lang="ko">진행 중</span><span lang="en">present</span></div>
-          <h3><span lang="ko">투자심의 사전검토 AI 에이전트</span><span lang="en">Pre-review AI agent for investment committees</span> <span class="co">· <span lang="ko">유진아이티서비스</span><span lang="en">Eugene IT Service</span></span></h3>
-          <p lang="ko">LLM만으로는 같은 안건에도 결론이 달라지는 문제를, 엔진과 LLM의 역할을 나눠 풀었습니다.</p>
-          <p lang="en">An LLM alone reached different conclusions on the same proposal. I solved it by splitting the work between an engine and the LLM.</p>
+          <div class="when mono">2025.07 — <span lang="ko">진행 중</span><span lang="en">present</span> <span class="rl">/ <span lang="ko">Project Leader, 3인</span><span lang="en">Project Leader, team of 3</span></span></div>
+          <h3><a class="more" href="projects/group-ai-platform.html"><span lang="ko">그룹 AI 서비스 도입과 확산</span><span lang="en">Group-wide AI rollout and adoption</span></a></h3>
+          <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
+          <p lang="ko">SaaS AI 서비스를 그룹에 도입하고, 현업 팀의 요청을 에이전트로 만들어 전달하고, 실제로 쓰이게 만드는 일까지 맡았습니다.</p>
+          <p lang="en">I brought a SaaS AI service to the group, turned requests from business teams into agents, and stayed until people actually used them.</p>
           <ul lang="ko">
-            <li><b>MCP 엔진이 순서, 상태, 근거를 통제</b>하고 LLM은 판독과 의견 작성만 맡도록 설계</li>
-            <li>외부투자자, CFO, 감사실, 사업부 대표, 레드팀의 5개 관점 심의와 사람 확인 2단계</li>
-            <li>근거 없는 답변은 엔진이 반려, 판독 사실을 단일 목록으로 고정해 결과 불일치 해소</li>
-            <li>대표이사 리뷰를 거쳐 실제 안건에 적용 가능한 상태로 오픈, <b>AX REAL 2026 발표</b></li>
+            <li>법무, 투자심의, 선물 영업, 보안 팀의 요청을 받아 <b>MCP 서버 10개(도구 85개)</b>를 만들어 전달. 공정거래 준법 에이전트는 사례 834건의 실시간 크롤링을 사전 수집과 검색으로 조정해 <b>요청 메일부터 배포까지 8일</b></li>
+            <li>Lambda와 API Gateway를 <b>공통 패턴</b>으로 묶어, 새 요청이 와도 같은 구조로 MCP 서버를 추가</li>
+            <li>API Gateway → Lambda → DMZ 경로로 <b>내부망 포트 개방 0건</b>, 보안 심의 1회 통과. OAuth 2.0 흐름을 표준화해 <b>신규 계열사 연동 2주 → 3일</b></li>
+            <li>6개 일간지 오피니언 클리핑을 자동화해 담당자의 작업을 <b>매일 40분 → 10분 이내</b>로</li>
+            <li>사용 빈도별로 다섯 그룹을 나눠 10명을 한 시간씩 인터뷰. 막고 있던 것이 기능이 아니라 <b>토큰 한도와 읽히지 않는 안내 메일</b>임을 확인하고, 교육 4회(2026년 7월, 10월 각 2회)와 뉴스레터로 정착을 지원</li>
+            <li>누적 가입자 <b>337 → 1,130명</b>, 월 사용자 <b>43 → 359명</b>, 사용 계열사 <b>5 → 17곳</b>, 에이전트 활용 비율 8% → 31%(테스트 물량 제외)</li>
           </ul>
           <ul lang="en">
-            <li><b>An MCP engine controls order, state and evidence</b>, while the LLM only reads documents and writes opinions</li>
-            <li>Reviews from five viewpoints (outside investor, CFO, audit, business unit head, red team) with two human checkpoints</li>
-            <li>The engine rejects answers without evidence, and a single fixed list of extracted facts keeps results consistent</li>
-            <li>Opened for real proposals after a CEO review, and <b>presented at AX REAL 2026</b></li>
+            <li>Took requests from legal, investment review, futures sales and security teams and delivered <b>10 MCP servers (85 tools)</b>. For the fair-trade compliance agent I changed live crawling of 834 cases into collect-in-advance and search, and shipped it <b>8 days after the request email</b></li>
+            <li>Built <b>a shared Lambda and API Gateway pattern</b>, so each new request becomes an MCP server on the same structure</li>
+            <li>An API Gateway → Lambda → DMZ path with <b>zero internal ports opened</b> passed security review first time. A standard OAuth 2.0 flow cut <b>new affiliate onboarding from 2 weeks to 3 days</b></li>
+            <li>Automated opinion clipping from 6 dailies, cutting the owner's work <b>from 40 minutes a day to under 10</b></li>
+            <li>Split users into five groups by usage and interviewed 10 for an hour each. The blockers were not features but <b>the token limit and announcement emails nobody read</b>. Supported adoption with 4 training sessions (2 each in July and October 2026) and a newsletter</li>
+            <li>Sign-ups <b>337 → 1,130</b>, monthly users <b>43 → 359</b>, affiliates using it <b>5 → 17</b>, usage through agents 8% → 31% (test volume excluded)</li>
           </ul>
-          <div class="tags mono"><span>Python</span><span>MCP</span><span>AWS Lambda</span></div>
+          <div class="tags mono"><span>Python</span><span>MCP</span><span>AWS Lambda</span><span>API Gateway</span><span>OAuth 2.0</span></div>
+        </article>
+
+        <article class="it rv sub">
+          <div class="sublab mono"><span lang="ko">그룹 AI 프로젝트의 하위 과제, 가장 큰 프로젝트</span><span lang="en">Part of the group AI project, its largest piece</span></div>
+          <div class="when mono">2026.04 — <span lang="ko">진행 중</span><span lang="en">present</span> <span class="rl">/ <span lang="ko">엔진 설계와 구현, 2인 팀</span><span lang="en">engine design and build, team of 2</span></span></div>
+          <h3><a class="more" href="projects/investment-review-agent.html"><span lang="ko">투자심의 사전검토 AI 에이전트</span><span lang="en">Pre-review AI agent for investment committees</span></a></h3>
+          <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
+          <p lang="ko">임원 투자심의를 AI로 대체해 달라는 요청에서 시작했습니다. 같은 자료에서 총점이 49점과 43점으로 갈리던 문제를 엔진의 구조로 풀었습니다.</p>
+          <p lang="en">It began as a request to replace the executive investment review with AI. I solved the same documents scoring 49 and 43 through the structure of the engine.</p>
+          <ul lang="ko">
+            <li>경영개선팀과 리뷰 6회. "AI로 대체"를 <b>AI 사전 심의와 경영진 결재의 두 단계</b>로 합의</li>
+            <li>몇 주에서 몇 달 걸리던 심의 준비 앞단에 <b>한 건당 10~40분</b>의 AI 사전검토 리포트를 제공. 임원 회의 2회를 거쳐 2026년 9월 경영개선팀에 오픈</li>
+            <li><b>서버는 LLM을 부르지 않고</b> 지시문과 최소한의 검사만 주는 MCP 엔진. 다섯 관점은 ID가 붙은 근거 원장만 인용. 정답 16항목을 심은 가상 안건에서 16개 모두 탐지</li>
+            <li>엔진을 5세대에 걸쳐 재설계. v2 커밋 111건 중 73건이 수정으로 나오자 순서 강제를 포기하고 검증 단계를 걷어냄. <b>안건당 비용 62% 절감</b>, 코드 6,300줄 → 1,615줄</li>
+            <li><b>AX REAL 2026</b>에서 약 300명 앞에 발표</li>
+          </ul>
+          <ul lang="en">
+            <li>6 reviews with the management improvement team. "Replace it with AI" became <b>two layers: AI pre-review, then management approval</b></li>
+            <li>Review preparation used to take weeks to months. The agent now produces a pre-review report in <b>10 to 40 minutes per deal</b>. Opened to the team in September 2026 after two executive meetings</li>
+            <li>An MCP engine where <b>the server never calls an LLM</b> and only issues instructions and minimal checks. Five viewpoints cite only an evidence ledger with IDs. On a fictional deal with 16 planted answers it found all 16</li>
+            <li>Five generations of redesign. When 73 of 111 commits on v2 turned out to be fixes, I gave up enforcing step order and removed the validation steps, <b>cutting cost per deal by 62%</b> and taking the code from 6,300 lines to 1,615</li>
+            <li>Presented to about 300 people at <b>AX REAL 2026</b></li>
+          </ul>
+          <div class="tags mono"><span>Python</span><span>MCP</span><span>AWS Lambda</span><span>DynamoDB</span><span>FastAPI</span></div>
         </article>
 
         <article class="it rv">
-          <div class="when mono">2025.07 — <span lang="ko">진행 중</span><span lang="en">present</span></div>
-          <h3><span lang="ko">그룹 AI 서비스 도입과 인증 표준, Project Leader</span><span lang="en">Group-wide AI service rollout and auth standard, Project Leader</span> <span class="co">· <span lang="ko">유진아이티서비스</span><span lang="en">Eugene IT Service</span></span></h3>
-          <p lang="ko">내부망 데이터를 보안 경계를 유지한 채 외부 SaaS와 AI가 쓸 수 있게 만들었습니다.</p>
-          <p lang="en">I made internal-network data usable by an external SaaS and AI while keeping the security boundary intact.</p>
-          <ul lang="ko">
-            <li>OAuth 2.0과 JWT 표준 흐름을 정의해 <b>신규 계열사 연동 2주 → 3일</b></li>
-            <li>API Gateway, Lambda, NAT Gateway, DMZ 경로로 <b>내부망 포트 개방 0건</b>, 보안 심의 1회 통과</li>
-            <li>사내 데이터 REST API 12종 개발, 월 호출 약 45만 건</li>
-            <li>에이전트 16건과 도구 10종 개발, 에이전트 활용 비율 <b>8% → 48%</b></li>
-          </ul>
-          <ul lang="en">
-            <li>Defined a standard OAuth 2.0 and JWT flow, cutting <b>new affiliate onboarding from 2 weeks to 3 days</b></li>
-            <li>Routed calls through API Gateway, Lambda, NAT Gateway and the DMZ with <b>zero internal ports opened</b>, passing security review on the first attempt</li>
-            <li>Built 12 REST APIs over internal data, serving about 450,000 calls a month</li>
-            <li>Built 16 agents and 10 tools, raising the share of agent usage <b>from 8% to 48%</b></li>
-          </ul>
-          <div class="tags mono"><span>Python</span><span>MCP</span><span>OAuth 2.0</span><span>API Gateway</span><span>Lambda</span></div>
-        </article>
-
-        <article class="it rv">
-          <div class="when mono">2025.01 — 2025.12</div>
-          <h3><span lang="ko">사내 AI 플랫폼 내재화와 딥리서치</span><span lang="en">In-house AI platform and deep research</span> <span class="co">· <span lang="ko">유진아이티서비스</span><span lang="en">Eugene IT Service</span></span></h3>
+          <div class="when mono">2025.01 — 2025.12 <span class="rl">/ <span lang="ko">백엔드와 파이프라인 설계, 3인</span><span lang="en">backend and pipeline, team of 3</span></span></div>
+          <h3><a class="more" href="projects/deep-research.html"><span lang="ko">사내 AI 플랫폼 내재화와 딥리서치</span><span lang="en">In-house AI platform and deep research</span></a></h3>
+          <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
+          <p lang="ko">보고서 한 건마다 자료 수집부터 초안까지 평균 4시간이 반복됐습니다. 이를 줄이는 플랫폼을 사내에서 직접 만들어 시범 부서 3곳에 도입했습니다.</p>
+          <p lang="en">Every report repeated an average of 4 hours of work, from gathering material to a first draft. We built a platform in-house to cut that and three pilot departments adopted it.</p>
           <ul lang="ko">
             <li>업로드, 요약, 검색, 초안 생성을 LangGraph 멀티스텝으로 구현해 <b>보고서 초안 4시간 → 25분</b></li>
             <li>자체 평가셋 100문항으로 환각과 누락을 점검, 근거 인용 정확도 91%</li>
@@ -248,28 +311,41 @@
         </article>
 
         <article class="it rv">
-          <div class="when mono">2023.06 — <span lang="ko">진행 중</span><span lang="en">present</span></div>
-          <h3><span lang="ko">e-HR 인사 시스템 성능 고도화와 운영</span><span lang="en">e-HR system performance and operations</span> <span class="co">· <span lang="ko">유진아이티서비스</span><span lang="en">Eugene IT Service</span></span></h3>
+          <div class="when mono">2023.06 — <span lang="ko">진행 중</span><span lang="en">present</span> <span class="rl">/ <span lang="ko">단독 운영, SSO PL</span><span lang="en">sole operator, SSO lead</span></span></div>
+          <h3><a class="more" href="projects/ehr.html"><span lang="ko">e-HR 인사 시스템 성능 고도화와 운영</span><span lang="en">e-HR system performance and operations</span></a></h3>
+          <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
           <p lang="ko">임직원 약 500명이 쓰는 계열사 인사 시스템을 단독 운영하며 SSO 통합 로그인을 이끌었습니다.</p>
           <p lang="en">I run an HR system for about 500 employees on my own, and led its single sign-on project.</p>
           <ul lang="ko">
             <li>AWR로 병목을 특정한 뒤 동적 SQL 정적화와 서버 캐시로 <b>핵심 화면 응답 18초 → 1.0초</b></li>
             <li>건별 직렬 처리를 스레드 풀 병렬로 바꿔 <b>일괄 결재 300건 14초 → 1초</b></li>
             <li>SSO 통합 로그인 PL(5인, 4개월), 로그인 문의 월 12건 → 2건</li>
-            <li>FTP 수동 배포를 Jenkins 파이프라인으로 전환, 배포 40분 → 6분</li>
+            <li>Gradle 빌드와 Jenkins 파이프라인을 도입하고 운영서버와 저장소의 차이 900여 건을 정합화, 개발서버 배포 자동화</li>
+            <li>연말정산을 비롯한 법정 패치 20회 이상 적용, 개인정보 마스킹과 해제 로그 공통화</li>
           </ul>
           <ul lang="en">
             <li>Located the bottleneck with Oracle AWR, then used static SQL and a server cache to cut <b>key screen response from 18 s to 1.0 s</b></li>
             <li>Replaced one-by-one processing with a thread pool, cutting <b>bulk approval of 300 items from 14 s to 1 s</b></li>
             <li>Led the single sign-on project (5 people, 4 months), reducing login inquiries from 12 to 2 a month</li>
-            <li>Replaced manual FTP deploys with a Jenkins pipeline, cutting deploy time from 40 to 6 minutes</li>
+            <li>Introduced a Gradle build and a Jenkins pipeline, reconciled 900+ files that had drifted between production and the repository, and automated dev-server deploys</li>
+            <li>Applied 20+ statutory patches including year-end tax settlement, and unified personal data masking and unmask logging</li>
           </ul>
-          <div class="tags mono"><span>Java</span><span>Spring</span><span>Oracle</span><span>Jenkins</span><span>JEUS</span></div>
+          <div class="tags mono"><span>Java</span><span>Spring</span><span>Oracle</span><span>Gradle</span><span>Jenkins</span><span>JEUS</span></div>
         </article>
 
+        <div class="cohead rv">
+          <div><h3><span lang="ko">포비즈코리아</span><span lang="en">Forbiz Korea</span></h3><span class="mono">2020.12 — 2023.06</span></div>
+          <p lang="ko">기업형 이커머스 솔루션 회사, 커머스개발팀 사원에서 대리</p>
+          <p lang="en">An enterprise e-commerce solutions company. Commerce Development Team, from staff to assistant manager</p>
+          <p class="why" lang="ko">입사한 이유: 대규모 주문과 결제 트래픽을 직접 다루며 트랜잭션과 성능 설계를 익히고 싶었습니다.</p>
+          <p class="why" lang="en">Why I joined: I wanted to learn transaction and performance design by handling large order and payment traffic directly.</p>
+        </div>
+
         <article class="it rv">
-          <div class="when mono">2023.02 — 2023.05</div>
-          <h3><span lang="ko">스마일게이트샵 글로벌 서비스 구축, Project Leader</span><span lang="en">Smilegate Shop global launch, Project Leader</span> <span class="co">· <span lang="ko">포비즈코리아</span><span lang="en">Forbiz Korea</span></span></h3>
+          <img class="plogo plogo-smilegate-global" src="images/projects/smilegate-global-logo.png" alt="" />
+          <div class="when mono">2023.02 — 2023.05 <span class="rl">/ <span lang="ko">5인, 4개월, 기여 약 50%</span><span lang="en">5 people, 4 months, about 50% mine</span></span></div>
+          <h3><a class="more" href="projects/smilegate-global.html"><span lang="ko">스마일게이트샵 글로벌 서비스 구축, Project Leader</span><span lang="en">Smilegate Shop global launch, Project Leader</span></a></h3>
+          <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
           <ul lang="ko">
             <li>국가 정책 테이블과 공통 결제 인터페이스로 <b>국가 추가 대응 2주 → 2일</b></li>
             <li>복합 결제 부분 환불 시나리오 40건 검증, 금액 불일치 0건으로 4개국 동시 출시</li>
@@ -282,8 +358,10 @@
         </article>
 
         <article class="it rv">
-          <div class="when mono">2022.10 — 2023.01</div>
-          <h3><span lang="ko">위기브 기부 모금 플랫폼</span><span lang="en">Wegive donation platform</span> <span class="co">· <span lang="ko">포비즈코리아</span><span lang="en">Forbiz Korea</span></span></h3>
+          <img class="plogo plogo-wegive" src="images/projects/wegive-logo.svg" alt="" />
+          <div class="when mono">2022.10 — 2023.01 <span class="rl">/ <span lang="ko">백엔드 개발</span><span lang="en">backend</span></span></div>
+          <h3><a class="more" href="projects/wegive.html"><span lang="ko">위기브 기부 모금 플랫폼</span><span lang="en">Wegive donation platform</span></a></h3>
+          <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
           <ul lang="ko">
             <li>UGC 신고와 차단 기능 개발</li>
             <li>지자체 셀러와 입점 문의 관리 기능을 개발해 운영 프로세스 표준화</li>
@@ -295,8 +373,10 @@
         </article>
 
         <article class="it rv">
-          <div class="when mono">2022.07 — 2022.10</div>
-          <h3><span lang="ko">푸드케어 CLE 구축</span><span lang="en">Foodcare CLE build</span> <span class="co">· <span lang="ko">포비즈코리아</span><span lang="en">Forbiz Korea</span></span></h3>
+          <img class="plogo plogo-foodcare-cle" src="images/projects/foodcare-cle-logo.png" alt="" />
+          <div class="when mono">2022.07 — 2022.10 <span class="rl">/ <span lang="ko">데이터 이관과 검색</span><span lang="en">migration and search</span></span></div>
+          <h3><a class="more" href="projects/foodcare-cle.html"><span lang="ko">푸드케어 CLE 구축</span><span lang="en">Foodcare CLE build</span></a></h3>
+          <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
           <ul lang="ko">
             <li>회원과 콘텐츠 <b>30만 건 이관, 건수와 금액 대사 불일치 0건</b> (전수 건수 대조와 샘플 2,000건 대조)</li>
             <li>Elasticsearch 검색 연동</li>
@@ -309,8 +389,10 @@
         </article>
 
         <article class="it rv">
-          <div class="when mono">2021.03 — 2022.12</div>
-          <h3><span lang="ko">HL SCIENCE MALL 운영</span><span lang="en">HL SCIENCE MALL operations</span> <span class="co">· <span lang="ko">포비즈코리아</span><span lang="en">Forbiz Korea</span></span></h3>
+          <img class="plogo plogo-hl-science-mall" src="images/projects/hl-science-mall-logo.png" alt="" />
+          <div class="when mono">2021.03 — 2022.12 <span class="rl">/ <span lang="ko">운영과 기능 개발</span><span lang="en">operations and features</span></span></div>
+          <h3><a class="more" href="projects/hl-science-mall.html"><span lang="ko">HL SCIENCE MALL 운영</span><span lang="en">HL SCIENCE MALL operations</span></a></h3>
+          <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
           <ul lang="ko">
             <li>월 2,000건 이상 주문을 장애 없이 운영</li>
             <li>네이버페이 주문형 API 연동, 관리자 검색 고도화</li>
@@ -323,22 +405,10 @@
         </article>
 
         <article class="it rv">
-          <div class="when mono">2021.01 — 2022.07</div>
-          <h3><span lang="ko">사내 프로젝트</span><span lang="en">Internal projects</span> <span class="co">· <span lang="ko">포비즈코리아</span><span lang="en">Forbiz Korea</span></span></h3>
-          <ul lang="ko">
-            <li>Elasticsearch 학습 매뉴얼 작성</li>
-            <li>OPEN API와 생체 인증 API 개발</li>
-          </ul>
-          <ul lang="en">
-            <li>Wrote an Elasticsearch learning manual</li>
-            <li>Built an open API and a biometric authentication API</li>
-          </ul>
-          <div class="tags mono"><span>Elasticsearch</span><span>Open API</span></div>
-        </article>
-
-        <article class="it rv">
-          <div class="when mono">2020.12 — 2023.03</div>
-          <h3><span lang="ko">ELAND FOLDER MALL 구축과 운영</span><span lang="en">ELAND FOLDER MALL build and operations</span> <span class="co">· <span lang="ko">포비즈코리아</span><span lang="en">Forbiz Korea</span></span></h3>
+          <img class="plogo plogo-eland-folder-mall" src="images/projects/eland-folder-mall-logo.png" alt="" />
+          <div class="when mono">2020.12 — 2023.03 <span class="rl">/ <span lang="ko">백엔드, 개발 4인 중 기여 약 60%</span><span lang="en">backend, about 60% of a 4-developer team</span></span></div>
+          <h3><a class="more" href="projects/eland-folder-mall.html"><span lang="ko">ELAND FOLDER MALL 구축과 운영</span><span lang="en">ELAND FOLDER MALL build and operations</span></a></h3>
+          <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
           <ul lang="ko">
             <li>실시간 집계를 10분 주기 사전 집계로 바꿔 <b>상품 조회 10초 → 1초</b>, DB CPU 피크 85% → 40%</li>
             <li>상품 약 200만 건을 Elasticsearch로 분리, 검색 평균 1.6초 → 0.6초</li>
@@ -363,11 +433,11 @@
           <div class="tags mono"><span>#talk</span><span>#mcp</span><span>#agent</span></div>
         </article>
         <article class="it rv">
-          <div class="when mono">2026</div>
-          <h3><span lang="ko">기업 데이터 접근성 향상을 위한 자기교정 Text-to-SQL 프레임워크</span><span lang="en">A self-correcting Text-to-SQL framework for enterprise data access</span></h3>
-          <p lang="ko">한국IT서비스학회 학술대회 게재, 제1저자. 자기교정 루프를 설계하고 실험했습니다.</p>
-          <p lang="en">Published at the Korea Society of IT Services conference as first author. I designed and tested the self-correction loop.</p>
-          <div class="tags mono"><span>#paper</span><span>#text-to-sql</span></div>
+          <div class="when mono">Jul, Oct 2026</div>
+          <h3><span lang="ko">그룹 전사 AI 활용 교육</span><span lang="en">Group-wide AI training</span></h3>
+          <p lang="ko">2026년 7월과 10월에 2회씩, 모두 4회를 직접 강의했습니다. 7월 교육에서 수강생 편차가 크다는 피드백을 받아, 10월 교육은 각자 자기 업무의 에이전트를 만들어 발표하는 워크숍으로 바꿨습니다.</p>
+          <p lang="en">I taught four sessions myself, two in July 2026 and two in October. After feedback from July that skill levels varied widely, I rebuilt the October round as a workshop where each person builds and presents an agent for their own work.</p>
+          <div class="tags mono"><span>#teaching</span><span>#workshop</span></div>
         </article>
         <article class="it rv">
           <div class="when mono">Jun — Aug 2026</div>
@@ -377,25 +447,25 @@
           <div class="tags mono"><span>#competition</span><span>#ai-pipeline</span></div>
         </article>
         <article class="it rv">
-          <div class="when mono">2025</div>
-          <h3><span lang="ko">그룹 전사 AI 활용 교육</span><span lang="en">Group-wide AI training</span></h3>
-          <p lang="ko">계열사 대상 오프라인 교육 5회, 누적 수강 약 150명. 팀장급 대상 도입 효과 발표.</p>
-          <p lang="en">Five in-person sessions for affiliates, about 150 attendees in total, plus a briefing on adoption results for team leads.</p>
-          <div class="tags mono"><span>#teaching</span></div>
+          <div class="when mono">2026</div>
+          <h3><span lang="ko">기업 데이터 접근성 향상을 위한 자기교정 Text-to-SQL 프레임워크</span><span lang="en">A self-correcting Text-to-SQL framework for enterprise data access</span></h3>
+          <p lang="ko">한국IT서비스학회 학술대회 게재, 제1저자. 자기교정 루프를 설계하고 실험했습니다.</p>
+          <p lang="en">Published at the Korea Society of IT Services conference as first author. I designed and tested the self-correction loop.</p>
+          <div class="tags mono"><span>#paper</span><span>#text-to-sql</span></div>
         </article>
       </div>
     </section>
 
     <section id="skills">
       <div class="head rv"><h2>Skills &amp; tools</h2></div>
-      <p class="lede rv" lang="ko">백엔드 개발, 성능 최적화, 인증 설계, AI 연동</p>
-      <p class="lede rv" lang="en">Backend development, performance tuning, auth design, AI integration</p>
+      <p class="lede rv" lang="ko">AI 연동, 백엔드 개발, 인증 설계, 성능 최적화</p>
+      <p class="lede rv" lang="en">AI integration, backend development, auth design, performance tuning</p>
       <dl class="rows rv">
-        <div class="rw"><dt class="mono">Languages</dt><dd><span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/java/java-original.svg" alt="" loading="lazy" />Java</span><span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/python/python-original.svg" alt="" loading="lazy" />Python</span><span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/php/php-original.svg" alt="" loading="lazy" />PHP</span><span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/javascript/javascript-original.svg" alt="" loading="lazy" />JavaScript</span></dd></div>
+        <div class="rw"><dt class="mono">AI</dt><dd><span><img src="https://cdn.simpleicons.org/modelcontextprotocol/e9e6df" alt="" loading="lazy" />MCP</span><span><img src="https://cdn.simpleicons.org/langgraph/e9e6df" alt="" loading="lazy" />LangGraph</span><span><img src="https://cdn.simpleicons.org/langchain/e9e6df" alt="" loading="lazy" />LangChain</span><span>RAG</span><span>LLM evaluation</span></dd></div>
+        <div class="rw"><dt class="mono">Languages</dt><dd><span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/python/python-original.svg" alt="" loading="lazy" />Python</span><span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/java/java-original.svg" alt="" loading="lazy" />Java</span><span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/php/php-original.svg" alt="" loading="lazy" />PHP</span><span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/javascript/javascript-original.svg" alt="" loading="lazy" />JavaScript</span></dd></div>
         <div class="rw"><dt class="mono">Frameworks</dt><dd><span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/spring/spring-original.svg" alt="" loading="lazy" />Spring</span><span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/java/java-original.svg" alt="" loading="lazy" />JSP</span><span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/fastapi/fastapi-original.svg" alt="" loading="lazy" />FastAPI</span><span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/codeigniter/codeigniter-plain.svg" alt="" loading="lazy" />CodeIgniter</span></dd></div>
         <div class="rw"><dt class="mono">Data</dt><dd><span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/oracle/oracle-original.svg" alt="" loading="lazy" />Oracle</span><span><img src="https://cdn.simpleicons.org/mysql/5a9bd4" alt="" loading="lazy" />MySQL</span><span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/elasticsearch/elasticsearch-original.svg" alt="" loading="lazy" />Elasticsearch</span></dd></div>
         <div class="rw"><dt class="mono">Infra &amp; tooling</dt><dd><span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="" loading="lazy" />AWS</span><span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/jenkins/jenkins-original.svg" alt="" loading="lazy" />Jenkins</span><span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/linux/linux-original.svg" alt="" loading="lazy" />Linux</span><span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/git/git-original.svg" alt="" loading="lazy" />Git</span><span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/oauth/oauth-original.svg" alt="" loading="lazy" />OAuth 2.0 · JWT</span></dd></div>
-        <div class="rw"><dt class="mono">AI</dt><dd><span><img src="https://cdn.simpleicons.org/langgraph/e9e6df" alt="" loading="lazy" />LangGraph</span><span><img src="https://cdn.simpleicons.org/langchain/e9e6df" alt="" loading="lazy" />LangChain</span><span><img src="https://cdn.simpleicons.org/modelcontextprotocol/e9e6df" alt="" loading="lazy" />MCP</span></dd></div>
       </dl>
     </section>
 
@@ -474,6 +544,23 @@
     document.querySelector('.g-total').textContent = d.total.lastYear.toLocaleString() + ' CONTRIBUTIONS';
     document.querySelector('.grass').hidden = false;
   }).catch(() => {});
+  // 첫 화면의 직함을 차례로 바꿔 보여 준다. 움직임을 줄이도록 설정한 사용자에게는 첫 직함만 보인다.
+  const ROLES = [
+    ['Forward deployed engineer', "from a team's request to production"],
+    ['Backend engineer', 'performance, auth and data integrity'],
+  ];
+  const roleEl = document.getElementById('role'), roleSub = document.getElementById('roleSub');
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let ri = 0;
+    setInterval(() => {
+      roleEl.classList.add('out'); roleSub.classList.add('out');
+      setTimeout(() => {
+        ri = (ri + 1) % ROLES.length;
+        roleEl.textContent = ROLES[ri][0]; roleSub.textContent = ROLES[ri][1];
+        roleEl.classList.remove('out'); roleSub.classList.remove('out');
+      }, 350);
+    }, 3200);
+  }
   // 화면에 들어올 때 한 번만 나타남
   const rv = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rv.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.rv').forEach(el => rv.observe(el));

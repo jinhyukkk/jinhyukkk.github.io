@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HL SCIENCE MALL 운영 · 박진혁</title>
+<meta name="description" content="네이버페이로 들어온 주문을 운영자가 따로 확인해야 했고, 관리자 화면의 주문 검색은 조건이 부족했습니다." />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Noto+Serif+KR:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="project.css" />
+<script>
+  try { var L = localStorage.getItem('lang') || ((navigator.language || 'ko').slice(0, 2) === 'ko' ? 'ko' : 'en');
+    document.documentElement.dataset.lang = L; document.documentElement.lang = L; } catch (e) {}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="bar mono">
+    <a href="../index.html#experience">← BACK</a>
+    <div class="lang" role="group" aria-label="Language"><button type="button" data-l="ko">KO</button><span>/</span><button type="button" data-l="en">EN</button></div>
+  </header>
+
+  <a class="lg lg-hl-science-mall" href="https://www.hlscience.com" target="_blank" rel="noopener"><img src="../images/projects/hl-science-mall-logo.png" alt="HL SCIENCE MALL operations" /></a>
+  <div class="when mono">2021.03 — 2022.12</div>
+  <h1><span lang="ko">HL SCIENCE MALL 운영</span><span lang="en">HL SCIENCE MALL operations</span></h1>
+  <p class="co"><span lang="ko">포비즈코리아</span><span lang="en">Forbiz Korea</span></p>
+  <p class="org g" lang="ko">건강기능식품 쇼핑몰의 운영과 기능 개발을 맡았습니다.</p>
+    <p class="org g" lang="en">I ran and extended a health supplement store.</p>
+  <div class="tags mono"><span>PHP</span><span>CodeIgniter</span><span>MySQL</span></div>
+
+  <dl class="tl"><div class="g"><dt class="mono"><span lang="ko">문제</span><span lang="en">Problem</span></dt><dd><span lang="ko">자사몰 주문과 네이버페이 주문을 함께 운영해야 했습니다.</span><span lang="en">Orders from the store and from Naver Pay had to be run together.</span></dd></div><div><dt class="mono"><span lang="ko">접근</span><span lang="en">Approach</span></dt><dd><span lang="ko">네이버페이 주문형 API를 연동하고 관리자 검색을 고도화했습니다.</span><span lang="en">I integrated the Naver Pay order API and improved admin search.</span></dd></div><div><dt class="mono"><span lang="ko">결과</span><span lang="en">Result</span></dt><dd><span lang="ko">월 2,000건 이상의 주문을 장애 없이 운영했습니다.</span><span lang="en">Over 2,000 orders a month ran without an outage.</span></dd></div></dl>
+
+  <dl class="facts"><div><dt class="mono"><span lang="ko">역할</span><span lang="en">Role</span></dt><dd><span lang="ko">운영과 기능 개발</span><span lang="en">Operations and features</span></dd></div><div><dt class="mono"><span lang="ko">주문</span><span lang="en">Orders</span></dt><dd><span lang="ko">월 2,000건 이상</span><span lang="en">2,000+ a month</span></dd></div><div><dt class="mono"><span lang="ko">기간</span><span lang="en">Duration</span></dt><dd><span lang="ko">약 22개월</span><span lang="en">about 22 months</span></dd></div></dl>
+
+  <section>
+    <h2>Background</h2>
+    <p class="g" lang="ko">HL사이언스의 건강기능식품을 파는 자사 쇼핑몰입니다. 자사몰 주문과 네이버페이 주문이 함께 들어옵니다.</p>
+    <p class="g" lang="en">The direct store of HL Science, which sells health supplements. Orders arrive both from the store itself and through Naver Pay.</p>
+  </section>
+
+  <section>
+    <h2>Problem</h2>
+    <p class="g" lang="ko">네이버페이로 들어온 주문을 운영자가 따로 확인해야 했고, 관리자 화면의 주문 검색은 조건이 부족했습니다.</p>
+    <p class="g" lang="en">Operators had to check Naver Pay orders separately, and order search in the admin screens lacked conditions.</p>
+  </section>
+
+  <section>
+    <h2>What I did</h2>
+    <figure class="fig g"><figcaption class="mono"><span lang="ko">네이버페이 주문 연동</span><span lang="en">Naver Pay order sync</span></figcaption><div class="flow"><div class="st"><b><span lang="ko">네이버페이 주문</span><span lang="en">Naver Pay order</span></b></div><i class="ar"></i><div class="st"><b><span lang="ko">주문 수집</span><span lang="en">Collect orders</span></b><span lang="ko">주문형 API</span><span lang="en">order API</span></div><i class="ar"></i><div class="st"><b><span lang="ko">쇼핑몰 주문 변환</span><span lang="en">Convert to store order</span></b></div><i class="ar"></i><div class="st"><b><span lang="ko">발주와 발송 처리</span><span lang="en">Confirm and ship</span></b></div><i class="ar"></i><div class="st"><b><span lang="ko">상태 동기화</span><span lang="en">Sync status</span></b><span lang="ko">취소, 반품 포함</span><span lang="en">incl. cancel, return</span></div></div></figure>
+    <dl>
+      <div class="pt"><dt><span lang="ko">월 2,000건 이상 주문 무장애 운영</span><span lang="en">Over 2,000 orders a month without an outage</span></dt><dd><span lang="ko">월 2,000건이 넘는 주문을 장애 없이 운영했습니다.</span><span lang="en">I ran a store with over 2,000 orders a month without an outage.</span></dd></div>
+      <div class="pt"><dt><span lang="ko">네이버페이 주문형 API 연동</span><span lang="en">Naver Pay order API</span></dt><dd><span lang="ko">네이버페이 주문을 쇼핑몰 주문으로 받아 오도록 연동했습니다.</span><span lang="en">I integrated the API so Naver Pay orders arrive as store orders.</span></dd></div>
+      <div class="pt g"><dt><span lang="ko">주문 중복 방지</span><span lang="en">No duplicate orders</span></dt><dd><span lang="ko">네이버페이 주문 번호를 기준으로 이미 받은 주문은 다시 만들지 않게 했습니다. 수집이 실패하면 다음 주기에 이어서 받습니다.</span><span lang="en">Orders already received are skipped using the Naver Pay order number. If a collection run fails, the next run picks up where it stopped.</span></dd></div>
+      <div class="pt g"><dt><span lang="ko">관리자 검색 고도화</span><span lang="en">Better admin search</span></dt><dd><span lang="ko">주문 번호, 주문자, 상품, 기간, 결제 수단을 조합해 찾을 수 있게 하고, 자주 쓰는 조건에 맞춰 인덱스를 정리했습니다.</span><span lang="en">Admins can combine order number, buyer, product, period and payment method, and I tuned indexes for the conditions used most.</span></dd></div>
+    </dl>
+  </section>
+
+  <section class="g">
+    <h2>Hard parts</h2>
+    <ul class="ls"><li><span lang="ko">외부 주문은 취소와 반품 상태가 뒤늦게 바뀌어 들어옵니다. 상태 동기화를 주기적으로 다시 돌려 맞췄습니다.</span><span lang="en">Outside orders change to cancelled or returned after the fact. Re-running the status sync on a schedule keeps them aligned.</span></li></ul>
+  </section>
+
+  <section>
+    <h2>Result</h2>
+    <p lang="ko">월 2,000건 이상의 주문을 장애 없이 처리했습니다.</p>
+    <p lang="en">Over 2,000 orders a month were handled without an outage.</p>
+  </section>
+
+  <section class="g">
+    <h2>What I learned</h2>
+    <ul class="ls"><li><span lang="ko">외부 주문을 내부 주문과 같은 형태로 바꿔 두면, 그 뒤의 운영 화면은 고칠 것이 거의 없습니다.</span><span lang="en">Once outside orders are converted into the same shape as internal ones, the operations screens behind them barely need changing.</span></li></ul>
+  </section>
+
+  <nav class="pn" aria-label="Projects"><a href="foodcare-cle.html"><span class="mono">← PREV</span><span lang="ko">푸드케어 CLE 구축</span><span lang="en">Foodcare CLE build</span></a><a class="nx" href="eland-folder-mall.html"><span class="mono">NEXT →</span><span lang="ko">ELAND FOLDER MALL 구축과 운영</span><span lang="en">ELAND FOLDER MALL build and operations</span></a></nav>
+</div>
+<script>
+  // 언어 전환: 메인 페이지와 같은 저장값을 쓴다
+  const setLang = l => {
+    document.documentElement.dataset.lang = document.documentElement.lang = l;
+    document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.l === l));
+    try { localStorage.setItem('lang', l); } catch (e) {}
+  };
+  document.querySelector('.lang').onclick = e => e.target.dataset.l && setLang(e.target.dataset.l);
+  setLang(document.documentElement.dataset.lang);
+  if (location.search.includes('review')) document.documentElement.classList.add('review');   // 추정 내용 표시
+</script>
+</body>
+</html>

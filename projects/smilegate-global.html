@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>스마일게이트샵 글로벌 서비스 구축 · 박진혁</title>
+<meta name="description" content="국가마다 통화, 결제, 배송 정책이 달랐습니다. 코드 분기만으로는 여러 나라로 확장하기 어려웠습니다." />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Noto+Serif+KR:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="project.css" />
+<script>
+  try { var L = localStorage.getItem('lang') || ((navigator.language || 'ko').slice(0, 2) === 'ko' ? 'ko' : 'en');
+    document.documentElement.dataset.lang = L; document.documentElement.lang = L; } catch (e) {}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="bar mono">
+    <a href="../index.html#experience">← BACK</a>
+    <div class="lang" role="group" aria-label="Language"><button type="button" data-l="ko">KO</button><span>/</span><button type="button" data-l="en">EN</button></div>
+  </header>
+
+  <a class="lg lg-smilegate-global" href="https://smilegateshop.com" target="_blank" rel="noopener"><img src="../images/projects/smilegate-global-logo.png" alt="Smilegate Shop global launch" /></a>
+  <div class="when mono">2023.02 — 2023.05</div>
+  <h1><span lang="ko">스마일게이트샵 글로벌 서비스 구축</span><span lang="en">Smilegate Shop global launch</span></h1>
+  <p class="co"><span lang="ko">포비즈코리아</span><span lang="en">Forbiz Korea</span></p>
+  <p class="org" lang="ko">다국가 결제와 정책에 대응하는 구조를 설계했습니다. 5인, 4개월 프로젝트의 Project Leader였고 결제와 정책 구조를 중심으로 약 50%를 기여했습니다.</p>
+    <p class="org" lang="en">I designed the structure for multi-country payments and policies. I was Project Leader of a 5-person, 4-month project and contributed about 50%, mainly the payment and policy structure.</p>
+  <div class="tags mono"><span>PHP</span><span>CodeIgniter</span><span>MySQL</span><span>JavaScript</span><span>Git</span></div>
+
+  <dl class="tl"><div><dt class="mono"><span lang="ko">문제</span><span lang="en">Problem</span></dt><dd><span lang="ko">국가마다 통화, 결제, 배송 정책이 달라 코드 분기만으로는 확장하기 어려웠습니다.</span><span lang="en">Currency, payment and shipping rules differed by country, and code branches alone would not scale.</span></dd></div><div><dt class="mono"><span lang="ko">접근</span><span lang="en">Approach</span></dt><dd><span lang="ko">국가 정책 테이블과 공통 결제 인터페이스를 두어 정책을 코드에서 설정으로 옮겼습니다.</span><span lang="en">A country policy table and a shared payment interface moved the rules from code into configuration.</span></dd></div><div><dt class="mono"><span lang="ko">결과</span><span lang="en">Result</span></dt><dd><span lang="ko">4개국 동시 출시, 국가 추가 2주 → 2일, 환불 금액 불일치 0건.</span><span lang="en">Launched in 4 countries at once, adding a country 2 weeks → 2 days, zero refund mismatches.</span></dd></div></dl>
+
+  <dl class="facts"><div><dt class="mono"><span lang="ko">역할</span><span lang="en">Role</span></dt><dd><span lang="ko">Project Leader</span><span lang="en">Project Leader</span></dd></div><div><dt class="mono"><span lang="ko">팀</span><span lang="en">Team</span></dt><dd><span lang="ko">5인, 기여 약 50%</span><span lang="en">5 people, about 50% mine</span></dd></div><div><dt class="mono"><span lang="ko">출시</span><span lang="en">Launch</span></dt><dd><span lang="ko">4개국 동시</span><span lang="en">4 countries at once</span></dd></div><div><dt class="mono"><span lang="ko">환불 검증</span><span lang="en">Refund scenarios</span></dt><dd><span lang="ko">40건</span><span lang="en">40</span></dd></div></dl>
+
+  <figure class="shot"><a href="https://smilegateshop.com" target="_blank" rel="noopener"><img src="../images/projects/smilegate-global.jpg" alt="Smilegate Shop global launch" loading="lazy" /></a><figcaption class="mono"><a href="https://smilegateshop.com" target="_blank" rel="noopener">smilegateshop.com ↗</a><span><span lang="ko">현재 운영 중인 화면입니다. 2026년 11월에 캡처했고, 개발 당시와 다를 수 있습니다.</span><span lang="en">The live site, captured in November 2026. It may differ from when I worked on it.</span></span></figcaption></figure>
+
+  <section>
+    <h2>Service</h2>
+    <p lang="ko">스마일게이트의 공식 굿즈 판매샵입니다. 크로스파이어, 로스트아크, 에픽세븐 같은 게임과 스마일메이츠, 스마일펫 캐릭터의 상품을 팝니다. 설정집, 봉제인형, 가방처럼 실물 상품을 여러 나라의 팬에게 배송하기 때문에, 통화와 결제 수단과 배송 방식이 나라마다 달라집니다.</p>
+    <p lang="en">The official Smilegate goods store. It sells merchandise for games such as CrossFire, Lost Ark and Epic Seven, and for the Smilemates and Smilepet characters. Because physical goods such as art books, plush toys and bags ship to fans in several countries, currency, payment methods and shipping differ by country.</p>
+  </section>
+
+  <section>
+    <h2>Problem</h2>
+    <p lang="ko">국가마다 통화, 결제, 배송 정책이 달랐습니다. 코드 분기만으로는 여러 나라로 확장하기 어려웠습니다.</p>
+    <p lang="en">Currency, payment and shipping rules differed by country. Branching in code alone would not scale to many countries.</p>
+  </section>
+
+  <section>
+    <h2>What I did</h2>
+    <figure class="fig"><figcaption class="mono"><span lang="ko">결제 구조</span><span lang="en">Payment structure</span></figcaption><div class="flow"><div class="st"><b><span lang="ko">주문</span><span lang="en">Order</span></b><span lang="ko">4개국</span><span lang="en">4 countries</span></div><i class="ar"></i><div class="st"><b><span lang="ko">국가 정책 테이블</span><span lang="en">Country policy table</span></b><span lang="ko">통화, 결제, 배송</span><span lang="en">currency, payment, shipping</span></div><i class="ar"></i><div class="st"><b><span lang="ko">공통 결제 인터페이스</span><span lang="en">Shared payment interface</span></b></div><i class="ar"></i><div class="st"><b><span lang="ko">이니시스, 엑심베이</span><span lang="en">Inicis, Eximbay</span></b><span lang="ko">국내, 해외 결제</span><span lang="en">domestic, overseas</span></div></div></figure>
+    <figure class="fig g"><figcaption class="mono"><span lang="ko">부분 환불 처리</span><span lang="en">Partial refund</span></figcaption><div class="flow"><div class="st"><b><span lang="ko">환불 요청</span><span lang="en">Refund request</span></b></div><i class="ar"></i><div class="st"><b><span lang="ko">수단별 금액 계산</span><span lang="en">Amount per method</span></b><span lang="ko">일반 결제, 포인트 2종</span><span lang="en">payment, two kinds of points</span></div><i class="ar"></i><div class="st"><b><span lang="ko">PG 부분 취소</span><span lang="en">Partial cancel at the PG</span></b></div><i class="ar"></i><div class="st"><b><span lang="ko">포인트 복원</span><span lang="en">Restore points</span></b></div><i class="ar"></i><div class="st"><b><span lang="ko">금액 대사</span><span lang="en">Reconcile amounts</span></b><span lang="ko">불일치 0건</span><span lang="en">zero mismatches</span></div></div></figure>
+    <dl>
+      <div class="pt"><dt><span lang="ko">국가 추가 대응 2주 → 2일</span><span lang="en">Adding a country, 2 weeks → 2 days</span></dt><dd><span lang="ko">국가 정책 테이블과 공통 결제 인터페이스를 두어 정책을 코드가 아닌 설정으로 옮겼습니다.</span><span lang="en">A country policy table and a shared payment interface moved the rules out of code and into configuration.</span></dd></div>
+      <div class="pt"><dt><span lang="ko">복합 결제 부분 환불 금액 불일치 0건</span><span lang="en">Zero amount mismatches in partial refunds of mixed payments</span></dt><dd><span lang="ko">일반 결제에 포인트 2종이 섞인 환불 시나리오 40건을 QA로 검증했습니다.</span><span lang="en">QA verified 40 refund scenarios that combine a normal payment with two kinds of points.</span></dd></div>
+      <div class="pt"><dt><span lang="ko">연동과 리딩</span><span lang="en">Integrations and leading</span></dt><dd><span lang="ko">국내와 해외 결제(이니시스, 엑심베이), EMS, 복지포인트, SNS 로그인 5종을 연동하고 다국어 검색을 구현했습니다. PL로서 일정과 산출물 품질을 관리했습니다.</span><span lang="en">I integrated domestic and overseas payments (Inicis, Eximbay), EMS, welfare points and 5 social logins, and built multilingual search. As PL I managed the schedule and the quality of deliverables.</span></dd></div>
+      <div class="pt g"><dt><span lang="ko">정책 테이블 구성</span><span lang="en">The policy table</span></dt><dd><span lang="ko">국가별로 통화, 사용할 결제 수단, 배송 방식, 언어를 한 행에 두고 코드는 이 값을 읽어 동작합니다. 새 국가는 행을 추가하고 번역을 넣으면 됩니다.</span><span lang="en">Each country has one row holding its currency, payment methods, shipping method and language, and the code reads those values. A new country means adding a row and its translations.</span></dd></div>
+      <div class="pt g"><dt><span lang="ko">공통 결제 인터페이스</span><span lang="en">The shared payment interface</span></dt><dd><span lang="ko">결제 요청, 승인, 취소, 부분 취소를 같은 메서드로 정의하고 이니시스와 엑심베이를 각각 구현체로 뒀습니다.</span><span lang="en">Request, approve, cancel and partial cancel are defined as the same methods, with Inicis and Eximbay each as an implementation.</span></dd></div>
+    </dl>
+  </section>
+
+  <section class="g">
+    <h2>Hard parts</h2>
+    <ul class="ls"><li><span lang="ko">포인트가 섞인 결제의 부분 환불은 어떤 수단부터 돌려주느냐에 따라 금액이 달라집니다. 시나리오 40건을 먼저 정의하고 그에 맞춰 구현했습니다.</span><span lang="en">In a partial refund of a payment mixed with points, the amounts depend on which method is refunded first. I defined 40 scenarios first and built to them.</span></li><li><span lang="ko">4개국을 같은 날 여는 일정이라 국가별 검증을 동시에 진행해야 했습니다.</span><span lang="en">Opening 4 countries on the same day meant verifying each country in parallel.</span></li></ul>
+  </section>
+
+  <section>
+    <h2>Result</h2>
+    <p lang="ko">4개국 동시 런칭 일정을 지켰고, 결제와 검색을 확장할 수 있는 구조를 확보했습니다.</p>
+    <p lang="en">We met the date for a simultaneous launch in 4 countries, and ended up with a structure that lets payments and search expand.</p>
+    <figure class="fig bars"><div class="br"><div class="bl"><span lang="ko">국가 추가 대응 기간</span><span lang="en">Time to add a country</span></div><div class="ln" style="--r:100.0"><i></i><span class="mono"><span lang="ko">2주</span><span lang="en">2 weeks</span></span></div><div class="ln after" style="--r:14.3"><i></i><span class="mono"><span lang="ko">2일</span><span lang="en">2 days</span></span></div></div><figcaption class="mono note"><span lang="ko">회색은 개선 전, 주황은 개선 후입니다. 선의 길이는 실제 비율입니다.</span><span lang="en">Grey is before, orange is after. Line lengths are to scale.</span></figcaption></figure>
+  </section>
+
+  <section class="g">
+    <h2>What I learned</h2>
+    <ul class="ls"><li><span lang="ko">분기가 늘어날 조짐이 보이면 일찍 설정으로 빼는 편이 비용이 적게 듭니다.</span><span lang="en">When branches look set to multiply, moving them into configuration early costs less.</span></li></ul>
+  </section>
+
+  <nav class="pn" aria-label="Projects"><a href="ehr.html"><span class="mono">← PREV</span><span lang="ko">e-HR 인사 시스템 성능 고도화와 운영</span><span lang="en">e-HR system performance and operations</span></a><a class="nx" href="wegive.html"><span class="mono">NEXT →</span><span lang="ko">위기브 기부 모금 플랫폼</span><span lang="en">Wegive donation platform</span></a></nav>
+</div>
+<script>
+  // 언어 전환: 메인 페이지와 같은 저장값을 쓴다
+  const setLang = l => {
+    document.documentElement.dataset.lang = document.documentElement.lang = l;
+    document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.l === l));
+    try { localStorage.setItem('lang', l); } catch (e) {}
+  };
+  document.querySelector('.lang').onclick = e => e.target.dataset.l && setLang(e.target.dataset.l);
+  setLang(document.documentElement.dataset.lang);
+  if (location.search.includes('review')) document.documentElement.classList.add('review');   // 추정 내용 표시
+</script>
+</body>
+</html>

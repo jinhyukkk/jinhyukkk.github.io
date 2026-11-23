@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ELAND FOLDER MALL 구축과 운영 · 박진혁</title>
+<meta name="description" content="주문이 몰리는 시간대에 실시간 집계 쿼리가 병목이 됐습니다. 상품 조회에 10초가 걸렸고 DB CPU 피크는 85%였습니다." />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Noto+Serif+KR:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="project.css" />
+<script>
+  try { var L = localStorage.getItem('lang') || ((navigator.language || 'ko').slice(0, 2) === 'ko' ? 'ko' : 'en');
+    document.documentElement.dataset.lang = L; document.documentElement.lang = L; } catch (e) {}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="bar mono">
+    <a href="../index.html#experience">← BACK</a>
+    <div class="lang" role="group" aria-label="Language"><button type="button" data-l="ko">KO</button><span>/</span><button type="button" data-l="en">EN</button></div>
+  </header>
+
+  <span class="lg lg-eland-folder-mall"><img src="../images/projects/eland-folder-mall-logo.png" alt="ELAND FOLDER MALL build and operations" /></span>
+  <div class="when mono">2020.12 — 2023.03</div>
+  <h1><span lang="ko">ELAND FOLDER MALL 구축과 운영</span><span lang="en">ELAND FOLDER MALL build and operations</span></h1>
+  <p class="co"><span lang="ko">포비즈코리아</span><span lang="en">Forbiz Korea</span></p>
+  <p class="org" lang="ko">일 평균 1,000건 이상(월 5만 건 이상) 주문을 처리하는 커머스입니다. 개발 4인(백엔드 2인) 중 집계와 검색 구조의 설계와 구현을 맡아 약 60%를 기여했습니다.</p>
+    <p class="org" lang="en">An e-commerce store handling over 1,000 orders a day (over 50,000 a month). On a team of 4 developers (2 backend), I designed and built the aggregation and search structure, about 60% of that work.</p>
+  <div class="tags mono"><span>PHP</span><span>CodeIgniter</span><span>MySQL</span><span>Elasticsearch</span><span>Jenkins</span><span>Linux</span></div>
+
+  <dl class="tl"><div><dt class="mono"><span lang="ko">문제</span><span lang="en">Problem</span></dt><dd><span lang="ko">주문이 몰리는 시간에 실시간 집계 쿼리 때문에 상품 조회가 10초씩 걸렸습니다.</span><span lang="en">At peak order times a live aggregation query made product listing take 10 seconds.</span></dd></div><div><dt class="mono"><span lang="ko">접근</span><span lang="en">Approach</span></dt><dd><span lang="ko">실시간 집계를 10분 주기 사전 집계로 바꾸고, 검색을 Elasticsearch로 분리했습니다.</span><span lang="en">I replaced live aggregation with a 10-minute pre-aggregation and moved search to Elasticsearch.</span></dd></div><div><dt class="mono"><span lang="ko">결과</span><span lang="en">Result</span></dt><dd><span lang="ko">조회 10초 → 1초, DB CPU 피크 85% → 40%, 검색 1.6초 → 0.6초.</span><span lang="en">Listing 10 s → 1 s, peak DB CPU 85% → 40%, search 1.6 s → 0.6 s.</span></dd></div></dl>
+
+  <dl class="facts"><div><dt class="mono"><span lang="ko">역할</span><span lang="en">Role</span></dt><dd><span lang="ko">백엔드, 집계와 검색 구조</span><span lang="en">Backend, aggregation and search</span></dd></div><div><dt class="mono"><span lang="ko">팀</span><span lang="en">Team</span></dt><dd><span lang="ko">개발 4인, 기여 약 60%</span><span lang="en">4 developers, about 60% mine</span></dd></div><div><dt class="mono"><span lang="ko">주문</span><span lang="en">Orders</span></dt><dd><span lang="ko">월 5만 건 이상</span><span lang="en">50,000+ a month</span></dd></div><div><dt class="mono"><span lang="ko">상품</span><span lang="en">Products</span></dt><dd><span lang="ko">약 200만 건</span><span lang="en">about 2 million</span></dd></div></dl>
+
+  <section>
+    <h2>Service</h2>
+    <p lang="ko">이랜드의 슈즈 편집숍 폴더(FOLDER)의 공식 온라인 스토어입니다. 아디다스, 아식스, 컨버스, 크록스, 호카 등 여러 브랜드의 신발과 단독 상품을 팝니다. 브랜드, 신상품, 랭킹, 세일, 프로모션, 이벤트 메뉴로 구성되며, 세일 기간에는 주문과 조회가 한꺼번에 몰립니다. 제가 개발하고 운영한 서비스는 종료됐고, 지금은 새로 만든 사이트가 운영되고 있습니다.</p>
+    <p lang="en">The official online store of FOLDER, E-Land's multi-brand shoe shop. It sells shoes from brands such as Adidas, Asics, Converse, Crocs and Hoka, along with exclusives. The store is organized into brands, new arrivals, ranking, sale, promotions and events, and during sales both orders and browsing surge at once. The service I built and ran has since been closed, and a newly built site runs in its place.</p>
+  </section>
+
+  <section>
+    <h2>Problem</h2>
+    <p lang="ko">주문이 몰리는 시간대에 실시간 집계 쿼리가 병목이 됐습니다. 상품 조회에 10초가 걸렸고 DB CPU 피크는 85%였습니다.</p>
+    <p lang="en">At peak order times the live aggregation query became the bottleneck. Product listing took 10 seconds and peak DB CPU was 85%.</p>
+  </section>
+
+  <section>
+    <h2>Why this approach</h2>
+    <p class="cap" lang="ko">조회 병목을 어떻게 풀 것인가</p>
+    <p class="cap" lang="en">How to fix the listing bottleneck</p>
+    <div class="scroll" lang="ko"><table><tr><th>대안</th><th>장점</th><th>한계</th><th>결론</th></tr><tr><td>쿼리와 인덱스 튜닝만</td><td>위험이 낮음</td><td>집계 부하가 남음</td><td class="pick">부분 적용</td></tr><tr><td>10분 주기 사전 집계</td><td>조회 부하를 제거</td><td>최대 10분 지연</td><td class="pick">최종 채택</td></tr><tr><td>Redis 실시간 갱신</td><td>지연이 없음</td><td>새 인프라와 비용이 필요</td><td class="pick">제외</td></tr></table></div>
+    <div class="scroll" lang="en"><table><tr><th>Option</th><th>Upside</th><th>Limit</th><th>Decision</th></tr><tr><td>Query and index tuning only</td><td>Low risk</td><td>The aggregation load remains</td><td class="pick">Partly used</td></tr><tr><td>Pre-aggregation every 10 minutes</td><td>Removes the load from listing</td><td>Up to 10 minutes stale</td><td class="pick">Chosen</td></tr><tr><td>Live updates in Redis</td><td>No staleness</td><td>Needs new infrastructure and cost</td><td class="pick">Rejected</td></tr></table></div>
+  </section>
+
+  <section>
+    <h2>What I did</h2>
+    <figure class="fig g"><figcaption class="mono"><span lang="ko">사전 집계</span><span lang="en">Pre-aggregation</span></figcaption><div class="flow"><div class="st"><b><span lang="ko">주문 테이블</span><span lang="en">Orders table</span></b></div><i class="ar"></i><div class="st"><b><span lang="ko">Cron 집계</span><span lang="en">Cron job</span></b><span lang="ko">10분 주기</span><span lang="en">every 10 minutes</span></div><i class="ar"></i><div class="st"><b><span lang="ko">Best 집계 테이블</span><span lang="en">Best-seller table</span></b></div><i class="ar"></i><div class="st"><b><span lang="ko">상품 조회</span><span lang="en">Product listing</span></b><span lang="ko">집계 테이블만 읽음</span><span lang="en">reads only this table</span></div></div></figure>
+    <figure class="fig g"><figcaption class="mono"><span lang="ko">검색 분리</span><span lang="en">Search split</span></figcaption><div class="flow"><div class="st"><b><span lang="ko">MySQL 상품</span><span lang="en">Products in MySQL</span></b><span lang="ko">약 200만 건</span><span lang="en">about 2 million</span></div><i class="ar"></i><div class="st"><b><span lang="ko">색인 배치</span><span lang="en">Index batch</span></b><span lang="ko">변경분만</span><span lang="en">changes only</span></div><i class="ar"></i><div class="st"><b><span lang="ko">Elasticsearch</span><span lang="en">Elasticsearch</span></b></div><i class="ar"></i><div class="st"><b><span lang="ko">검색 API</span><span lang="en">Search API</span></b><span lang="ko">평균 0.6초</span><span lang="en">0.6 s average</span></div></div></figure>
+    <dl>
+      <div class="pt"><dt><span lang="ko">상품 조회 10초 → 1초 (90% 감소), DB CPU 피크 85% → 40%</span><span lang="en">Product listing, 10 s → 1 s (90% less); peak DB CPU, 85% → 40%</span></dt><dd><span lang="ko">실시간 Best 상품 집계를 10분 주기의 사전 집계로 바꿨습니다.</span><span lang="en">I replaced the live best-seller aggregation with a pre-aggregation that runs every 10 minutes.</span></dd></div>
+      <div class="pt"><dt><span lang="ko">검색 평균 1.6초 → 0.6초</span><span lang="en">Average search time, 1.6 s → 0.6 s</span></dt><dd><span lang="ko">상품 약 200만 건을 Elasticsearch로 분리했습니다.</span><span lang="en">I moved about 2 million products into Elasticsearch.</span></dd></div>
+      <div class="pt"><dt><span lang="ko">운영 업무 월 30시간 절감</span><span lang="en">30 hours of operations work saved a month</span></dt><dd><span lang="ko">Cron 기반으로 정산과 운영 배치를 자동화하고, Jenkins로 자동 배포와 수동 배포를 구성했습니다.</span><span lang="en">I automated settlement and operations batches with cron, and set up automatic and manual deploys with Jenkins.</span></dd></div>
+      <div class="pt"><dt><span lang="ko">기능 개발</span><span lang="en">Features</span></dt><dd><span lang="ko">커뮤니티(FolderingChannel), UGC 신고와 차단, 최근 본 상품 기록, 본인인증 등을 개발했습니다.</span><span lang="en">I built the community (FolderingChannel), reporting and blocking for user content, recently viewed products, identity verification and more.</span></dd></div>
+      <div class="pt g"><dt><span lang="ko">집계 테이블 교체</span><span lang="en">Swapping the aggregate table</span></dt><dd><span lang="ko">집계가 끝난 뒤 한 번에 바꿔치기해, 집계 도중의 불완전한 순위가 노출되지 않게 했습니다.</span><span lang="en">The table is swapped in one step after aggregation finishes, so a half-built ranking is never shown.</span></dd></div>
+      <div class="pt g"><dt><span lang="ko">색인 동기화</span><span lang="en">Index sync</span></dt><dd><span lang="ko">상품이 바뀌면 변경분만 Elasticsearch에 다시 색인해, 전체 재색인 없이 검색 결과를 최신으로 유지했습니다.</span><span lang="en">When products change, only the changes are re-indexed in Elasticsearch, keeping search results current without a full re-index.</span></dd></div>
+    </dl>
+  </section>
+
+  <section class="g">
+    <h2>Hard parts</h2>
+    <ul class="ls"><li><span lang="ko">실시간 순위를 10분 지연으로 바꾸려면 기획 쪽의 합의가 필요했습니다. 그 정도 지연은 구매에 영향을 주지 않는다는 점을 설명해 합의했습니다.</span><span lang="en">Changing a live ranking to one that is 10 minutes stale needed agreement from the planning side. I explained that a delay of that size does not affect purchases.</span></li><li><span lang="ko">검색을 분리하면 DB와 검색 결과가 어긋날 수 있습니다. 변경분을 바로 색인해 차이를 줄였습니다.</span><span lang="en">Splitting search off can let the database and search results drift apart. Indexing changes right away keeps the gap small.</span></li></ul>
+  </section>
+
+  <section>
+    <h2>Result</h2>
+    <p lang="ko">월 5만 건 이상의 주문을 장애 없이 처리했습니다. 구조를 바꾼 뒤로는 피크 시간대의 지연 문의가 사라졌습니다.</p>
+    <p lang="en">Over 50,000 orders a month were handled without an outage. After the change, complaints about peak-time delays stopped.</p>
+    <figure class="fig bars"><div class="br"><div class="bl"><span lang="ko">상품 조회 응답</span><span lang="en">Product listing response</span></div><div class="ln" style="--r:100.0"><i></i><span class="mono"><span lang="ko">10초</span><span lang="en">10 s</span></span></div><div class="ln after" style="--r:10.0"><i></i><span class="mono"><span lang="ko">1초</span><span lang="en">1 s</span></span></div></div><div class="br"><div class="bl"><span lang="ko">DB CPU 피크</span><span lang="en">Peak DB CPU</span></div><div class="ln" style="--r:100.0"><i></i><span class="mono"><span lang="ko">85%</span><span lang="en">85%</span></span></div><div class="ln after" style="--r:47.1"><i></i><span class="mono"><span lang="ko">40%</span><span lang="en">40%</span></span></div></div><div class="br"><div class="bl"><span lang="ko">검색 평균 응답</span><span lang="en">Average search time</span></div><div class="ln" style="--r:100.0"><i></i><span class="mono"><span lang="ko">1.6초</span><span lang="en">1.6 s</span></span></div><div class="ln after" style="--r:37.5"><i></i><span class="mono"><span lang="ko">0.6초</span><span lang="en">0.6 s</span></span></div></div><figcaption class="mono note"><span lang="ko">회색은 개선 전, 주황은 개선 후입니다. 선의 길이는 실제 비율입니다.</span><span lang="en">Grey is before, orange is after. Line lengths are to scale.</span></figcaption></figure>
+  </section>
+
+  <section>
+    <h2>Measurement &amp; trade-offs</h2>
+    <dl>
+      <div class="pt"><dt><span lang="ko">측정</span><span lang="en">Measurement</span></dt><dd><span lang="ko">슬로우 쿼리 로그와 APM 기준으로 피크 시간(20~23시)의 2주 일평균을 비교했습니다. 검색은 상위 검색어 100개의 평균 응답입니다.</span><span lang="en">I compared two-week daily averages at peak hours (8 to 11 pm) using slow query logs and APM. Search time is the average over the top 100 search terms.</span></dd></div>
+    </dl>
+  </section>
+
+  <section class="g">
+    <h2>What I learned</h2>
+    <ul class="ls"><li><span lang="ko">실시간일 필요가 없는 데이터를 가려낸 것만으로 가장 큰 병목이 사라졌습니다.</span><span lang="en">Just identifying the data that did not need to be real-time removed the biggest bottleneck.</span></li></ul>
+  </section>
+
+  <nav class="pn" aria-label="Projects"><a href="hl-science-mall.html"><span class="mono">← PREV</span><span lang="ko">HL SCIENCE MALL 운영</span><span lang="en">HL SCIENCE MALL operations</span></a><span></span></nav>
+</div>
+<script>
+  // 언어 전환: 메인 페이지와 같은 저장값을 쓴다
+  const setLang = l => {
+    document.documentElement.dataset.lang = document.documentElement.lang = l;
+    document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.l === l));
+    try { localStorage.setItem('lang', l); } catch (e) {}
+  };
+  document.querySelector('.lang').onclick = e => e.target.dataset.l && setLang(e.target.dataset.l);
+  setLang(document.documentElement.dataset.lang);
+  if (location.search.includes('review')) document.documentElement.classList.add('review');   // 추정 내용 표시
+</script>
+</body>
+</html>
