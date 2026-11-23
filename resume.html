@@ -564,11 +564,11 @@
           <div class="org">계열사 인사 시스템(사용자 약 500명) 단독 운영 · SSO 통합 로그인 PL</div>
           <div class="stack">Java · Spring · JSP · Oracle · JavaScript · Jenkins · JEUS · Git</div>
           <ul>
-            <li class="problem"><strong>문제</strong> — 핵심 화면 p95 응답이 <strong>18초</strong>에 달하고, 수기 입력과 FTP 수동 배포로 오류·오배포 위험이 누적됨</li>
+            <li class="problem"><strong>문제</strong> — 핵심 화면 응답이 <strong>18초</strong>에 달하고, 수기 입력과 FTP 수동 배포로 오류·오배포 위험이 누적됨</li>
             <li><b>핵심 화면 응답 18초 → 1.0초(94%↓)</b> — AWR·개발자 도구로 병목이 하드파싱과 반복 조회임을 특정하고, 동적 SQL 정적화·인덱스 보완·서버 캐시(적중률 87%)·접속 로그 비동기 분리를 적용</li><li><b>일괄 결재(최대 300건) 14초 → 1초 이내</b> — 건별 직렬 처리를 스레드 풀 8개 비동기 병렬로 전환, 결재선 순서는 문서 단위 락으로 보장</li><li><b>SSO 통합 로그인 PL(5인·4개월)</b> — 대상 시스템 6개의 분석·설계·개발·검증 주도, 로그인 관련 문의 월 12건 → 2건</li><li><b>입사자 등록 20분 → 1분(월 약 13시간 절감)</b> — 엑셀 업로드·유효성 검증·DB 자동 반영 구조로 전환</li><li><b>개인정보 마스킹 62개 화면 일원화</b> — 공통 AOP·인터셉터로 누락 0건, 권한 등급별 해제와 접근 로그·감사 추적으로 내부 개인정보 점검 지적 0건</li><li><b>배포 40분 → 6분, 오배포 연 3건 → 0건</b> — FTP 수동 배포를 Jenkins·Git 파이프라인으로 전환</li>
-            <li class="result"><strong>성과</strong> — 핵심 화면 5종 평균 응답을 개선 전후 각 2주 일평균으로 비교(Oracle AWR·Chrome DevTools), 연 12회 이상 무중단 배포·단독 운영</li>
+            <li class="result"><strong>성과</strong> — 핵심 화면 5종 응답을 개선 전후 각 2주씩 비교(Oracle AWR·Chrome DevTools), 연 12회 이상 무중단 배포·단독 운영</li>
           </ul>
-          <div class="cmp"><div class="cmp-title">대안 검토 — 응답 지연 해소</div><table><tr><th>대안</th><th>장점</th><th>한계</th><th>결론</th></tr><tr><td>서버 스펙 증설</td><td>코드 변경 없음</td><td>병목이 하드파싱·반복 조회라 효과 제한</td><td class="pick">제외</td></tr><tr><td>인덱스 보완만</td><td>위험 낮음</td><td>동적 SQL 파싱 비용 잔존</td><td class="pick">1단계</td></tr><tr><td>정적 SQL + 서버 캐시 + 로그 비동기</td><td>파싱·조회·I/O 동시 제거</td><td>캐시 무효화 규칙 필요</td><td class="pick">최종 채택</td></tr></table></div><p class="measure"><b>측정</b> — p95 응답은 Chrome DevTools Network 기준, 하드파싱 횟수는 Oracle AWR 리포트로 개선 전후 비교<br>· <b>트레이드오프</b> 서버 캐시 갱신 지연 최대 30초는 인사 데이터 특성상 현업 합의 후 수용</p>
+          <div class="cmp"><div class="cmp-title">대안 검토 — 응답 지연 해소</div><table><tr><th>대안</th><th>장점</th><th>한계</th><th>결론</th></tr><tr><td>서버 스펙 증설</td><td>코드 변경 없음</td><td>병목이 하드파싱·반복 조회라 효과 제한</td><td class="pick">제외</td></tr><tr><td>인덱스 보완만</td><td>위험 낮음</td><td>동적 SQL 파싱 비용 잔존</td><td class="pick">1단계</td></tr><tr><td>정적 SQL + 서버 캐시 + 로그 비동기</td><td>파싱·조회·I/O 동시 제거</td><td>캐시 무효화 규칙 필요</td><td class="pick">최종 채택</td></tr></table></div><p class="measure"><b>측정</b> — 응답 시간은 Chrome DevTools Network 기준, 하드파싱 횟수는 Oracle AWR 리포트로 개선 전후 비교<br>· <b>트레이드오프</b> 서버 캐시 갱신 지연 최대 30초는 인사 데이터 특성상 현업 합의 후 수용</p>
         </div>
       </div>
       <div class="item">

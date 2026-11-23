@@ -45,19 +45,12 @@
   <section>
     <h2>What I did</h2>
     <figure class="fig"><figcaption class="mono"><span lang="ko">보고서 초안 생성 흐름 (LangGraph)</span><span lang="en">Report drafting flow (LangGraph)</span></figcaption><div class="flow"><div class="st"><b><span lang="ko">업로드</span><span lang="en">Upload</span></b><span lang="ko">사내 문서</span><span lang="en">internal documents</span></div><i class="ar"></i><div class="st"><b><span lang="ko">요약</span><span lang="en">Summary</span></b></div><i class="ar"></i><div class="st"><b><span lang="ko">검색</span><span lang="en">Search</span></b><span lang="ko">근거 인용</span><span lang="en">cited evidence</span></div><i class="ar"></i><div class="st"><b><span lang="ko">초안 생성</span><span lang="en">Draft</span></b><span lang="ko">보고서 초안</span><span lang="en">report draft</span></div></div></figure>
-    <figure class="fig"><figcaption class="mono"><span lang="ko">품질 점검 루프</span><span lang="en">Quality loop</span></figcaption><div class="flow"><div class="st"><b><span lang="ko">평가셋</span><span lang="en">Evaluation set</span></b><span lang="ko">100문항</span><span lang="en">100 questions</span></div><i class="ar"></i><div class="st"><b><span lang="ko">답변 생성</span><span lang="en">Generate answers</span></b></div><i class="ar"></i><div class="st"><b><span lang="ko">인용 대조</span><span lang="en">Check citations</span></b><span lang="ko">환각, 누락</span><span lang="en">hallucination, omissions</span></div><i class="ar"></i><div class="st"><b><span lang="ko">개선</span><span lang="en">Improve</span></b><span lang="ko">프롬프트, 검색</span><span lang="en">prompts, search</span></div><i class="ar"></i><div class="st"><b><span lang="ko">재평가</span><span lang="en">Re-evaluate</span></b></div></div></figure>
     <dl>
       <div class="pt"><dt><span lang="ko">보고서 초안 4시간 → 25분</span><span lang="en">Report draft, 4 hours → 25 minutes</span></dt><dd><span lang="ko">업로드 → 요약 → 검색 → 초안 생성으로 이어지는 과정을 LangGraph 멀티스텝 플로우로 구현했습니다.</span><span lang="en">I built the upload → summary → search → draft sequence as a multi-step LangGraph flow.</span></dd></div>
       <div class="pt"><dt><span lang="ko">근거 인용 정확도 91%</span><span lang="en">91% citation accuracy</span></dt><dd><span lang="ko">자체 평가셋 100문항으로 환각과 누락을 점검하면서 프롬프트와 검색 단계를 개선했습니다.</span><span lang="en">I checked for hallucination and omissions with a 100-question evaluation set and improved the prompts and the search step against it.</span></dd></div>
-      <div class="pt"><dt><span lang="ko">검색 단계</span><span lang="en">The search step</span></dt><dd><span lang="ko">문서를 조각으로 나눠 색인하고, 질문과 관련된 조각만 찾아 초안 생성에 넘깁니다. 초안의 문장에는 출처 조각을 붙입니다.</span><span lang="en">Documents are split into chunks and indexed, and only the chunks relevant to the question go on to drafting. Sentences in the draft carry their source chunk.</span></dd></div>
-      <div class="pt"><dt><span lang="ko">단계별 상태 관리</span><span lang="en">State per step</span></dt><dd><span lang="ko">LangGraph의 상태에 중간 결과를 담아, 한 단계가 실패하면 그 단계만 다시 실행합니다.</span><span lang="en">Intermediate results live in the LangGraph state, so when one step fails only that step runs again.</span></dd></div>
     </dl>
   </section>
 
-  <section>
-    <h2>Hard parts</h2>
-    <ul class="ls"><li><span lang="ko">긴 문서를 한 번에 넣으면 요약이 뭉개졌습니다. 나눠서 요약한 뒤 합치는 방식으로 바꿨습니다.</span><span lang="en">Feeding a long document in one go blurred the summary. I changed to summarizing in parts and then combining.</span></li><li><span lang="ko">그럴듯하지만 출처가 없는 문장이 초안에 섞였습니다. 인용이 붙지 않은 문장은 초안에서 빼도록 했습니다.</span><span lang="en">Plausible sentences with no source crept into drafts. Sentences without a citation are now dropped from the draft.</span></li></ul>
-  </section>
 
   <section>
     <h2>Result</h2>
@@ -66,10 +59,6 @@
     <figure class="fig bars"><div class="br"><div class="bl"><span lang="ko">보고서 초안 작성 시간</span><span lang="en">Time to draft a report</span></div><div class="ln" style="--r:100.0"><i></i><span class="mono"><span lang="ko">4시간</span><span lang="en">4 h</span></span></div><div class="ln after" style="--r:10.4"><i></i><span class="mono"><span lang="ko">25분</span><span lang="en">25 min</span></span></div></div><figcaption class="mono note"><span lang="ko">회색은 개선 전, 주황은 개선 후입니다. 선의 길이는 실제 비율입니다.</span><span lang="en">Grey is before, orange is after. Line lengths are to scale.</span></figcaption></figure>
   </section>
 
-  <section>
-    <h2>What I learned</h2>
-    <ul class="ls"><li><span lang="ko">평가셋을 먼저 만들어 두니 개선이 감이 아니라 숫자로 확인됐습니다.</span><span lang="en">Building the evaluation set first meant improvements showed up as numbers, not impressions.</span></li></ul>
-  </section>
 
   <nav class="pn" aria-label="Projects"><a href="investment-review-agent.html"><span class="mono">← PREV</span><span lang="ko">투자심의 사전검토 AI 에이전트</span><span lang="en">Pre-review AI agent for investment committees</span></a><a class="nx" href="ehr.html"><span class="mono">NEXT →</span><span lang="ko">e-HR 인사 시스템 성능 고도화와 운영</span><span lang="en">e-HR system performance and operations</span></a></nav>
 </div>

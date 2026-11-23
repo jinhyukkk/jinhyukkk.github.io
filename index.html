@@ -56,8 +56,6 @@
   #intro h2 { font-size: 60px; line-height: 69px; font-weight: 400; color: var(--ink); letter-spacing: -0.01em; }
   #intro .sub { font-style: italic; font-size: 24px; color: var(--accent); margin-top: 4px; }
   #intro .bio { font-size: 18px; line-height: 1.75; color: var(--muted); margin-top: 18px; max-width: 560px; }
-  #intro .now { margin-top: 32px; font-size: 17px; }
-  #intro .now b { color: var(--ink); font-weight: 500; }
 
   .head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
   .head h2 { font-size: 48px; line-height: 55px; font-weight: 400; color: var(--ink); letter-spacing: -0.01em; }
@@ -214,19 +212,15 @@
       <p class="sub" id="roleSub">now forward deployed, from a team's request to production</p>
       <p class="bio" lang="ko">백엔드 6년 차 개발자입니다. 지금은 현업 가까이에서 문제를 듣고, 만들고, 사용하게 만드는 Forward Deployed 역할까지 맡고 있습니다. 유진그룹에 AI 서비스를 도입해 법무, 경영, 증권, 보안 분야의 요청을 에이전트와 MCP 서버로 전달했습니다. 그 전에는 일 1,000건 이상의 주문을 처리하는 커머스에서 성능과 정합성을 다졌습니다.</p>
       <p class="bio" lang="en">I am a backend engineer in my sixth year. These days I also work forward deployed: I sit next to business teams, listen to the problem, build, and stay until it is used. I brought an AI service to Eugene Group and delivered agents and MCP servers for legal, management, securities and security work. Before that I learned performance and data integrity on an e-commerce store handling over 1,000 orders a day.</p>
-      <p class="now" lang="ko"><span class="mono">building</span>&nbsp; <b>투자심의 AI 에이전트</b>. 누적 가입자 1,130명이 쓰는 그룹 AI 서비스에서 만들고 있습니다.</p>
-      <p class="now" lang="en"><span class="mono">building</span>&nbsp; <b>an investment review agent</b>, on a group AI service with 1,130 sign-ups.</p>
     </section>
 
     <section id="strengths">
       <div class="head rv"><h2>What I'm good at</h2></div>
       <dl class="rows rv">
-        <div class="sr"><dt class="mono"><span lang="ko">요청을 범위로 바꾸기</span><span lang="en">Scoping with teams</span></dt><dd><p lang="ko">요청을 그대로 만들지 않고 실제로 필요한 것과 제약을 먼저 확인합니다. "투자심의를 AI로 대체"는 AI 사전 심의와 경영진 결재의 두 단계로, "상담사례 834건 실시간 크롤링"은 미리 모아 검색하는 방식으로 합의했습니다.</p><p lang="en">I do not build requests as stated. I check what is actually needed and what the constraints are. "Replace the investment review with AI" became AI pre-review plus management approval, and "crawl 834 cases live" became collect in advance and search.</p><div class="sl mono"><a href="projects/investment-review-agent.html">Review agent ↗</a><a href="projects/group-ai-platform.html">Group AI ↗</a></div></dd></div>
-        <div class="sr"><dt class="mono"><span lang="ko">빠르게 만들어 전달</span><span lang="en">Shipping fast</span></dt><dd><p lang="ko">공정거래 준법 에이전트는 요청 메일부터 배포까지 8일, 신문 클리핑은 첫 결과까지 10일, 계약서 검토는 하루가 걸렸습니다. Lambda와 API Gateway를 공통 패턴으로 묶어 MCP 서버 12개를 만들었습니다.</p><p lang="en">The fair-trade compliance agent took 8 days from request to deployment, newspaper clipping 10 days to a first result, and contract review one day. A shared Lambda and API Gateway pattern produced 12 MCP servers.</p><div class="sl mono"><a href="projects/group-ai-platform.html">Group AI ↗</a></div></dd></div>
-        <div class="sr"><dt class="mono"><span lang="ko">제약 안에서 배포</span><span lang="en">Deploying within constraints</span></dt><dd><p lang="ko">플랫폼이 멀티에이전트를 지원하지 않아 에이전트 하나 안에서 다섯 관점을 차례로 이었습니다. 유료 단말에 API가 없어 공개 API로 시황 데이터를 대체했고, 연동할 수 없는 항목은 이유를 문서로 남기고 제외했습니다.</p><p lang="en">The platform had no multi-agent support, so I chained five viewpoints inside one agent. A paid terminal had no API, so I replaced the market data with public APIs and documented why some items had to be left out.</p><div class="sl mono"><a href="projects/investment-review-agent.html">Review agent ↗</a><a href="projects/group-ai-platform.html">Group AI ↗</a></div></dd></div>
-        <div class="sr"><dt class="mono"><span lang="ko">정착과 측정</span><span lang="en">Adoption and measurement</span></dt><dd><p lang="ko">지표를 정의해 매월 보고하고, 사용자 10명을 인터뷰하고, 2026년 7월과 10월에 교육을 2회씩 직접 진행했습니다. 누적 가입자는 337명에서 1,130명이 됐습니다. 지표가 테스트 물량으로 부풀려졌을 때는 대표이사에게 먼저 보고했습니다.</p><p lang="en">I defined metrics and reported them monthly, interviewed 10 users, and taught two training sessions each in July and October 2026. Sign-ups went from 337 to 1,130. When a metric was inflated by test volume, I told the CEO first.</p><div class="sl mono"><a href="projects/group-ai-platform.html">Group AI ↗</a></div></dd></div>
-        <div class="sr"><dt class="mono"><span lang="ko">현업과 직접 일하기</span><span lang="en">Working with business teams</span></dt><dd><p lang="ko">법무, 경영, 증권, 보안 분야의 요청을 담당자에게 직접 듣고 에이전트로 만들었습니다. 투자심의 에이전트는 현업 팀과 리뷰 6회를 거쳐 범위를 정했고, 리포트의 "추가 확인 필요 항목"을 본 심의의 질의 목록으로 쓰는 운영 절차까지 함께 정리했습니다.</p><p lang="en">I heard requests in legal, management, securities and security directly from the people asking, and turned them into agents. For the investment review agent I set the scope with the team over 6 reviews, and agreed with them an operating procedure in which the report's "items needing follow-up" become the committee's question list.</p><div class="sl mono"><a href="projects/investment-review-agent.html">Review agent ↗</a><a href="projects/group-ai-platform.html">Group AI ↗</a></div></dd></div>
-        <div class="sr"><dt class="mono"><span lang="ko">성능과 정합성</span><span lang="en">Performance and integrity</span></dt><dd><p lang="ko">병목을 지표로 먼저 특정한 뒤 구조를 바꿉니다. 화면 응답 18초 → 1초, 상품 조회 10초 → 1초. 복합 결제 환불 시나리오 40건을 검증했고, 30만 건 이관에서 불일치가 0건이었습니다.</p><p lang="en">I locate the bottleneck with metrics first, then change the structure. Screen response 18 s → 1 s, product listing 10 s → 1 s. I verified 40 mixed-payment refund scenarios and migrated 300,000 records with zero mismatches.</p><div class="sl mono"><a href="projects/ehr.html">e-HR ↗</a><a href="projects/eland-folder-mall.html">FOLDER MALL ↗</a><a href="projects/smilegate-global.html">Smilegate Shop ↗</a><a href="projects/foodcare-cle.html">Foodcare CLE ↗</a></div></dd></div>
+        <div class="sr"><dt class="mono"><span lang="ko">성능 개선</span><span lang="en">Performance</span></dt><dd><p lang="ko">느린 원인을 수치로 먼저 찾은 뒤 구조를 바꿉니다. e-HR의 핵심 화면 응답을 18초에서 1초로, 폴더몰의 상품 조회를 10초에서 1초로 줄이고 DB CPU 피크를 85%에서 40%로 낮췄습니다.</p><p lang="en">I measure where it is slow before changing the structure. I cut key screen response in e-HR from 18 s to 1 s, and product listing at FOLDER MALL from 10 s to 1 s, with peak DB CPU down from 85% to 40%.</p><div class="sl mono"><a href="projects/ehr.html">e-HR ↗</a><a href="projects/eland-folder-mall.html">FOLDER MALL ↗</a></div></dd></div>
+        <div class="sr"><dt class="mono"><span lang="ko">결제와 데이터 정합성</span><span lang="en">Payment and data integrity</span></dt><dd><p lang="ko">돈과 데이터가 어긋나지 않게 만듭니다. 포인트가 섞인 부분 환불 시나리오 40건을 검증해 금액 불일치 0건으로 4개국 동시 출시했고, 30만 건 이관에서도 불일치가 0건이었습니다.</p><p lang="en">I make sure money and data never drift apart. I verified 40 partial-refund scenarios for payments mixed with points and launched in 4 countries at once with zero amount mismatches, and migrated 300,000 records with zero mismatches.</p><div class="sl mono"><a href="projects/smilegate-global.html">Smilegate Shop ↗</a><a href="projects/foodcare-cle.html">Foodcare CLE ↗</a></div></dd></div>
+        <div class="sr"><dt class="mono"><span lang="ko">인증과 보안 연동</span><span lang="en">Auth and secure integration</span></dt><dd><p lang="ko">내부망 포트를 하나도 열지 않는 구조로 보안 심의를 1회에 통과했고, OAuth 2.0을 표준화해 신규 계열사 연동을 2주에서 3일로 줄였습니다. SSO 통합 로그인 PL을 맡아 로그인 문의를 월 12건에서 2건으로 줄였습니다.</p><p lang="en">A design that opened zero internal ports passed security review first time, and a standard OAuth 2.0 flow cut new affiliate onboarding from 2 weeks to 3 days. As project leader for single sign-on, I cut login inquiries from 12 a month to 2.</p><div class="sl mono"><a href="projects/group-ai-platform.html">Group AI ↗</a><a href="projects/ehr.html">e-HR ↗</a></div></dd></div>
+        <div class="sr"><dt class="mono"><span lang="ko">요청을 범위로 바꿔 빠르게 전달</span><span lang="en">Scoping requests and shipping fast</span></dt><dd><p lang="ko">요청을 그대로 만들지 않고 실제로 필요한 것과 제약을 먼저 확인합니다. "투자심의를 AI로 대체"는 AI 사전 심의와 경영진 결재의 두 단계로 합의했고, 공정거래 준법 에이전트는 요청 메일부터 배포까지 8일이 걸렸습니다.</p><p lang="en">I do not build requests as stated; I first check what is actually needed and what the constraints are. "Replace the investment review with AI" became AI pre-review plus management approval, and the fair-trade compliance agent shipped 8 days after the request email.</p><div class="sl mono"><a href="projects/investment-review-agent.html">Review agent ↗</a><a href="projects/group-ai-platform.html">Group AI ↗</a></div></dd></div>
       </dl>
     </section>
 
@@ -312,15 +306,15 @@
           <p lang="ko">임직원 약 500명이 쓰는 계열사 인사 시스템을 단독 운영하며 SSO 통합 로그인을 이끌었습니다.</p>
           <p lang="en">I run an HR system for about 500 employees on my own, and led its single sign-on project.</p>
           <ul lang="ko">
-            <li>AWR로 병목을 특정한 뒤 동적 SQL 정적화와 서버 캐시로 <b>핵심 화면 응답 18초 → 1.0초</b></li>
-            <li>건별 직렬 처리를 스레드 풀 병렬로 바꿔 <b>일괄 결재 300건 14초 → 1초</b></li>
+            <li>DB 분석 리포트(AWR)로 느린 원인을 찾고, 쿼리를 미리 고정해 두고 자주 쓰는 데이터를 서버에 저장해 <b>핵심 화면 응답 18초 → 1.0초</b></li>
+            <li>한 건씩 차례로 처리하던 결재를 여러 건 동시에 처리하도록 바꿔 <b>일괄 결재 300건 14초 → 1초</b></li>
             <li>SSO 통합 로그인 PL(5인, 4개월), 로그인 문의 월 12건 → 2건</li>
             <li>Gradle 빌드와 Jenkins 파이프라인을 도입하고 운영서버와 저장소의 차이 900여 건을 정합화, 개발서버 배포 자동화</li>
             <li>연말정산을 비롯한 법정 패치 20회 이상 적용, 개인정보 마스킹과 해제 로그 공통화</li>
           </ul>
           <ul lang="en">
-            <li>Located the bottleneck with Oracle AWR, then used static SQL and a server cache to cut <b>key screen response from 18 s to 1.0 s</b></li>
-            <li>Replaced one-by-one processing with a thread pool, cutting <b>bulk approval of 300 items from 14 s to 1 s</b></li>
+            <li>Found the cause with database reports (Oracle AWR), then fixed the queries in advance and kept frequently used data on the server, cutting <b>key screen response from 18 s to 1.0 s</b></li>
+            <li>Approvals handled one at a time now run several at once, cutting <b>bulk approval of 300 items from 14 s to 1 s</b></li>
             <li>Led the single sign-on project (5 people, 4 months), reducing login inquiries from 12 to 2 a month</li>
             <li>Introduced a Gradle build and a Jenkins pipeline, reconciled 900+ files that had drifted between production and the repository, and automated dev-server deploys</li>
             <li>Applied 20+ statutory patches including year-end tax settlement, and unified personal data masking and unmask logging</li>
@@ -346,17 +340,15 @@
           <p lang="ko">스마일게이트의 공식 굿즈샵을 여러 나라에 여는 프로젝트였습니다. 국가별 언어, 통화, 결제를 담는 구조를 설계하고, 결제 프로세스의 복합 결제와 환불·교환 기능을 개발했습니다.</p>
           <p lang="en">A project to open Smilegate's official goods store in several countries. I designed the structure for per-country language, currency and payment, and built mixed payments, refunds and exchanges in the payment flow.</p>
           <ul lang="ko">
-            <li>국가별 통화, 결제 수단, 배송, 언어를 <b>정책 테이블</b>로 옮기고 결제를 공통 인터페이스로 정의해 <b>국가 추가 대응 2주 → 2일</b></li>
-            <li>포인트 2종이 섞인 복합 결제의 부분 환불 시나리오 40건을 먼저 정의하고 구현. <b>금액 불일치 0건</b>으로 4개국 동시 출시</li>
-            <li>PG 부분 취소와 포인트 복원을 하나의 흐름으로 묶고, 실패하면 되돌리거나 재시도해 <b>결제와 포인트의 정합성</b>을 유지</li>
-            <li>교환은 환불과 재주문으로 나누지 않고 <b>차액만 정산</b>. 환율은 주문 시점에 고정해 금액 오차를 방지</li>
+            <li>국가 정책 테이블과 공통 결제 인터페이스로 <b>국가 추가 대응 2주 → 2일</b></li>
+            <li>포인트 2종이 섞인 복합 결제의 부분 환불 시나리오 40건을 검증해 <b>금액 불일치 0건</b>으로 4개국 동시 출시</li>
+            <li>장바구니의 배송 국가 선택, 주문과 <b>교환·반품·환불 클레임</b> 프로세스 개발</li>
             <li>국내·해외 결제(이니시스, 엑심베이), EMS, 복지포인트, SNS 로그인 5종 연동</li>
           </ul>
           <ul lang="en">
-            <li>Moved each country's currency, payment methods, shipping and language into <b>a policy table</b> and put payments behind a shared interface. <b>Adding a country went from 2 weeks to 2 days</b></li>
-            <li>Defined 40 partial-refund scenarios for payments mixed with two kinds of points before building. Launched in 4 countries at once with <b>zero amount mismatches</b></li>
-            <li>The PG partial cancel and the point restore run as one flow that rolls back or retries on failure, keeping <b>payments and points consistent</b></li>
-            <li>Exchanges settle <b>only the price difference</b> instead of a refund and a new order. The exchange rate is locked at order time</li>
+            <li>A country policy table and a shared payment interface cut <b>the work to add a country from 2 weeks to 2 days</b></li>
+            <li>Verified 40 partial-refund scenarios for payments mixed with two kinds of points and launched in 4 countries at once with <b>zero amount mismatches</b></li>
+            <li>Built country selection in the cart and the order, <b>exchange, return and refund claim</b> flows</li>
             <li>Integrated domestic and overseas payments (Inicis, Eximbay), EMS, welfare points and 5 social logins</li>
           </ul>
           <div class="tags mono"><span>PHP</span><span>CodeIgniter</span><span>MySQL</span></div>
@@ -370,14 +362,12 @@
           <p lang="ko">고향사랑기부제 플랫폼입니다. 여러 지자체와 답례품 셀러를 담는 지자체 구조를 설계하고, 운영 기능과 커뮤니티 기능을 4개월 동안 개발했습니다.</p>
           <p lang="en">A platform for Korea's hometown donation program. Over four months I designed the structure that holds many local governments and gift sellers, and built the operations and community features.</p>
           <ul lang="ko">
-            <li>지자체, 셀러, 답례품을 <b>계층 구조</b>로 설계하고, 지자체별로 권한과 데이터 접근 범위를 분리</li>
-            <li><b>지자체별 맞춤형 홈페이지</b>를 공통 템플릿 구조로 만들어, 새 지자체는 코드 수정 없이 관리자 등록만으로 추가</li>
+            <li>셀러와 지자체 관리 기능, <b>지자체별 맞춤형 홈페이지</b> 개발</li>
             <li>UGC 정책에 맞춘 <b>회원 신고와 차단</b> 기능 개발</li>
             <li>입점과 제휴 문의를 관리자 화면에서 처리하도록 만들어 운영 프로세스 표준화</li>
           </ul>
           <ul lang="en">
-            <li>Designed local governments, sellers and gifts as <b>a hierarchy</b>, with permissions and data access scoped per local government</li>
-            <li>Built <b>a home page per local government</b> on a shared template, so a new one is added from the admin screen with no code change</li>
+            <li>Built seller and local government management and <b>a home page per local government</b></li>
             <li>Built <b>member reporting and blocking</b> to fit the user-content policy</li>
             <li>Moved onboarding and partnership inquiries into the admin screens, standardizing operations</li>
           </ul>
@@ -392,16 +382,14 @@
           <p lang="ko">유리병 이유식 브랜드의 쇼핑몰을 새 플랫폼으로 구축한 프로젝트입니다. 레거시 데이터의 마이그레이션과 이유식 일정 배송 기능 개발을 맡았습니다.</p>
           <p lang="en">A project to build a new platform for a glass-jar baby food brand's store. I owned the migration of legacy data and built scheduled delivery for the baby food plans.</p>
           <ul lang="ko">
-            <li>회원과 콘텐츠 <b>30만 건 이관, 불일치 0건</b>. 건수는 전수 비교, 금액은 회원별 합계와 샘플 2,000건으로 대조</li>
-            <li>본 이관 전에 리허설을 돌려 오류 유형과 변환 규칙을 먼저 정리</li>
-            <li>월령 단계별 이유식을 일정대로 보내는 <b>일정 배송</b> 개발. 배송일을 주문 시점에 생성하고 휴일과 배송 불가일을 피해 조정</li>
-            <li>배송일 변경, 건너뛰기, 일시 중지를 지원하고 출고 마감 이후의 변경은 차단</li>
+            <li>회원과 콘텐츠 <b>30만 건 이관, 건수와 금액 대사 불일치 0건</b> (전수 건수 대조와 샘플 2,000건 대조)</li>
+            <li>월령 단계별 이유식을 일정대로 보내는 <b>일정 배송</b> 기능 개발</li>
+            <li>Elasticsearch 검색 연동, SNS 로그인과 공유 연동</li>
           </ul>
           <ul lang="en">
-            <li><b>Migrated 300,000 member and content records with zero mismatches</b>. Counts compared in full, amounts by per-member totals and a 2,000-record sample</li>
-            <li>Ran a rehearsal before the real migration to sort out error types and conversion rules</li>
-            <li>Built <b>scheduled delivery</b> of baby food by age stage. Delivery dates are generated at order time and moved off holidays and no-delivery days</li>
-            <li>Customers can change, skip or pause a delivery, and changes after the shipping cut-off are blocked</li>
+            <li><b>Migrated 300,000 member and content records with zero mismatches</b> in counts and amounts (full count check plus a 2,000-record sample)</li>
+            <li>Built <b>scheduled delivery</b> of baby food by age stage</li>
+            <li>Integrated Elasticsearch search, social login and sharing</li>
           </ul>
           <div class="tags mono"><span>PHP</span><span>MySQL</span><span>Elasticsearch</span></div>
         </article>
@@ -414,15 +402,13 @@
           <p lang="ko">건강기능식품 자사몰에 네이버페이 결제를 연동하고, 운영과 기능 개발을 맡았습니다.</p>
           <p lang="en">I integrated Naver Pay into a health supplement brand's own online store, and ran and extended the store.</p>
           <ul lang="ko">
-            <li><b>네이버페이 주문형 API 연동</b>. 주문 번호 기준으로 중복 생성을 막고, 수집이 실패하면 다음 주기에 이어서 받음</li>
-            <li>뒤늦게 바뀌는 취소·반품 상태를 주기적으로 다시 동기화</li>
-            <li>관리자 주문 검색 조건을 넓히고, 자주 쓰는 조건에 맞춰 인덱스 정리</li>
+            <li><b>네이버페이 주문형 API 연동</b>, 관리자 검색 고도화</li>
+            <li>SNS 간편 로그인과 회원가입 개발, 크론 자동화 프로그램 운영</li>
             <li><b>월 2,000건 이상</b> 주문을 장애 없이 운영</li>
           </ul>
           <ul lang="en">
-            <li><b>Integrated the Naver Pay order API</b>. Orders are deduplicated by order number, and a failed collection resumes on the next cycle</li>
-            <li>Late cancel and return statuses are re-synced periodically</li>
-            <li>Widened admin order search and tuned indexes for the most used conditions</li>
+            <li><b>Integrated the Naver Pay order API</b> and improved admin search</li>
+            <li>Built social login and sign-up, and ran the cron automation programs</li>
             <li>Ran a store with <b>over 2,000 orders a month</b> without an outage</li>
           </ul>
           <div class="tags mono"><span>PHP</span><span>MySQL</span><span>Naver Pay API</span></div>
@@ -437,16 +423,14 @@
           <p lang="en">The official online store of FOLDER, E-Land's multi-brand shoe shop. Over 6 months of build and 22 months of operations it handled more than 50,000 orders a month, and I worked on performance, search and new features (the FOLDER social feed and recently viewed products).</p>
           <ul lang="ko">
             <li>실시간 집계를 10분 주기 사전 집계로 바꿔 <b>상품 조회 10초 → 1초</b>, DB CPU 피크 85% → 40%</li>
-            <li>집계 테이블을 한 번에 교체해, 집계 도중의 불완전한 순위가 노출되지 않게 함</li>
-            <li>상품 약 200만 건을 Elasticsearch로 분리하고 변경분만 색인해 <b>검색 평균 1.6초 → 0.6초</b></li>
-            <li><b>폴더 SNS</b>의 팔로우 피드를 미리 만들어 두는 방식으로 구현. <b>최근 본 상품</b>은 비회원 쿠키와 회원 테이블을 로그인할 때 병합</li>
+            <li>상품 약 200만 건을 Elasticsearch로 분리해 <b>검색 평균 1.6초 → 0.6초</b></li>
+            <li>신규 기능 개발: <b>폴더 SNS</b>(FolderingChannel)의 팔로우와 UGC 신고·차단, <b>최근 본 상품</b> 기록</li>
             <li>Cron 배치와 Jenkins 배포로 <b>운영 업무 월 30시간 절감</b></li>
           </ul>
           <ul lang="en">
             <li>Replaced live aggregation with a 10-minute pre-aggregation, cutting <b>product listing from 10 s to 1 s</b> and peak DB CPU from 85% to 40%</li>
-            <li>Swapped the aggregate table in one step, so a half-built ranking is never shown</li>
-            <li>Moved about 2 million products to Elasticsearch and re-indexed only what changed, cutting <b>average search time from 1.6 s to 0.6 s</b></li>
-            <li>Built the follow feed of <b>the FOLDER social feed</b> ahead of time instead of joining at read time. <b>Recently viewed products</b> merge a guest cookie and a member table at login</li>
+            <li>Moved about 2 million products to Elasticsearch, cutting <b>average search time from 1.6 s to 0.6 s</b></li>
+            <li>New features: follow, reporting and blocking for <b>the FOLDER social feed</b> (FolderingChannel), and <b>recently viewed products</b></li>
             <li>Cron batches and Jenkins deploys <b>saved 30 hours of operations work a month</b></li>
           </ul>
           <div class="tags mono"><span>PHP</span><span>MySQL</span><span>Elasticsearch</span><span>Jenkins</span></div>
@@ -506,8 +490,8 @@
         <article class="it rv">
           <div class="when mono">Jan — Jun 2021</div>
           <h3><span lang="ko">SoftSquared Server Session 1:1 멘토</span><span lang="en">1:1 mentor, SoftSquared Server Session</span></h3>
-          <p lang="ko">서버 개발자 교육 과정에서 수강생을 1:1로 가르쳤습니다. 과제 코드를 매주 리뷰하고, 막힌 부분을 수강생이 스스로 설명하게 한 뒤 함께 풀었습니다.</p>
-          <p lang="en">I taught trainees one to one in a server developer course. I reviewed assignment code every week and had each trainee explain where they were stuck before we solved it together.</p>
+          <p lang="ko">서버 개발자 교육 과정에서 수강생을 1:1로 가르쳤습니다.</p>
+          <p lang="en">I taught trainees one to one in a server developer course.</p>
           <div class="tags mono"><span>#mentoring</span><span>#teaching</span></div>
         </article>
       </div>

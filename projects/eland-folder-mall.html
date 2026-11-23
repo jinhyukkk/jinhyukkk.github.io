@@ -53,26 +53,17 @@
 
   <section>
     <h2>What I did</h2>
-    <figure class="fig"><figcaption class="mono"><span lang="ko">사전 집계</span><span lang="en">Pre-aggregation</span></figcaption><div class="flow"><div class="st"><b><span lang="ko">주문 테이블</span><span lang="en">Orders table</span></b></div><i class="ar"></i><div class="st"><b><span lang="ko">Cron 집계</span><span lang="en">Cron job</span></b><span lang="ko">10분 주기</span><span lang="en">every 10 minutes</span></div><i class="ar"></i><div class="st"><b><span lang="ko">Best 집계 테이블</span><span lang="en">Best-seller table</span></b></div><i class="ar"></i><div class="st"><b><span lang="ko">상품 조회</span><span lang="en">Product listing</span></b><span lang="ko">집계 테이블만 읽음</span><span lang="en">reads only this table</span></div></div></figure>
-    <figure class="fig"><figcaption class="mono"><span lang="ko">검색 분리</span><span lang="en">Search split</span></figcaption><div class="flow"><div class="st"><b><span lang="ko">MySQL 상품</span><span lang="en">Products in MySQL</span></b><span lang="ko">약 200만 건</span><span lang="en">about 2 million</span></div><i class="ar"></i><div class="st"><b><span lang="ko">색인 배치</span><span lang="en">Index batch</span></b><span lang="ko">변경분만</span><span lang="en">changes only</span></div><i class="ar"></i><div class="st"><b><span lang="ko">Elasticsearch</span><span lang="en">Elasticsearch</span></b></div><i class="ar"></i><div class="st"><b><span lang="ko">검색 API</span><span lang="en">Search API</span></b><span lang="ko">평균 0.6초</span><span lang="en">0.6 s average</span></div></div></figure>
     <dl>
       <div class="pt"><dt><span lang="ko">상품 조회 10초 → 1초 (90% 감소), DB CPU 피크 85% → 40%</span><span lang="en">Product listing, 10 s → 1 s (90% less); peak DB CPU, 85% → 40%</span></dt><dd><span lang="ko">실시간 Best 상품 집계를 10분 주기의 사전 집계로 바꿨습니다.</span><span lang="en">I replaced the live best-seller aggregation with a pre-aggregation that runs every 10 minutes.</span></dd></div>
-      <div class="pt"><dt><span lang="ko">검색 평균 1.6초 → 0.6초</span><span lang="en">Average search time, 1.6 s → 0.6 s</span></dt><dd><span lang="ko">상품 약 200만 건을 Elasticsearch로 분리했습니다. 형태소 분석, 동의어 사전, 초성 검색을 적용해 검색 정확도도 높였습니다.</span><span lang="en">I moved about 2 million products into Elasticsearch. Morphological analysis, a synonym dictionary and initial-consonant search also improved accuracy.</span></dd></div>
+      <div class="pt"><dt><span lang="ko">검색 평균 1.6초 → 0.6초</span><span lang="en">Average search time, 1.6 s → 0.6 s</span></dt><dd><span lang="ko">상품 약 200만 건을 Elasticsearch로 분리했습니다.</span><span lang="en">I moved about 2 million products into Elasticsearch.</span></dd></div>
       <div class="pt"><dt><span lang="ko">운영 업무 월 30시간 절감</span><span lang="en">30 hours of operations work saved a month</span></dt><dd><span lang="ko">Cron 기반으로 정산과 운영 배치를 자동화하고, Jenkins로 자동 배포와 수동 배포를 구성했습니다.</span><span lang="en">I automated settlement and operations batches with cron, and set up automatic and manual deploys with Jenkins.</span></dd></div>
       <div class="pt"><dt><span lang="ko">기능 개발</span><span lang="en">Features</span></dt><dd><span lang="ko">폴더 SNS(FolderingChannel), UGC 신고와 차단, 최근 본 상품 기록, 본인인증 등을 개발했습니다.</span><span lang="en">I built the FOLDER social feed (FolderingChannel), reporting and blocking for user content, recently viewed products, identity verification and more.</span></dd></div>
-      <div class="pt"><dt><span lang="ko">폴더 SNS 피드와 최근 본 상품</span><span lang="en">Social feed and recently viewed products</span></dt><dd><span lang="ko">폴더 SNS의 팔로우 피드는 조회할 때 조인하지 않고 미리 만들어 두는 방식으로 구현했습니다. 최근 본 상품은 비회원은 쿠키, 회원은 전용 테이블에 기록하고 로그인할 때 둘을 합칩니다.</span><span lang="en">The follow feed is built ahead of time instead of joined at read time. Recently viewed products are kept in a cookie for guests and a dedicated table for members, and merged at login.</span></dd></div>
       <div class="pt"><dt><span lang="ko">외부 시스템 연동</span><span lang="en">Outside systems</span></dt><dd><span lang="ko">회원정보, 후기종합, 평점통계를 외부 시스템과 연동해 데이터를 한곳으로 모았습니다. Google, Naver, Facebook의 분석과 마케팅 스크립트도 붙였습니다.</span><span lang="en">I connected member data, combined reviews and rating statistics with outside systems to bring the data together, and added analytics and marketing scripts from Google, Naver and Facebook.</span></dd></div>
       <div class="pt"><dt><span lang="ko">이벤트와 팔로우</span><span lang="en">Events and follow</span></dt><dd><span lang="ko">초성퀴즈와 TimeSale 같은 이벤트 기능, 커뮤니티의 팔로우 기능을 개발했습니다.</span><span lang="en">I built event features such as an initial-consonant quiz and TimeSale, and a follow feature for the community.</span></dd></div>
       <div class="pt"><dt><span lang="ko">구축 6개월, 운영 1년 10개월</span><span lang="en">6 months of build, 22 months of operations</span></dt><dd><span lang="ko">2020년 12월부터 구축하고 2021년 5월부터 운영했습니다. 운영 중에 나온 버그를 바로 대응해 서비스를 안정적으로 유지했습니다.</span><span lang="en">I worked on the build from December 2020 and on operations from May 2021, responding quickly to bugs to keep the service stable.</span></dd></div>
-      <div class="pt"><dt><span lang="ko">집계 테이블 교체</span><span lang="en">Swapping the aggregate table</span></dt><dd><span lang="ko">집계가 끝난 뒤 한 번에 바꿔치기해, 집계 도중의 불완전한 순위가 노출되지 않게 했습니다.</span><span lang="en">The table is swapped in one step after aggregation finishes, so a half-built ranking is never shown.</span></dd></div>
-      <div class="pt"><dt><span lang="ko">색인 동기화</span><span lang="en">Index sync</span></dt><dd><span lang="ko">상품이 바뀌면 변경분만 Elasticsearch에 다시 색인해, 전체 재색인 없이 검색 결과를 최신으로 유지했습니다.</span><span lang="en">When products change, only the changes are re-indexed in Elasticsearch, keeping search results current without a full re-index.</span></dd></div>
     </dl>
   </section>
 
-  <section>
-    <h2>Hard parts</h2>
-    <ul class="ls"><li><span lang="ko">검색을 분리하면 DB와 검색 결과가 어긋날 수 있습니다. 변경분을 바로 색인해 차이를 줄였습니다.</span><span lang="en">Splitting search off can let the database and search results drift apart. Indexing changes right away keeps the gap small.</span></li></ul>
-  </section>
 
   <section>
     <h2>Result</h2>
@@ -88,10 +79,6 @@
     </dl>
   </section>
 
-  <section>
-    <h2>What I learned</h2>
-    <ul class="ls"><li><span lang="ko">실시간일 필요가 없는 데이터를 가려낸 것만으로 가장 큰 병목이 사라졌습니다.</span><span lang="en">Just identifying the data that did not need to be real-time removed the biggest bottleneck.</span></li></ul>
-  </section>
 
   <nav class="pn" aria-label="Projects"><a href="hl-science-mall.html"><span class="mono">← PREV</span><span lang="ko">HL SCIENCE MALL 운영</span><span lang="en">HL SCIENCE MALL operations</span></a><span></span></nav>
 </div>

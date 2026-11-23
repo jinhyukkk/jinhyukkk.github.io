@@ -39,31 +39,19 @@
     <p lang="en">The store of Foodcare CLE, a brand of baby food in glass jars. It sells stage-by-stage baby food from the first stage to the late stage, toddler meals and snacks, centered on a subscription meal plan delivered on a schedule. Members' order history and subscription delivery data are the core of the service.</p>
   </section>
 
-  <section>
-    <h2>Problem</h2>
-    <p lang="ko">기존 시스템의 회원과 콘텐츠를 새 플랫폼으로 옮겨야 했습니다. 누락이나 금액 오차가 생기면 회원의 포인트와 이력에 바로 문제가 됩니다.</p>
-    <p lang="en">Members and content had to move from the old system to the new platform. Any missing record or amount error would show up directly in members' points and history.</p>
-  </section>
 
   <section>
     <h2>What I did</h2>
-    <figure class="fig"><figcaption class="mono"><span lang="ko">이관 절차</span><span lang="en">Migration steps</span></figcaption><div class="flow"><div class="st"><b><span lang="ko">원본 추출</span><span lang="en">Extract</span></b><span lang="ko">회원, 콘텐츠</span><span lang="en">members, content</span></div><i class="ar"></i><div class="st"><b><span lang="ko">변환과 적재</span><span lang="en">Transform and load</span></b><span lang="ko">임시 테이블</span><span lang="en">staging tables</span></div><i class="ar"></i><div class="st"><b><span lang="ko">건수 대사</span><span lang="en">Count check</span></b><span lang="ko">전수</span><span lang="en">every record</span></div><i class="ar"></i><div class="st"><b><span lang="ko">샘플 대조</span><span lang="en">Sample check</span></b><span lang="ko">2,000건</span><span lang="en">2,000 records</span></div><i class="ar"></i><div class="st"><b><span lang="ko">전환</span><span lang="en">Cutover</span></b><span lang="ko">불일치 0건</span><span lang="en">zero mismatches</span></div></div></figure>
     <dl>
       <div class="pt"><dt><span lang="ko">회원과 콘텐츠 30만 건 이관, 건수와 금액 대사 불일치 0건</span><span lang="en">300,000 member and content records migrated with zero mismatches</span></dt><dd><span lang="ko">전수 건수 대조와 샘플 2,000건 대조로 검증했습니다.</span><span lang="en">Verified with a full count check and a 2,000-record sample check.</span></dd></div>
-      <div class="pt"><dt><span lang="ko">이유식 일정 배송</span><span lang="en">Scheduled delivery</span></dt><dd><span lang="ko">아이의 월령 단계에 맞춘 이유식을 정해진 일정대로 보내는 일정 배송 기능을 개발했습니다. 배송일은 주문 시점에 한꺼번에 생성하고 휴일과 배송 불가일을 피해 조정합니다. 고객은 배송일을 변경하거나 건너뛰거나 일시 중지할 수 있고, 출고 마감 이후의 변경은 막았습니다.</span><span lang="en">I built scheduled delivery, which sends baby food matched to the child's age stage on a set schedule. Delivery dates are generated up front at order time and moved off holidays and no-delivery days. Customers can change, skip or pause a delivery, and changes after the shipping cut-off are blocked.</span></dd></div>
+      <div class="pt"><dt><span lang="ko">이유식 일정 배송</span><span lang="en">Scheduled delivery</span></dt><dd><span lang="ko">아이의 월령 단계에 맞춘 이유식을 정해진 일정대로 보내는 일정 배송 기능을 개발했습니다.</span><span lang="en">I built scheduled delivery, which sends baby food matched to the child's age stage on a set schedule.</span></dd></div>
       <div class="pt"><dt><span lang="ko">Elasticsearch 검색 연동</span><span lang="en">Elasticsearch search</span></dt><dd><span lang="ko">이관한 콘텐츠를 Elasticsearch로 검색할 수 있게 연동했습니다.</span><span lang="en">I connected the migrated content to Elasticsearch search.</span></dd></div>
       <div class="pt"><dt><span lang="ko">주문 데이터 수집</span><span lang="en">Order data collection</span></dt><dd><span lang="ko">주문 데이터를 주문별, 결제수단별, 상품별로 모으는 기능을 개발해 운영자가 매출을 여러 기준으로 볼 수 있게 했습니다.</span><span lang="en">I built collection of order data by order, by payment method and by product, so operators can look at sales from several angles.</span></dd></div>
       <div class="pt"><dt><span lang="ko">SNS 로그인과 공유</span><span lang="en">Social login and sharing</span></dt><dd><span lang="ko">SNS 로그인과 공유 기능을 연동했습니다.</span><span lang="en">I integrated social login and sharing.</span></dd></div>
       <div class="pt"><dt><span lang="ko">게시판 관리와 이벤트</span><span lang="en">Board management and events</span></dt><dd><span lang="ko">커뮤니티 운영을 위한 게시판 관리 기능과 여러 이벤트 기능을 개발했습니다.</span><span lang="en">I built board management for the community and several event features.</span></dd></div>
-      <div class="pt"><dt><span lang="ko">리허설 이관</span><span lang="en">Rehearsal run</span></dt><dd><span lang="ko">본 이관 전에 같은 절차를 리허설로 먼저 돌려, 형식이 맞지 않는 데이터와 중복 회원 같은 오류 유형을 정리했습니다.</span><span lang="en">Before the real migration I ran the same steps as a rehearsal and sorted out error types such as malformed data and duplicate members.</span></dd></div>
-      <div class="pt"><dt><span lang="ko">대사 기준</span><span lang="en">How I reconciled</span></dt><dd><span lang="ko">건수는 테이블별로 원본과 전수 비교하고, 금액은 회원별 합계를 맞춘 뒤 샘플 2,000건을 항목 단위로 대조했습니다.</span><span lang="en">Counts were compared in full per table. Amounts were matched as per-member totals, then 2,000 sampled records were checked field by field.</span></dd></div>
     </dl>
   </section>
 
-  <section>
-    <h2>Hard parts</h2>
-    <ul class="ls"><li><span lang="ko">원본 데이터에 형식이 제각각인 값이 많아, 옮기기 전에 변환 규칙부터 정리해야 했습니다.</span><span lang="en">The source data had many values in inconsistent formats, so the conversion rules had to be settled before moving anything.</span></li></ul>
-  </section>
 
   <section>
     <h2>Result</h2>
@@ -71,10 +59,6 @@
     <p lang="en">300,000 records were migrated with no mismatch in counts or amounts.</p>
   </section>
 
-  <section>
-    <h2>What I learned</h2>
-    <ul class="ls"><li><span lang="ko">이관은 옮기는 작업보다 맞는지 확인하는 방법을 먼저 정하는 일이 더 중요했습니다.</span><span lang="en">In a migration, deciding how to verify the result mattered more than the moving itself.</span></li></ul>
-  </section>
 
   <nav class="pn" aria-label="Projects"><a href="wegive.html"><span class="mono">← PREV</span><span lang="ko">위기브 기부 모금 플랫폼</span><span lang="en">Wegive donation platform</span></a><a class="nx" href="hl-science-mall.html"><span class="mono">NEXT →</span><span lang="ko">HL SCIENCE MALL 운영</span><span lang="en">HL SCIENCE MALL operations</span></a></nav>
 </div>
