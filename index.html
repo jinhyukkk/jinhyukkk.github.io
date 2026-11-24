@@ -293,14 +293,14 @@
           <p lang="en">I run a Spring and Oracle HR system, built up since 2018, on my own, and modernized its build and deploy, performance and personal data handling.</p>
           <ul lang="ko">
             <li>SVN을 GitLab으로 옮기고 Gradle 빌드를 도입, 운영서버와 저장소의 차이 900여 건을 정합화한 뒤 Jenkins로 개발서버 자동 배포와 운영용 WAR 자동 빌드 구성, 기본값 섞인 WAR·업로드 폴더 덮어쓰기를 막는 빌드 가드 추가</li>
-            <li>동적 SQL을 정적 SQL로 바꿔 하드파싱을 없애고, 반복 조회를 캐시로 돌리고, 접속 로그를 비동기로 분리해 <b>핵심 화면 응답 18초 → 1초 이내</b></li>
+            <li>행마다 8번 불리던 코드 조회 함수를 조인으로 바꾸고, 뷰 정의·마스킹 설정을 캐시하고, 접속 로그 DB 쓰기를 전용 스레드로 분리해 <b>핵심 화면 응답 18초 → 1초 이내</b></li>
             <li>한 건씩 차례로 처리하던 일괄 결재를 <b>최대 5건 동시 처리</b>로 전환</li>
             <li>연말정산을 비롯한 법정 패치 20회 이상 적용, 개인정보 마스킹과 해제 로그 공통화, SSO 통합 로그인 개발 PL</li>
             <li>운영 JVM <b>OutOfMemoryError 장애</b>의 원인을 전 사원·전 기간을 메모리에 올리던 조회로 특정하고, 사번 일치·월 6자리 조건으로 막아 재발 방지</li>
           </ul>
           <ul lang="en">
             <li>Moved SVN to GitLab, introduced a Gradle build, reconciled 900+ files that had drifted between production and the repository, then set up Jenkins for automatic development-server deploys and production WAR builds, with build guards against default-config WARs and overwritten upload folders</li>
-            <li>Turned dynamic SQL into static SQL to stop hard parsing, cached repeated lookups and moved access logging off the request path, cutting <b>key screen response from 18 s to under 1 s</b></li>
+            <li>Replaced a code lookup function called 8 times per row with joins, cached view definitions and masking settings, and moved access-log writes to dedicated threads, cutting <b>key screen response from 18 s to under 1 s</b></li>
             <li>Bulk approvals handled one at a time now run <b>up to 5 at once</b></li>
             <li>Applied 20+ statutory patches including year-end tax settlement, unified personal data masking and unmask logging, and led single sign-on development</li>
             <li>Traced a production JVM <b>OutOfMemoryError outage</b> to a lookup that loaded every employee and period into memory, and prevented a repeat by requiring an exact ID and a 6-digit month</li>
