@@ -217,9 +217,9 @@
     <section id="strengths">
       <div class="head rv"><h2>What I'm good at</h2></div>
       <dl class="rows rv">
-        <div class="sr"><dt class="mono"><span lang="ko">성능 개선</span><span lang="en">Performance</span></dt><dd><p lang="ko">느린 원인을 수치로 먼저 찾은 뒤 구조를 바꿉니다. e-HR의 핵심 화면 응답을 18초에서 1초로, 폴더몰의 상품 조회를 10초에서 1초로 줄이고 DB CPU 피크를 85%에서 40%로 낮췄습니다.</p><p lang="en">I measure where it is slow before changing the structure. I cut key screen response in e-HR from 18 s to 1 s, and product listing at FOLDER MALL from 10 s to 1 s, with peak DB CPU down from 85% to 40%.</p><div class="sl mono"><a href="projects/ehr.html">e-HR ↗</a><a href="projects/eland-folder-mall.html">FOLDER MALL ↗</a></div></dd></div>
-        <div class="sr"><dt class="mono"><span lang="ko">결제와 데이터 정합성</span><span lang="en">Payment and data integrity</span></dt><dd><p lang="ko">돈과 데이터가 어긋나지 않게 만듭니다. 포인트가 섞인 부분 환불 시나리오 40건을 검증해 금액 불일치 0건으로 4개국 동시 출시했고, 30만 건 이관에서도 불일치가 0건이었습니다.</p><p lang="en">I make sure money and data never drift apart. I verified 40 partial-refund scenarios for payments mixed with points and launched in 4 countries at once with zero amount mismatches, and migrated 300,000 records with zero mismatches.</p><div class="sl mono"><a href="projects/smilegate-global.html">Smilegate Shop ↗</a><a href="projects/foodcare-cle.html">Foodcare CLE ↗</a></div></dd></div>
-        <div class="sr"><dt class="mono"><span lang="ko">인증과 보안 연동</span><span lang="en">Auth and secure integration</span></dt><dd><p lang="ko">내부망 포트를 하나도 열지 않는 구조로 보안 심의를 1회에 통과했고, OAuth 2.0을 표준화해 신규 계열사 연동을 2주에서 3일로 줄였습니다. SSO 통합 로그인 PL을 맡아 로그인 문의를 월 12건에서 2건으로 줄였습니다.</p><p lang="en">A design that opened zero internal ports passed security review first time, and a standard OAuth 2.0 flow cut new affiliate onboarding from 2 weeks to 3 days. As project leader for single sign-on, I cut login inquiries from 12 a month to 2.</p><div class="sl mono"><a href="projects/group-ai-platform.html">Group AI ↗</a><a href="projects/ehr.html">e-HR ↗</a></div></dd></div>
+        <div class="sr"><dt class="mono"><span lang="ko">성능 개선</span><span lang="en">Performance</span></dt><dd><p lang="ko">느린 원인을 수치로 먼저 찾은 뒤 구조를 바꿉니다. e-HR의 핵심 화면 응답을 18초에서 1초로, 폴더몰의 Best 상품 조회를 10초에서 1초로 줄였습니다.</p><p lang="en">I measure where it is slow before changing the structure. I cut key screen response in e-HR from 18 s to 1 s, and best-seller listing at FOLDER MALL from 10 s to 1 s.</p><div class="sl mono"><a href="projects/ehr.html">e-HR ↗</a><a href="projects/eland-folder-mall.html">FOLDER MALL ↗</a></div></dd></div>
+        <div class="sr"><dt class="mono"><span lang="ko">결제와 데이터 정합성</span><span lang="en">Payment and data integrity</span></dt><dd><p lang="ko">돈과 데이터가 어긋나지 않게 만듭니다. 일반 결제와 포인트가 섞인 부분 교환·환불에서 결제 수단별 환불 금액과 남은 포인트를 다시 계산하는 정산 흐름을 설계해 4개국 동시 출시했고, 레거시 회원 약 30만 건도 새 플랫폼으로 이관했습니다.</p><p lang="en">I make sure money and data never drift apart. I designed settlement for partial exchanges and refunds of card-and-points payments, recalculating refunds per payment method and the remaining points, and launched in 4 countries at once, and migrated about 300,000 legacy members to a new platform.</p><div class="sl mono"><a href="projects/smilegate-global.html">Smilegate Shop ↗</a><a href="projects/foodcare-cle.html">Foodcare CLE ↗</a></div></dd></div>
+        <div class="sr"><dt class="mono"><span lang="ko">인증과 보안 연동</span><span lang="en">Auth and secure integration</span></dt><dd><p lang="ko">AWS와 사내망이 직접 통신하지 않도록 DMZ 중계 게이트웨이를 거쳐 e-HR API를 연결했고, 단일 토큰 인증을 OAuth 2.0/JWT로 바꿔 모든 호출에 호출자 사번을 남겼습니다. e-HR에서는 SSO 통합 로그인 개발의 PL을 맡았습니다.</p><p lang="en">I connected e-HR APIs through a DMZ relay gateway so AWS never talks to the internal network directly, and replaced a single shared token with OAuth 2.0/JWT so every call carries the caller's employee ID. On e-HR, I was project leader for single sign-on development.</p><div class="sl mono"><a href="projects/group-ai-platform.html">Group AI ↗</a><a href="projects/ehr.html">e-HR ↗</a></div></dd></div>
         <div class="sr"><dt class="mono"><span lang="ko">요청을 범위로 바꿔 빠르게 전달</span><span lang="en">Scoping requests and shipping fast</span></dt><dd><p lang="ko">요청을 그대로 만들지 않고 실제로 필요한 것과 제약을 먼저 확인합니다. "투자심의를 AI로 대체"는 AI 사전 심의와 경영진 결재의 두 단계로 합의했고, 공정거래 준법 에이전트는 요청 메일부터 배포까지 8일이 걸렸습니다.</p><p lang="en">I do not build requests as stated; I first check what is actually needed and what the constraints are. "Replace the investment review with AI" became AI pre-review plus management approval, and the fair-trade compliance agent shipped 8 days after the request email.</p><div class="sl mono"><a href="projects/investment-review-agent.html">Review agent ↗</a><a href="projects/group-ai-platform.html">Group AI ↗</a></div></dd></div>
       </dl>
     </section>
@@ -237,20 +237,20 @@
 
         <article class="it rv">
           <div class="when mono">2025.07 — <span lang="ko">진행 중</span><span lang="en">present</span> <span class="rl">/ <span lang="ko">Project Leader, 3인</span><span lang="en">Project Leader, team of 3</span></span></div>
-          <h3><a class="more" href="projects/group-ai-platform.html"><span lang="ko">그룹 AI 서비스 도입과 확산</span><span lang="en">Group-wide AI rollout and adoption</span></a></h3>
+          <h3><a class="more" href="projects/group-ai-platform.html"><span lang="ko">그룹 AI 연동 플랫폼과 도입 확산</span><span lang="en">Group AI integration platform and adoption</span></a></h3>
           <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
           <p lang="ko">SaaS AI 서비스를 그룹에 도입하고, 현업 팀의 요청을 에이전트로 만들어 전달하고, 실제로 사용하게 만드는 일까지 맡았습니다.</p>
           <p lang="en">I brought a SaaS AI service to the group, turned requests from business teams into agents, and stayed until people actually used them.</p>
           <ul lang="ko">
             <li>법무, 경영, 증권, 보안 분야의 요청을 <b>MCP 서버 12개</b>로 만들어 전달. 공정거래 준법 에이전트는 <b>요청 메일부터 배포까지 8일</b></li>
-            <li>Lambda와 API Gateway 공통 패턴으로 <b>내부망 포트 개방 0건</b>, 보안 심의 1회 통과. OAuth 2.0 표준화로 <b>신규 계열사 연동 2주 → 3일</b></li>
+            <li>AWS Lambda MCP 서버가 <b>DMZ 중계 게이트웨이</b>를 거쳐 e-HR REST API를 호출하고, <b>OAuth 2.0/JWT</b>로 호출자 사번을 모든 도구 호출에 주입</li>
             <li>사용자 10명을 인터뷰해 쓰지 않는 이유가 <b>토큰 한도와 읽히지 않는 안내 메일</b>임을 확인하고, 교육 4회와 뉴스레터로 정착을 지원</li>
             <li>누적 가입자 <b>337 → 1,130명</b>, 월 사용자 <b>43 → 356명</b>, 사용 계열사 <b>5 → 17곳</b></li>
             <li>월 1회 이상 사용된 에이전트·워크플로우 <b>19 → 91개</b>, 에이전트 활용 비율 8% → 28%(2026년 10월)</li>
           </ul>
           <ul lang="en">
             <li>Turned requests in legal, management, securities and security into <b>12 MCP servers</b>. The fair-trade compliance agent shipped <b>8 days after the request email</b></li>
-            <li>A shared Lambda and API Gateway pattern with <b>zero internal ports opened</b> passed security review first time. A standard OAuth 2.0 flow cut <b>new affiliate onboarding from 2 weeks to 3 days</b></li>
+            <li>A Lambda MCP server calls e-HR REST APIs through a <b>DMZ relay gateway</b>, with <b>OAuth 2.0/JWT</b> putting the caller's employee ID on every tool call</li>
             <li>Interviewed 10 users and found the blockers were <b>the token limit and announcement emails nobody read</b>, then supported adoption with 4 training sessions and a newsletter</li>
             <li>Sign-ups <b>337 → 1,130</b>, monthly users <b>43 → 356</b>, affiliates using it <b>5 → 17</b></li>
             <li>Agents and workflows used at least once a month <b>19 → 91</b>, usage through agents 8% → 28% (October 2026)</li>
@@ -283,41 +283,24 @@
         </article>
 
         <article class="it rv">
-          <div class="when mono">2025.01 — 2025.12 <span class="rl">/ <span lang="ko">백엔드와 파이프라인 설계, 3인</span><span lang="en">backend and pipeline, team of 3</span></span></div>
-          <h3><a class="more" href="projects/deep-research.html"><span lang="ko">사내 AI 플랫폼 내재화와 딥리서치</span><span lang="en">In-house AI platform and deep research</span></a></h3>
-          <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
-          <p lang="ko">보고서 한 건마다 자료 수집부터 초안까지 평균 4시간이 반복됐습니다. 이를 줄이는 플랫폼을 사내에서 직접 만들어 시범 부서 3곳에 도입했습니다. 특정 부서의 요청이 아니라 그룹의 AI 프로젝트에서 출발했습니다.</p>
-          <p lang="en">Every report repeated an average of 4 hours of work, from gathering material to a first draft. We built a platform in-house to cut that and three pilot departments adopted it. It did not come from any one team's request; it started inside the group's AI project.</p>
-          <ul lang="ko">
-            <li>업로드, 요약, 검색, 초안 생성을 LangGraph 멀티스텝으로 구현해 <b>보고서 초안 4시간 → 25분</b></li>
-            <li>자체 평가셋 100문항으로 환각과 누락을 점검, 근거 인용 정확도 91%</li>
-          </ul>
-          <ul lang="en">
-            <li>Built upload, summary, search and drafting as a multi-step LangGraph flow, cutting <b>a report draft from 4 hours to 25 minutes</b></li>
-            <li>Checked hallucination and omissions with a 100-question evaluation set, reaching 91% citation accuracy</li>
-          </ul>
-          <div class="tags mono"><span>Python</span><span>FastAPI</span><span>LangGraph</span><span>MCP</span><span>AWS</span></div>
-        </article>
-
-        <article class="it rv">
           <div class="when mono">2023.06 — <span lang="ko">진행 중</span><span lang="en">present</span> <span class="rl">/ <span lang="ko">단독 운영, SSO PL</span><span lang="en">sole operator, SSO lead</span></span></div>
-          <h3><a class="more" href="projects/ehr.html"><span lang="ko">e-HR 인사 시스템 성능 고도화와 운영</span><span lang="en">e-HR system performance and operations</span></a></h3>
+          <h3><a class="more" href="projects/ehr.html"><span lang="ko">e-HR 레거시 현대화와 성능 개선</span><span lang="en">e-HR legacy modernization and performance</span></a></h3>
           <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
-          <p lang="ko">임직원 약 500명이 쓰는 계열사 인사 시스템을 단독 운영하며 SSO 통합 로그인을 이끌었습니다.</p>
-          <p lang="en">I run an HR system for about 500 employees on my own, and led its single sign-on project.</p>
+          <p lang="ko">2018년부터 쌓인 Spring·Oracle 레거시 인사 시스템을 단독 운영하며 빌드·배포 체계와 성능, 개인정보 처리를 현대화했습니다.</p>
+          <p lang="en">I run a Spring and Oracle HR system, built up since 2018, on my own, and modernized its build and deploy, performance and personal data handling.</p>
           <ul lang="ko">
-            <li>DB 분석 리포트(AWR)로 느린 원인을 찾고, 쿼리를 미리 고정해 두고 자주 쓰는 데이터를 서버에 저장해 <b>핵심 화면 응답 18초 → 1.0초</b></li>
-            <li>한 건씩 차례로 처리하던 결재를 여러 건 동시에 처리하도록 바꿔 <b>일괄 결재 300건 14초 → 1초</b></li>
-            <li>SSO 통합 로그인 PL(5인, 4개월), 로그인 문의 월 12건 → 2건</li>
-            <li>Gradle 빌드와 Jenkins 파이프라인을 도입하고 운영서버와 저장소의 차이 900여 건을 정합화, 개발서버 배포 자동화</li>
+            <li>SVN을 GitLab으로 옮기고 Gradle 빌드를 도입, 운영서버와 저장소의 차이 900여 건을 정합화한 뒤 Jenkins로 개발서버 자동 배포와 운영용 WAR 자동 빌드 구성</li>
+            <li>동적 SQL을 정적 SQL로 바꿔 하드파싱을 없애고, 반복 조회를 캐시로 돌리고, 접속 로그를 비동기로 분리해 <b>핵심 화면 응답 18초 → 1초 이내</b></li>
+            <li>한 건씩 차례로 처리하던 일괄 결재를 <b>최대 5건 동시 처리</b>로 전환</li>
             <li>연말정산을 비롯한 법정 패치 20회 이상 적용, 개인정보 마스킹과 해제 로그 공통화</li>
+            <li>SSO 통합 로그인 개발 PL</li>
           </ul>
           <ul lang="en">
-            <li>Found the cause with database reports (Oracle AWR), then fixed the queries in advance and kept frequently used data on the server, cutting <b>key screen response from 18 s to 1.0 s</b></li>
-            <li>Approvals handled one at a time now run several at once, cutting <b>bulk approval of 300 items from 14 s to 1 s</b></li>
-            <li>Led the single sign-on project (5 people, 4 months), reducing login inquiries from 12 to 2 a month</li>
-            <li>Introduced a Gradle build and a Jenkins pipeline, reconciled 900+ files that had drifted between production and the repository, and automated dev-server deploys</li>
+            <li>Moved SVN to GitLab, introduced a Gradle build, reconciled 900+ files that had drifted between production and the repository, then set up Jenkins for automatic development-server deploys and production WAR builds</li>
+            <li>Turned dynamic SQL into static SQL to stop hard parsing, cached repeated lookups and moved access logging off the request path, cutting <b>key screen response from 18 s to under 1 s</b></li>
+            <li>Bulk approvals handled one at a time now run <b>up to 5 at once</b></li>
             <li>Applied 20+ statutory patches including year-end tax settlement, and unified personal data masking and unmask logging</li>
+            <li>Project leader for single sign-on development</li>
           </ul>
           <div class="tags mono"><span>Java</span><span>Spring</span><span>Oracle</span><span>Gradle</span><span>Jenkins</span><span>JEUS</span></div>
         </article>
@@ -334,42 +317,42 @@
 
         <article class="it rv">
           <img class="plogo plogo-smilegate-global" src="images/projects/smilegate-global-logo.png" alt="" />
-          <div class="when mono">2023.02 — 2023.05 <span class="rl">/ <span lang="ko">백엔드 설계와 개발 PL, 5인, 4개월, 기여 약 50%</span><span lang="en">backend design and development lead, 5 people, 4 months, about 50% mine</span></span></div>
-          <h3><a class="more" href="projects/smilegate-global.html"><span lang="ko">스마일게이트샵 글로벌 서비스 구축, 개발 PL</span><span lang="en">Smilegate Shop global launch, development lead</span></a></h3>
+          <div class="when mono">2023.02 — 2023.05 <span class="rl">/ <span lang="ko">백엔드 설계와 개발 PL, 개발자 3명, 4개월</span><span lang="en">backend design and development lead, 3 developers, 4 months</span></span></div>
+          <h3><a class="more" href="projects/smilegate-global.html"><span lang="ko">스마일게이트샵 4개국 결제·정책 구조 설계, 개발 PL</span><span lang="en">Smilegate Shop: 4-country payment and policy design, development lead</span></a></h3>
           <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
           <p lang="ko">스마일게이트의 공식 굿즈샵을 여러 나라에 여는 프로젝트였습니다. 국가별 언어, 통화, 결제를 담는 구조를 설계하고, 결제 프로세스의 복합 결제와 환불·교환 기능을 개발했습니다.</p>
           <p lang="en">A project to open Smilegate's official goods store in several countries. I designed the structure for per-country language, currency and payment, and built mixed payments, refunds and exchanges in the payment flow.</p>
           <ul lang="ko">
-            <li>국가 정책 테이블과 공통 결제 인터페이스로 <b>국가 추가 대응 2주 → 2일</b></li>
-            <li>포인트 2종이 섞인 복합 결제의 부분 환불 시나리오 40건을 검증해 <b>금액 불일치 0건</b>으로 4개국 동시 출시</li>
+            <li>일반 결제와 포인트를 섞은 <b>복합 결제와 부분 교환·환불 정산</b>을 설계, 부분 클레임 때 남은 금액·포인트 재계산</li>
+            <li>국가·언어·통화·결제수단을 데이터로 분리해 <b>국가 추가를 코드 수정 없이 설정으로</b> 처리, 4개월 만에 <b>4개국·5개 언어 동시 출시</b></li>
             <li>장바구니의 배송 국가 선택, 주문과 <b>교환·반품·환불 클레임</b> 프로세스 개발</li>
-            <li>국내·해외 결제(이니시스, 엑심베이), EMS, 복지포인트, SNS 로그인 5종 연동</li>
+            <li>국가별 Elasticsearch 인덱스로 현지 언어 검색, 국내·해외 결제(이니시스, 엑심베이), EMS, 복지포인트, SNS 로그인 5종 연동</li>
           </ul>
           <ul lang="en">
-            <li>A country policy table and a shared payment interface cut <b>the work to add a country from 2 weeks to 2 days</b></li>
-            <li>Verified 40 partial-refund scenarios for payments mixed with two kinds of points and launched in 4 countries at once with <b>zero amount mismatches</b></li>
+            <li>Designed <b>mixed card-and-points payments and partial exchange and refund settlement</b>, recalculating the remaining amount and points on partial claims</li>
+            <li>Separated country, language, currency and payment method into data so <b>a new country is configuration, not code</b>, and <b>launched in 4 countries and 5 languages at once</b> in 4 months</li>
             <li>Built country selection in the cart and the order, <b>exchange, return and refund claim</b> flows</li>
-            <li>Integrated domestic and overseas payments (Inicis, Eximbay), EMS, welfare points and 5 social logins</li>
+            <li>Per-country Elasticsearch indexes for local-language search; integrated domestic and overseas payments (Inicis, Eximbay), EMS, welfare points and 5 social logins</li>
           </ul>
           <div class="tags mono"><span>PHP</span><span>CodeIgniter</span><span>MySQL</span></div>
         </article>
 
         <article class="it rv">
           <img class="plogo plogo-wegive" src="images/projects/wegive-logo.svg" alt="" />
-          <div class="when mono">2022.10 — 2023.01 <span class="rl">/ <span lang="ko">지자체 구조 설계와 백엔드 개발</span><span lang="en">local government structure and backend</span></span></div>
+          <div class="when mono">2022.10 — 2023.01 <span class="rl">/ <span lang="ko">마이크로사이트·제휴 관리 메인, 개발자 3명</span><span lang="en">lead on microsites and partner management, 3 developers</span></span></div>
           <h3><a class="more" href="projects/wegive.html"><span lang="ko">위기브 기부 모금 플랫폼</span><span lang="en">Wegive donation platform</span></a></h3>
           <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
-          <p lang="ko">고향사랑기부제 플랫폼입니다. 여러 지자체와 답례품 셀러를 담는 지자체 구조를 설계하고, 운영 기능과 커뮤니티 기능을 4개월 동안 개발했습니다.</p>
-          <p lang="en">A platform for Korea's hometown donation program. Over four months I designed the structure that holds many local governments and gift sellers, and built the operations and community features.</p>
+          <p lang="ko">고향사랑기부제 플랫폼입니다. 지자체마다 답례품과 콘텐츠가 달라지는 마이크로사이트와 제휴 관리를 메인으로 맡아 4개월 일정에 맞춰 열었습니다.</p>
+          <p lang="en">A platform for Korea's hometown donation program. I led the per-government microsites and partner management and opened it on a 4-month schedule.</p>
           <ul lang="ko">
-            <li>셀러와 지자체 관리 기능, <b>지자체별 맞춤형 홈페이지</b> 개발</li>
-            <li>UGC 정책에 맞춘 <b>회원 신고와 차단</b> 기능 개발</li>
-            <li>입점과 제휴 문의를 관리자 화면에서 처리하도록 만들어 운영 프로세스 표준화</li>
+            <li>URL과 세션으로 지자체 컨텍스트를 나눈 <b>지자체별 마이크로사이트</b>(답례품·웹진·소식) 개발</li>
+            <li>지자체 입점, 답례품 등록, 셀러 관리, 입점·제휴 문의를 한곳에서 처리하는 <b>제휴 관리</b> 개발</li>
+            <li>UGC 정책에 맞춘 회원 신고와 차단 기능 개발</li>
           </ul>
           <ul lang="en">
-            <li>Built seller and local government management and <b>a home page per local government</b></li>
-            <li>Built <b>member reporting and blocking</b> to fit the user-content policy</li>
-            <li>Moved onboarding and partnership inquiries into the admin screens, standardizing operations</li>
+            <li>Built <b>per-government microsites</b> (gifts, webzine, news) by splitting the government context by URL and session</li>
+            <li>Built <b>partner management</b> that handles government onboarding, gift registration, sellers and partnership inquiries in one place</li>
+            <li>Built member reporting and blocking to fit the user-content policy</li>
           </ul>
           <div class="tags mono"><span>PHP</span><span>CodeIgniter</span><span>MySQL</span></div>
         </article>
@@ -377,18 +360,18 @@
         <article class="it rv">
           <img class="plogo plogo-foodcare-cle" src="images/projects/foodcare-cle-logo.png" alt="" />
           <div class="when mono">2022.07 — 2023.02 <span class="rl">/ <span lang="ko">데이터 이관과 일정 배송</span><span lang="en">migration and scheduled delivery</span></span></div>
-          <h3><a class="more" href="projects/foodcare-cle.html"><span lang="ko">푸드케어 CLE 구축</span><span lang="en">Foodcare CLE build</span></a></h3>
+          <h3><a class="more" href="projects/foodcare-cle.html"><span lang="ko">푸드케어 CLE 레거시 이관과 일정 배송</span><span lang="en">Foodcare CLE: legacy migration and scheduled delivery</span></a></h3>
           <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
-          <p lang="ko">유리병 이유식 브랜드의 쇼핑몰을 새 플랫폼으로 구축한 프로젝트입니다. 레거시 데이터의 마이그레이션과 이유식 일정 배송 기능 개발을 맡았습니다.</p>
+          <p lang="ko">유리병 이유식 브랜드의 쇼핑몰을 새 플랫폼으로 구축한 프로젝트입니다. 레거시 회원 데이터 이관과 이유식 일정 배송 기능 개발을 맡았습니다.</p>
           <p lang="en">A project to build a new platform for a glass-jar baby food brand's store. I owned the migration of legacy data and built scheduled delivery for the baby food plans.</p>
           <ul lang="ko">
-            <li>회원과 콘텐츠 <b>30만 건 이관, 건수와 금액 대사 불일치 0건</b> (전수 건수 대조와 샘플 2,000건 대조)</li>
-            <li>월령 단계별 이유식을 일정대로 보내는 <b>일정 배송</b> 기능 개발</li>
+            <li>10년 넘게 쌓인 <b>레거시 회원 약 30만 건</b>을 새 플랫폼으로 이관</li>
+            <li>요일·식단·월령에 따라 매일 달라지는 발송을 <b>일자 × 상품 × 고객</b> 구조로 관리하는 일정 배송 개발</li>
             <li>Elasticsearch 검색 연동, SNS 로그인과 공유 연동</li>
           </ul>
           <ul lang="en">
-            <li><b>Migrated 300,000 member and content records with zero mismatches</b> in counts and amounts (full count check plus a 2,000-record sample)</li>
-            <li>Built <b>scheduled delivery</b> of baby food by age stage</li>
+            <li>Migrated <b>about 300,000 legacy members</b>, built up over 10+ years, to the new platform</li>
+            <li>Built scheduled delivery that manages daily-changing shipments as a <b>date × product × customer</b> structure</li>
             <li>Integrated Elasticsearch search, social login and sharing</li>
           </ul>
           <div class="tags mono"><span>PHP</span><span>MySQL</span><span>Elasticsearch</span></div>
@@ -396,63 +379,46 @@
 
         <article class="it rv">
           <img class="plogo plogo-hl-science-mall" src="images/projects/hl-science-mall-logo.png" alt="" />
-          <div class="when mono">2021.03 — 2021.12 <span class="rl">/ <span lang="ko">네이버페이 연동과 운영</span><span lang="en">Naver Pay integration and operations</span></span></div>
-          <h3><a class="more" href="projects/hl-science-mall.html"><span lang="ko">HL SCIENCE MALL 운영</span><span lang="en">HL SCIENCE MALL operations</span></a></h3>
+          <div class="when mono">2021.03 — 2021.12 <span class="rl">/ <span lang="ko">커머스 코어 단독 구현, 개발자 2명</span><span lang="en">commerce core on my own, 2 developers</span></span></div>
+          <h3><a class="more" href="projects/hl-science-mall.html"><span lang="ko">HL SCIENCE MALL 구축</span><span lang="en">HL SCIENCE MALL build</span></a></h3>
           <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
-          <p lang="ko">건강기능식품 자사몰에 네이버페이 결제를 연동하고, 운영과 기능 개발을 맡았습니다.</p>
-          <p lang="en">I integrated Naver Pay into a health supplement brand's own online store, and ran and extended the store.</p>
+          <p lang="ko">건강기능식품 자사몰을 새로 구축하며 장바구니·주문·결제·관리자 같은 커머스 코어를 단독으로 구현했습니다.</p>
+          <p lang="en">Building a health supplement brand's own online store, I built the commerce core (cart, orders, payment, admin) on my own.</p>
           <ul lang="ko">
-            <li><b>네이버페이 주문형 API 연동</b>, 관리자 검색 고도화</li>
-            <li>SNS 간편 로그인과 회원가입 개발, 크론 자동화 프로그램 운영</li>
-            <li><b>월 2,000건 이상</b> 주문을 장애 없이 운영</li>
+            <li>장바구니, 배송지, <b>주문·결제</b>, 교환·반품·환불, 관리자 페이지 단독 구현</li>
+            <li><b>네이버페이 주문형 API 연동</b>, 관리자 검색 고도화, SNS 간편 로그인</li>
+            <li>10개월 계획 일정에 맞춰 오픈, <b>월 약 2,000건</b> 주문 처리</li>
           </ul>
           <ul lang="en">
-            <li><b>Integrated the Naver Pay order API</b> and improved admin search</li>
-            <li>Built social login and sign-up, and ran the cron automation programs</li>
-            <li>Ran a store with <b>over 2,000 orders a month</b> without an outage</li>
+            <li>Built the cart, shipping addresses, <b>orders and payment</b>, exchanges, returns and refunds, and admin pages on my own</li>
+            <li><b>Integrated the Naver Pay order API</b>, improved admin search, added social login</li>
+            <li>Opened on the 10-month plan, handling <b>about 2,000 orders a month</b></li>
           </ul>
           <div class="tags mono"><span>PHP</span><span>MySQL</span><span>Naver Pay API</span></div>
         </article>
 
         <article class="it rv">
           <img class="plogo plogo-eland-folder-mall" src="images/projects/eland-folder-mall-logo.png" alt="" />
-          <div class="when mono">2020.12 — 2023.03 <span class="rl">/ <span lang="ko">백엔드, 개발 4인 중 기여 약 60%</span><span lang="en">backend, about 60% of a 4-developer team</span></span></div>
+          <div class="when mono">2020.12 — 2023.03 <span class="rl">/ <span lang="ko">백엔드, 개발자 3명</span><span lang="en">backend, one of 3 developers</span></span></div>
           <h3><a class="more" href="projects/eland-folder-mall.html"><span lang="ko">ELAND FOLDER MALL 구축과 운영</span><span lang="en">ELAND FOLDER MALL build and operations</span></a></h3>
           <svg class="ic go" aria-hidden="true"><use href="#i-up" /></svg>
-          <p lang="ko">이랜드의 슈즈 편집숍 폴더(FOLDER)의 공식 온라인 스토어입니다. 구축 6개월과 운영 1년 10개월 동안 월 5만 건 이상의 주문을 다루며 성능 개선, 검색 개선, 신규 기능(폴더 SNS, 최근 본 상품) 개발을 맡았습니다.</p>
-          <p lang="en">The official online store of FOLDER, E-Land's multi-brand shoe shop. Over 6 months of build and 22 months of operations it handled more than 50,000 orders a month, and I worked on performance, search and new features (the FOLDER social feed and recently viewed products).</p>
+          <p lang="ko">이랜드의 오프라인 슈즈 편집숍 폴더(FOLDER)의 공식 온라인 스토어입니다. 구축 6개월과 운영 1년 10개월 동안 하루 평균 1,000건 이상의 주문을 다루며 성능 개선, 검색, 커뮤니티 기능 개발을 맡았습니다.</p>
+          <p lang="en">The official online store of FOLDER, E-Land's offline multi-brand shoe shop. Over 6 months of build and 22 months of operations it handled more than 1,000 orders a day, and I worked on performance, search and community features.</p>
           <ul lang="ko">
-            <li>실시간 집계를 10분 주기 사전 집계로 바꿔 <b>상품 조회 10초 → 1초</b>, DB CPU 피크 85% → 40%</li>
-            <li>상품 약 200만 건을 Elasticsearch로 분리해 <b>검색 평균 1.6초 → 0.6초</b></li>
-            <li>신규 기능 개발: <b>폴더 SNS</b>(FolderingChannel)의 팔로우와 UGC 신고·차단, <b>최근 본 상품</b> 기록</li>
-            <li>Cron 배치와 Jenkins 배포로 <b>운영 업무 월 30시간 절감</b></li>
+            <li>요청마다 돌던 실시간 집계를 배치 사전 집계와 별도 테이블로 분리하고 인덱스를 보강해 <b>Best 상품 조회 10초 → 1초 이내</b></li>
+            <li>Elasticsearch로 <b>상품 검색과 최근 본 상품</b> 기록을 만들고 관리자 검색까지 확장</li>
+            <li><b>폴더 SNS</b>(FolderingChannel)의 팔로우, UGC 신고·차단, 후기·평점 관리 단독 개발, 이벤트 기능 메인 담당</li>
+            <li>Cron 운영 배치와 Jenkins 자동·수동 배포 구성</li>
           </ul>
           <ul lang="en">
-            <li>Replaced live aggregation with a 10-minute pre-aggregation, cutting <b>product listing from 10 s to 1 s</b> and peak DB CPU from 85% to 40%</li>
-            <li>Moved about 2 million products to Elasticsearch, cutting <b>average search time from 1.6 s to 0.6 s</b></li>
-            <li>New features: follow, reporting and blocking for <b>the FOLDER social feed</b> (FolderingChannel), and <b>recently viewed products</b></li>
-            <li>Cron batches and Jenkins deploys <b>saved 30 hours of operations work a month</b></li>
+            <li>Moved live aggregation into a batch and a separate table and added missing indexes, cutting <b>best-seller listing from 10 s to under 1 s</b></li>
+            <li>Built <b>product search and recently viewed products</b> on Elasticsearch and extended it to admin search</li>
+            <li>Built follows, reporting and blocking, and review management for <b>the FOLDER social feed</b> (FolderingChannel) on my own, and led event features</li>
+            <li>Set up cron operations batches and automatic and manual Jenkins deploys</li>
           </ul>
           <div class="tags mono"><span>PHP</span><span>MySQL</span><span>Elasticsearch</span><span>Jenkins</span></div>
         </article>
 
-        <article class="it rv">
-          <div class="when mono">2021.01 — 2022.07 <span class="rl">/ <span lang="ko">사내 솔루션 개발</span><span lang="en">in-house solution</span></span></div>
-          <h3><span lang="ko">커머스 솔루션 개선과 사내 프로젝트</span><span lang="en">Commerce solution and in-house projects</span></h3>
-          <p lang="ko">고객사 프로젝트의 기반이 되는 자사 커머스 솔루션을 개선했습니다.</p>
-          <p lang="en">I improved the company's own commerce solution, the base for its client projects.</p>
-          <ul lang="ko">
-            <li>Elasticsearch 프로젝트로 검색 속도와 정확도를 개선하고, 팀이 쓸 수 있도록 매뉴얼 작성</li>
-            <li>해외 판매 시스템과 외부 연동용 OPEN API 개발</li>
-            <li>바이오 생체 인증 API 개발</li>
-          </ul>
-          <ul lang="en">
-            <li>Improved search speed and accuracy in an Elasticsearch project, and wrote a manual for the team</li>
-            <li>Built an overseas sales system and an open API for outside integrations</li>
-            <li>Built a biometric authentication API</li>
-          </ul>
-          <div class="tags mono"><span>PHP</span><span>CodeIgniter</span><span>MySQL</span><span>Elasticsearch</span></div>
-        </article>
       </div>
     </section>
 

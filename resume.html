@@ -528,9 +528,9 @@
       </div>
       <p class="summary">
         Java &amp; Spring 기반의 6년차 서버 백엔드 개발자로
-        일 1,000건+ 주문 커머스, 4개국 글로벌 결제, 임직원 500명 인사 시스템을 개발·운영하며
-        응답 시간 <b>94%↓</b>, 일괄 결재(최대 300건) <b>14초 → 1초</b>를 달성했고,
-        현재는 그룹 계열사 <b>1,200명</b>이 쓰는 AI 서비스의 인증·연동 표준을 설계하고 있습니다.
+        일 1,000건+ 주문 커머스, 4개국 글로벌 결제, 계열사 인사 시스템을 개발·운영하며
+        핵심 화면 응답 <b>18초 → 1초 이내</b>를 달성했고,
+        현재는 그룹 가입자 <b>1,130명</b>이 쓰는 AI 서비스의 인증·연동 표준을 설계하고 있습니다.
       </p>
       <p class="summary">
         대규모 트래픽 이커머스에서 트랜잭션과 성능을 다진 뒤 엔터프라이즈 보안·인증 환경을 거치며,
@@ -542,11 +542,11 @@
       <div class="sec-label">Key Strengths</div>
       <div class="cmp"><table>
         <tr><th>역량</th><th>근거</th></tr>
-        <tr><td>성능 최적화</td><td>병목을 지표로 먼저 특정(AWR·슬로우 쿼리·APM) 후 구조 변경. 응답 18초→1초, 조회 10초→1초, 검색 60%↑</td></tr>
-        <tr><td>정합성 설계</td><td>복합 결제·부분 환불 시나리오 40건 검증(불일치 0건), 30만 건 이관 건수·금액 대사 불일치 0건</td></tr>
-        <tr><td>인증·보안 연동</td><td>OAuth 2.0/JWT 표준화로 계열사 연동 2주→3일, 내부망 포트 개방 없이 AI 연동(API GW→Lambda→DMZ), 보안 심의 1회 통과</td></tr>
-        <tr><td>AI 서비스 개발</td><td>MCP 엔진이 일관성·근거를 통제하고 LLM이 판독·의견을 맡는 투자심의 에이전트(대표이사 리뷰, 컨퍼런스 발표), 전사 에이전트 16건·도구 10종, 딥리서치 4시간→25분</td></tr>
-        <tr><td>리딩·확산</td><td>PL 2회(5인), 계열사 교육 5회(150명), 멘토링</td></tr>
+        <tr><td>성능 최적화</td><td>병목을 먼저 특정한 뒤 구조 변경. 응답 18초→1초, 조회 10초→1초</td></tr>
+        <tr><td>정합성 설계</td><td>복합 결제·부분 교환/환불 정산 설계(결제 수단별 환불 금액·잔여 포인트 재계산), 레거시 회원 약 30만 건 이관</td></tr>
+        <tr><td>인증·보안 연동</td><td>OAuth 2.0/JWT 전환으로 호출자 사번 자동 주입, AWS Lambda MCP → DMZ 중계 게이트웨이 → e-HR REST API 연동</td></tr>
+        <tr><td>AI 서비스 개발</td><td>MCP 엔진이 일관성·근거를 통제하고 LLM이 판독·의견을 맡는 투자심의 에이전트(현업 리뷰 6회, 컨퍼런스 발표), 전사 에이전트 16건·도구 10종</td></tr>
+        <tr><td>리딩·확산</td><td>PL 2회(스마일게이트샵 개발자 3명, e-HR SSO), 그룹 AI 교육 4회, 멘토링</td></tr>
       </table></div>
     </section>
 
@@ -560,68 +560,49 @@
       <div class="item">
         <div class="when">2023.06 — 진행 중</div>
         <div>
-          <h3>e-HR 인사시스템 성능 고도화·운영 안정화</h3>
-          <div class="org">계열사 인사 시스템(사용자 약 500명) 단독 운영 · SSO 통합 로그인 PL</div>
-          <div class="stack">Java · Spring · JSP · Oracle · JavaScript · Jenkins · JEUS · Git</div>
+          <h3>e-HR 레거시 현대화와 성능 개선</h3>
+          <div class="org">2018년부터 쌓인 Spring·Oracle 레거시 인사 시스템 단독 운영 · SSO 통합 로그인 PL</div>
+          <div class="stack">Java · Spring · JSP · Oracle · JavaScript · Gradle · Jenkins · JEUS · Git</div>
           <ul>
-            <li class="problem"><strong>문제</strong> — 핵심 화면 응답이 <strong>18초</strong>에 달하고, 수기 입력과 FTP 수동 배포로 오류·오배포 위험이 누적됨</li>
-            <li><b>핵심 화면 응답 18초 → 1.0초(94%↓)</b> — AWR·개발자 도구로 병목이 하드파싱과 반복 조회임을 특정하고, 동적 SQL 정적화·인덱스 보완·서버 캐시(적중률 87%)·접속 로그 비동기 분리를 적용</li><li><b>일괄 결재(최대 300건) 14초 → 1초 이내</b> — 건별 직렬 처리를 스레드 풀 8개 비동기 병렬로 전환, 결재선 순서는 문서 단위 락으로 보장</li><li><b>SSO 통합 로그인 PL(5인·4개월)</b> — 대상 시스템 6개의 분석·설계·개발·검증 주도, 로그인 관련 문의 월 12건 → 2건</li><li><b>입사자 등록 20분 → 1분(월 약 13시간 절감)</b> — 엑셀 업로드·유효성 검증·DB 자동 반영 구조로 전환</li><li><b>개인정보 마스킹 62개 화면 일원화</b> — 공통 AOP·인터셉터로 누락 0건, 권한 등급별 해제와 접근 로그·감사 추적으로 내부 개인정보 점검 지적 0건</li><li><b>배포 40분 → 6분, 오배포 연 3건 → 0건</b> — FTP 수동 배포를 Jenkins·Git 파이프라인으로 전환</li>
-            <li class="result"><strong>성과</strong> — 핵심 화면 5종 응답을 개선 전후 각 2주씩 비교(Oracle AWR·Chrome DevTools), 연 12회 이상 무중단 배포·단독 운영</li>
+            <li class="problem"><strong>문제</strong> — 핵심 화면 응답이 최대 <strong>18초</strong>에 달하고, FTP 수동 배포로 운영서버와 저장소가 어긋나 있음</li>
+            <li><b>빌드·배포 파이프라인 전환</b> — SVN → GitLab 이관, Gradle 빌드 도입, 운영서버 수정분 900여 건 정합화, Jenkins로 개발서버 자동 배포·운영 WAR 자동 빌드</li><li><b>핵심 화면 응답 18초 → 1초 이내</b> — DB(동적 SQL 정적화로 하드파싱 제거·인덱스 보완), 서버(SQL 템플릿·마스킹 설정 캐시·접속 로그 비동기), 화면(공통코드 sessionStorage·비동기 AJAX) 3계층 개선</li><li><b>일괄 결재 병렬 처리</b> — 건별 직렬 처리를 스레드 풀 5개 병렬로 전환(DB 커넥션 풀 고려), 건별 DB 시각 조회 제거</li><li><b>개인정보 공통 마스킹</b> — 공통 인터셉터로 일원화, 메뉴별 마스킹 설정, 해제 로그 저장·조회</li><li><b>SSO 통합 로그인 PL</b> — SSO 인증 연동의 분석·설계·개발·검증 주도</li><li><b>입사자 등록 자동화</b> — 엑셀 업로드·유효성 검증·DB 자동 반영 구조로 전환, 가족·학력 정보까지 확대</li><li><b>법정 패치 20회 이상 적용</b> — 연말정산 등</li>
+            <li class="result"><strong>성과</strong> — 핵심 화면 응답 18초 → 1초 이내(실측), 단독 운영</li>
           </ul>
-          <div class="cmp"><div class="cmp-title">대안 검토 — 응답 지연 해소</div><table><tr><th>대안</th><th>장점</th><th>한계</th><th>결론</th></tr><tr><td>서버 스펙 증설</td><td>코드 변경 없음</td><td>병목이 하드파싱·반복 조회라 효과 제한</td><td class="pick">제외</td></tr><tr><td>인덱스 보완만</td><td>위험 낮음</td><td>동적 SQL 파싱 비용 잔존</td><td class="pick">1단계</td></tr><tr><td>정적 SQL + 서버 캐시 + 로그 비동기</td><td>파싱·조회·I/O 동시 제거</td><td>캐시 무효화 규칙 필요</td><td class="pick">최종 채택</td></tr></table></div><p class="measure"><b>측정</b> — 응답 시간은 Chrome DevTools Network 기준, 하드파싱 횟수는 Oracle AWR 리포트로 개선 전후 비교<br>· <b>트레이드오프</b> 서버 캐시 갱신 지연 최대 30초는 인사 데이터 특성상 현업 합의 후 수용</p>
+          <div class="cmp"><div class="cmp-title">대안 검토 — 응답 지연 해소</div><table><tr><th>대안</th><th>장점</th><th>한계</th><th>결론</th></tr><tr><td>서버 스펙 증설</td><td>코드 변경 없음</td><td>병목이 하드파싱·반복 조회라 효과 제한</td><td class="pick">제외</td></tr><tr><td>인덱스 보완만</td><td>위험 낮음</td><td>동적 SQL 파싱 비용 잔존</td><td class="pick">1단계</td></tr><tr><td>정적 SQL + 서버 캐시 + 로그 비동기</td><td>파싱·조회·I/O 동시 제거</td><td>캐시 무효화 규칙 필요</td><td class="pick">최종 채택</td></tr></table></div>
         </div>
       </div>
       <div class="item">
-        <div class="when">2026.02 — 진행 중</div>
+        <div class="when">2026.04 — 진행 중</div>
         <div>
           <h3>투자심의 사전검토 AI 에이전트 설계·구현</h3>
-          <div class="org">현업 팀 요건 협의 · 설계·구현 전담 · 2026.07 대표이사 리뷰, 실제 안건 적용 가능 상태로 오픈</div>
-          <div class="stack">Python · MCP · AWS Lambda · 웍스AI 에이전트</div>
+          <div class="org">경영개선팀 요청 · 2인 팀 엔진 설계·구현 · 현업 리뷰 6회 후 2026.09 오픈</div>
+          <div class="stack">Python · MCP(JSON-RPC) · AWS Lambda · API Gateway · DynamoDB · FastAPI · React</div>
           <ul>
-            <li class="problem"><strong>문제</strong> — 임원 투자심의를 AI로 대체해 달라는 요청이었으나, LLM만으로는 같은 안건에도 결론이 달라지고 근거 없는 답변이 섞여 의사결정에 쓸 수 없음</li>
-            <li><b>범위 재설정</b> — AI의 한계를 근거로 "대체"가 아닌 <b>"심의 전 사전 검토 의견 제공"</b>으로 요구를 낮춰 합의, 최종 판단은 사람이 유지</li>
-            <li><b>엔진과 LLM의 역할 분리</b> — 일관성이 필요한 부분(진행 순서·상태 관리, 입력 검증, 근거 미조회 시 반려, 배점 기준)은 Lambda 기반 MCP 심의 엔진이 통제하고, 판독·의견 작성·점수 산정은 LLM이 수행. MCP를 데이터 연동이 아닌 <b>오케스트레이터</b>로 활용</li>
-            <li><b>5개 관점 심의 + 사람 확인 2단계</b> — 외부투자자·CFO·감사실·사업부 대표·레드팀 관점으로 점수와 근거를 산출하고, 자료 요약 검증·추가 토론 여부에서 사용자가 개입. 사업부 대표 관점은 우려 일색의 편향된 점수를 보정하기 위해 추가</li>
-            <li><b>품질 문제 3종 해결</b> — ① 결과 불일치: 판독 사실을 단일 목록으로 고정해 모든 관점이 이 목록만 인용 ② 기준 변동: 상태를 엔진이 관리해 재판독·중간 기준 변경 차단 ③ 환각: 근거 없는 답변은 반려, 인용 필수</li>
-            <li class="result"><strong>성과</strong> — 대표이사 리뷰에서 높은 평가, <b>8개 섹션 심의 리포트 자동 생성</b>, 실제 안건 즉시 활용 가능한 상태로 운영. 설계 사례를 AX REAL 2026 컨퍼런스에서 발표</li>
+            <li class="problem"><strong>문제</strong> — 임원 투자심의를 AI로 대체해 달라는 요청이었으나, LLM에 같은 자료를 주면 총점이 49점과 43점으로 갈려 의사결정에 쓸 수 없음</li>
+            <li><b>범위 재설정</b> — "대체"가 아닌 <b>AI 사전 심의 + 경영진 결재</b> 두 단계로 합의, 리포트에 최종 결정 권한 문구 고정</li>
+            <li><b>LLM을 부르지 않는 MCP 엔진</b> — 서버는 다음 행동 지시문과 최소 검사만 반환하고 판독·조회·의견은 클라이언트 LLM이 수행. 서버 측 LLM 비용 0, 모델 교체 자유</li>
+            <li><b>근거 원장</b> — 판독 사실·사용자 답변·외부 증거를 ID 붙은 표 하나로 확정, 다섯 관점(외부투자자·CFO·감사실·사업부 대표·레드팀)은 원장 ID로만 인용, 사람 확인 3단계</li>
+            <li><b>실측 기반 5세대 재설계</b> — 첨부 원문 재전송이 청구 입력의 84%임을 확인해 판독·심의 대화 분리로 안건당 비용 62% 절감, 검증 코드가 양식 채우기를 유도(v2 커밋 111건 중 fix 73건)해 걷어내고 코드 6,300 → 1,615줄, 지시문 109,297 → 42,678자</li>
+            <li><b>검증</b> — 정답 16항목 가상 안건으로 16/16 확인, 테스트 654건, 배포 없이 전 과정을 돌리는 로컬 실행 환경</li>
+            <li class="result"><strong>성과</strong> — 2026.09 경영개선팀 오픈, <b>8개 섹션 심의 리포트</b> 생성, AX REAL 2026(10/1)에서 설계 발표</li>
           </ul>
-          <div class="cmp"><div class="cmp-title">대안 검토 — 심의 로직 위치</div><table><tr><th>대안</th><th>장점</th><th>한계</th><th>결론</th></tr><tr><td>프롬프트 중심 단일 에이전트</td><td>구현 단순</td><td>실행마다 결론·순서가 달라지고 근거 통제 불가</td><td class="pick">제외</td></tr><tr><td>MCP 엔진 통제 + LLM 판단</td><td>일관성·상태 보장, 근거 게이트</td><td>순차 실행으로 1회 10분+ 소요</td><td class="pick">최종 채택</td></tr></table></div><p class="measure"><b>트레이드오프</b> — 관점이 순차 실행되어 앞 관점이 뒤 관점 의견을 볼 수 없으므로 추가 토론 단계를 두어 보완하고, 긴 실행 시간은 단계별 진행 안내로 완화</p>
+          <div class="cmp"><div class="cmp-title">대안 검토 — 일관성을 어디서 확보할 것인가</div><table><tr><th>대안</th><th>장점</th><th>한계</th><th>결론</th></tr><tr><td>프롬프트만 사용</td><td>구현이 가장 단순</td><td>같은 자료에서 총점 49점과 43점</td><td class="pick">제외</td></tr><tr><td>엔진이 모든 단계를 검증·반려</td><td>순서 위반·근거 없는 답 차단</td><td>검증 통과용 양식 채우기 발생, 동시 심의 불가</td><td class="pick">운영 후 철회</td></tr><tr><td>상태 없는 엔진 + 근거 원장 + 최소 검사</td><td>구조 단순, 동시 심의 가능</td><td>순서는 강제하지 않고 안내만</td><td class="pick">현재 운영</td></tr></table></div><p class="measure"><b>트레이드오프</b> — 관점이 순서대로 실행되어 한 건에 10~40분이 걸리므로 단계마다 진행 상황을 보여 주고, 같은 오판이 실측에서 두 번 이상 나오면 그 검사 하나만 되살린다</p>
         </div>
       </div>
 
       <div class="item">
         <div class="when">2025.07 — 진행 중</div>
         <div>
-          <h3>그룹 AI 서비스 도입·인증 표준·확산 (Project Leader)</h3>
-          <div class="org">SaaS 기반 AI 서비스 '웍스AI(유진GPT)' 그룹 도입 · 3인 팀 · 본인 기여 약 70% (설계·구현·확산 리딩)</div>
-          <div class="stack">Python · MCP · OAuth 2.0 · AWS(API Gateway·Lambda) · Git</div>
+          <h3>그룹 AI 연동 플랫폼과 도입 확산 (Project Leader)</h3>
+          <div class="org">SaaS 기반 AI 서비스 '웍스AI(유진GPT)' 그룹 도입 · 3인 팀 Project Leader</div>
+          <div class="stack">Python · MCP · OAuth 2.0/JWT · AWS(Lambda·API Gateway·DynamoDB) · Playwright · Git</div>
           <ul>
-            <li class="problem"><strong>문제</strong> — 내부망 데이터를 보안 경계를 유지한 채 외부 SaaS·AI가 활용해야 하고, 계열사마다 인증 방식이 달라 연동이 지연됨</li>
-            <li><b>신규 계열사 연동 2주 → 3일</b> — OAuth 2.0/JWT 표준 흐름(토큰 1시간·리프레시 14일, scope 5종)을 정의해 그룹 계열사에 동일 적용</li>
-            <li><b>내부망 포트 개방 0건, 보안 심의 1회 통과</b> — API Gateway → Lambda → NAT Gateway → DMZ 경로와 MCP 서버로 AI가 e-HR 데이터를 안전하게 조회 (호출 p95 1.2초)</li>
-            <li><b>사내 데이터 REST API 12종</b> 신규 개발, 월 호출 약 45만 건·월별 사용자 현황 정기 보고 체계 구축</li>
-            <li><b>자체 에이전트 16건·도구 10종</b> 개발, 현업 요구 발굴로 시작해 법무팀이 먼저 요청한 공정거래 준법 에이전트까지 <b>현업 선요청 구조</b>로 전환</li>
-            <li><b>확산 활동</b> — 주간 뉴스레터로 신규 에이전트 소개(2026.03~), 그룹 AI 교육 5회(누적 150명), 팀장급 도입 효과 발표</li>
-            <li class="result"><strong>성과</strong> — 에이전트 활용 토큰 비율 <strong>8% → 48%</strong>(2026.01→08), 월 토큰 사용량 <strong>7천만 → 2.7억(약 3.9배)</strong>, 월 활성 사용자 <strong>그룹 계열사 1,200명</strong> (활성 = 월 1회 이상 로그인, 로그인 로그 기준)</li>
+            <li class="problem"><strong>문제</strong> — 도입 석 달째(2025.10) 등록 337명 중 실제 사용자 43명(12.8%), 사내 시스템 데이터에 안전하게 닿는 경로도 없음</li>
+            <li><b>MCP 서버 12개</b> — Lambda·API Gateway·공용 MCP 처리 코드를 공통 패턴으로 묶어 법무·경영·증권·보안 분야 요청을 전달, 공정거래 준법 에이전트는 요청 메일부터 배포까지 8일</li><li><b>사내 시스템 보안 연동</b> — AWS Lambda MCP → DMZ 중계 게이트웨이 → e-HR 인사·조직·휴가 REST API, 단일 Bearer 토큰을 OAuth 2.0/JWT로 전환해 호출자 사번 자동 주입</li><li><b>지표 정의·월간 보고</b> — 월 사용자·Light/Heavy User·에이전트 활용 비율 정의, Playwright 수집기, 8월 활용 비율 48%가 테스트 물량을 포함한 착시임을 먼저 보고하고 31%로 정정</li><li><b>사용자 인터뷰·교육</b> — 10명 인터뷰로 미사용 원인(토큰 한도·안내 메일) 확인, 뉴스레터로 에이전트 16건 소개, 교육 4회(2026.07·10) 직접 강의</li>
+            <li class="result"><strong>성과</strong> — 누적 가입자 337 → 1,130명, 월 사용자 43 → 356명(2025.10 → 2026.10), 월 1회 이상 쓰인 에이전트·워크플로우 19 → 91개, 에이전트 활용 비율 8% → 28%</li>
           </ul>
-          <div class="cmp"><div class="cmp-title">대안 검토 — 내부망 연동 방식</div><table><tr><th>대안</th><th>장점</th><th>한계</th><th>결론</th></tr><tr><td>내부망 포트 직접 개방</td><td>구현 단순</td><td>보안 심의 불가</td><td class="pick">제외</td></tr><tr><td>VPN·전용선</td><td>통제 용이</td><td>SaaS 미지원, 구축 길음</td><td class="pick">제외</td></tr><tr><td>API GW → Lambda → NAT → DMZ + MCP</td><td>내부망 비노출, 호출 단위 인가·감사</td><td>홉 증가 지연</td><td class="pick">최종 채택</td></tr></table></div><p class="measure"><b>측정</b> — p95 응답은 CloudWatch 2주 집계, 사용자·호출량은 게이트웨이 액세스 로그 월 집계<br>· <b>트레이드오프</b> 경로 홉 증가로 호출당 약 80ms 추가, 응답 캐시로 상쇄</p>
         </div>
       </div>
-      <div class="item">
-        <div class="when">2025.01 — 2025.12</div>
-        <div>
-          <h3>사내 AI 플랫폼 내재화 · 딥리서치</h3>
-          <div class="org">사내 문서 기반 답변·보고서 초안 생성 플랫폼 (3인 중 백엔드·파이프라인 설계)</div>
-          <div class="stack">Python · FastAPI · LangChain · LangGraph · MCP · AWS</div>
-          <ul>
-            <li class="problem"><strong>문제</strong> — 보고서 한 건에 평균 <strong>4시간</strong>이 걸리는 자료 수집·요약·초안 작성이 반복됨</li>
-            <li><b>보고서 초안 4시간 → 25분</b> — 업로드 → 요약 → 검색 → 초안 생성을 LangGraph 멀티스텝 플로우로 구현</li><li><b>근거 인용 정확도 91%</b> — 자체 평가셋 100문항으로 환각·누락을 점검하며 프롬프트·검색 단계 개선</li>
-            <li class="result"><strong>성과</strong> — 반복 보고서 작성 자동화, 시범 부서 3곳 도입</li>
-          </ul>
-          
-        </div>
-      </div>
-
       <div class="company">
         <div><h2>포비즈코리아</h2><div class="meta">기업형 E-Commerce 솔루션 · 사원~대리 · 커머스개발팀</div><div class="why">입사 동기: 대규모 주문·결제 트래픽을 직접 다루며 트랜잭션·성능 설계 역량을 쌓기 위해 입사</div></div>
         <div class="when">2020.12 — 2023.06</div>
@@ -629,13 +610,13 @@
       <div class="item">
         <div class="when">2023.02 — 2023.05</div>
         <div>
-          <h3>스마일게이트샵 글로벌 서비스 구축 (개발 PL)</h3>
-          <div class="org">다국가 결제·정책 대응 구조 설계 · 5인 · 4개월 · 본인 기여 약 50% (결제·정책 구조)</div>
-          <div class="stack">PHP · CodeIgniter · MySQL · JavaScript · Git</div>
+          <h3>스마일게이트샵 4개국 결제·정책 구조 설계 (개발 PL)</h3>
+          <div class="org">다국가 결제·정책 대응 구조 설계 · 개발자 3명 · 4개월</div>
+          <div class="stack">PHP · CodeIgniter · MySQL · Elasticsearch · JavaScript · Git</div>
           <ul>
-            <li class="problem"><strong>문제</strong> — 국가별 통화·결제·배송 정책이 달라 코드 분기만으로는 다국가 확장이 어려움</li>
-            <li><b>국가 추가 대응 2주 → 2일</b> — 국가 정책 테이블 + 공통 결제 인터페이스로 정책을 설정화</li><li><b>복합 결제 부분 환불 금액 불일치 0건</b> — 일반 결제 + 포인트 2종 환불 시나리오 40건 QA로 검증</li><li>국내/해외 결제(이니시스/엑심베이)와 EMS·복지포인트·SNS 로그인 5종 연동, 다국어 검색 구현, 개발 PL로서 개발 일정·산출물 품질 관리</li>
-            <li class="result"><strong>성과</strong> — 4개국 동시 런칭 일정 준수, 결제·검색 확장 구조 확보</li>
+            <li class="problem"><strong>문제</strong> — 한국 단일 시장용 쇼핑몰을 4개국 동시 서비스로 확장, 국가별 언어·통화·결제·배송 정책을 코드 분기 없이 다뤄야 함</li>
+            <li><b>복합 결제·부분 환불 정산</b> — 일반 결제 + 포인트 복합 결제와 부분 교환·환불 정산 설계·구현, 결제 수단별 환불 금액 정합성·잔여 금액·포인트 재계산 담당</li><li><b>설정 기반 다국가 구조</b> — 국가·언어·통화·결제수단을 데이터로 분리해 국가 추가를 코드 수정 없이 처리, 국내/해외 결제(이니시스/엑심베이) 연동</li><li><b>국가별 검색</b> — 국가별 Elasticsearch 인덱스 분리로 현지 언어 검색</li><li>EMS·임직원 인증·이지웰 복지포인트·SNS 로그인 5종 연동, 장바구니 배송 국가 선택·교환/반품/환불 클레임 개발, 개발자 3명 일정·업무 배분 관리</li>
+            <li class="result"><strong>성과</strong> — 4개월 만에 4개국·5개 언어 동시 출시, 국가를 설정으로 늘리는 구조 확보</li>
           </ul>
           
         </div>
@@ -644,14 +625,13 @@
         <div class="when">2020.12 — 2023.03</div>
         <div>
           <h3>ELAND FOLDER MALL 구축·운영</h3>
-          <div class="org">일 평균 1,000건+(월 5만 건+) 주문 커머스 · 개발 4인(백엔드 2인) · 집계·검색 구조 설계·구현 본인 기여 약 60%</div>
+          <div class="org">하루 평균 1,000건 이상 주문 커머스 · 개발자 3명 · 집계·커뮤니티·검색 담당</div>
           <div class="stack">PHP · CodeIgniter · MySQL · Elasticsearch · Jenkins · Linux</div>
           <ul>
-            <li class="problem"><strong>문제</strong> — 주문 집중 시간대 실시간 집계 쿼리가 병목이 되어 상품 조회 <strong>10초</strong>, DB CPU 피크 85%</li>
-            <li><b>상품 조회 10초 → 1초(90%↓), DB CPU 피크 85% → 40%</b> — 실시간 Best 상품 집계를 10분 주기 사전 집계로 전환</li><li><b>검색 평균 1.6초 → 0.6초(약 60%↑)</b> — 상품 약 200만 건을 Elasticsearch로 분리</li><li><b>운영 업무 월 30시간 절감</b> — Cron 기반 정산·운영 배치 자동화, Jenkins 자동·수동 배포</li><li>커뮤니티(FolderingChannel)·UGC 신고/차단·최근 본 상품 History·본인인증 등 기능 개발</li>
-            <li class="result"><strong>성과</strong> — 월 5만 건+ 주문 무장애 처리, 구조 개선 후 피크 시간대 지연 문의 소멸</li>
+            <li class="problem"><strong>문제</strong> — Best 상품을 요청마다 실시간 집계해 데이터가 쌓일수록 느려져 조회 <strong>10초</strong> (EXPLAIN: 풀 스캔·임시 테이블, 인덱스 누락)</li>
+            <li><b>Best 상품 조회 10초 → 1초 이내</b> — 배치 사전 집계 + 별도 테이블로 읽기·집계 경로 분리, 누락 인덱스 보강</li><li><b>Elasticsearch 검색</b> — 상품 검색·최근 본 상품 기록 개발, 관리자 검색 고도화</li><li><b>커뮤니티·프로모션</b> — FolderingChannel 팔로우·UGC 신고/차단·후기·평점·게시판 단독 개발, 초성퀴즈·TimeSale·래플 이벤트 메인 담당</li><li><b>외부 연동·운영</b> — 본인인증·회원정보·후기종합·평점통계 외부 연동, Cron 운영 배치, Jenkins 자동·수동 배포</li>
+            <li class="result"><strong>성과</strong> — Best 상품 조회 10초 → 1초 이내, 사용자 요청을 집계 부하에서 분리</li>
           </ul>
-          <div class="cmp"><div class="cmp-title">대안 검토 — 조회 병목</div><table><tr><th>대안</th><th>장점</th><th>한계</th><th>결론</th></tr><tr><td>쿼리·인덱스 튜닝만</td><td>위험 낮음</td><td>집계 부하 잔존</td><td class="pick">부분 적용</td></tr><tr><td>10분 주기 사전 집계</td><td>조회 부하 제거</td><td>최대 10분 지연</td><td class="pick">최종 채택</td></tr><tr><td>Redis 실시간 갱신</td><td>지연 없음</td><td>신규 인프라·비용</td><td class="pick">제외</td></tr></table></div><p class="measure"><b>측정</b> — 슬로우 쿼리 로그·APM 기준 피크(20~23시) 2주 일평균 비교, 검색은 상위 검색어 100개 평균 응답</p>
         </div>
       </div>
       <div class="item">
@@ -659,10 +639,9 @@
         <div>
           <h3>그 외 커머스 구축·운영</h3>
           <ul>
-            <li><b>푸드케어 CLE</b> (2022.07~2023.02) — 회원·콘텐츠 <b>30만 건 이관, 건수·금액 대사 불일치 0건</b> (전수 건수 + 샘플 2,000건 대조), Elasticsearch 연동</li>
-            <li><b>HL SCIENCE MALL</b> (2021.03~2021.12) — 월 2,000건+ 주문 무장애 운영, 네이버페이 주문형 API 연동, 관리자 검색 고도화</li>
-            <li><b>위기브 기부 모금</b> (2022.10~2023.01) — UGC 신고·차단, 지자체 셀러·입점 문의 관리 개발로 운영 프로세스 표준화</li>
-            <li><b>사내 프로젝트</b> (2021.01~2022.07) — Elasticsearch 학습 매뉴얼 작성, OPEN API·생체 인증 API 개발</li>
+            <li><b>푸드케어 CLE</b> (2022.07~2023.02) — 레거시 회원 <b>약 30만 건 이관</b>, 요일·식단·월령별 <b>일정 배송</b>(일자 × 상품 × 고객) 개발, Elasticsearch 연동</li>
+            <li><b>HL SCIENCE MALL</b> (2021.03~2021.12) — 신규 구축에서 장바구니·주문·결제·관리자 커머스 코어 단독 구현, 네이버페이 주문형 API 연동, 관리자 검색 고도화, 월 약 2,000건 주문</li>
+            <li><b>위기브 고향사랑기부제</b> (2022.10~2023.01) — 지자체별 마이크로사이트(URL·세션 기반 분기)와 입점·답례품 등록 제휴 관리 메인 구현, UGC 신고·차단, 4개월 일정 오픈</li>
           </ul>
         </div>
       </div>
@@ -791,7 +770,7 @@
         <div class="when">2025</div>
         <div>
           <h3>그룹 전사 AI 활용 교육 · 팀장급 도입 효과 발표</h3>
-          <div class="org">계열사 대상 오프라인 교육 5회 (누적 수강 약 150명), 사내 기술 세미나 발표 (참석 80명)</div>
+          <div class="org">주요 계열사 대상 오프라인 활용 가이드 5회, 그룹사 팀장급 대상 발표 1회 (약 30명)</div>
         </div>
       </div>
 

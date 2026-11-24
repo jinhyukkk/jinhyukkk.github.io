@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>푸드케어 CLE 구축 · 박진혁</title>
+<title>푸드케어 CLE 레거시 이관과 일정 배송 · 박진혁</title>
 <meta name="description" content="기존 시스템의 회원과 콘텐츠를 새 플랫폼으로 옮겨야 했습니다. 누락이나 금액 오차가 생기면 회원의 포인트와 이력에 바로 문제가 됩니다." />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Noto+Serif+KR:wght@400;500;600&display=swap" />
 <link rel="stylesheet" href="project.css" />
@@ -19,19 +19,19 @@
     <div class="lang" role="group" aria-label="Language"><button type="button" data-l="ko">KO</button><span>/</span><button type="button" data-l="en">EN</button></div>
   </header>
 
-  <a class="lg lg-foodcare-cle" href="https://foodcare-cle.com" target="_blank" rel="noopener"><img src="../images/projects/foodcare-cle-logo.png" alt="Foodcare CLE build" /></a>
+  <a class="lg lg-foodcare-cle" href="https://foodcare-cle.com" target="_blank" rel="noopener"><img src="../images/projects/foodcare-cle-logo.png" alt="Foodcare CLE: legacy migration and scheduled delivery" /></a>
   <div class="when mono">2022.07 — 2023.02</div>
-  <h1><span lang="ko">푸드케어 CLE 구축</span><span lang="en">Foodcare CLE build</span></h1>
+  <h1><span lang="ko">푸드케어 CLE 레거시 이관과 일정 배송</span><span lang="en">Foodcare CLE: legacy migration and scheduled delivery</span></h1>
   <p class="co"><span lang="ko">포비즈코리아</span><span lang="en">Forbiz Korea</span></p>
-  <p class="org" lang="ko">새 플랫폼 구축에서 레거시 데이터의 마이그레이션과 이유식 일정 배송 기능 개발을 맡았습니다.</p>
-    <p class="org" lang="en">On the new platform build, I owned the migration of legacy data and built scheduled delivery for the baby food plans.</p>
-  <div class="tags mono"><span>PHP</span><span>MySQL</span><span>Elasticsearch</span></div>
+  <p class="org" lang="ko">10년 넘게 쌓인 레거시 회원 약 30만 건을 새 플랫폼으로 옮기고, 아이 월령에 따라 매일 달라지는 이유식 일정 배송을 일자 × 상품 × 고객 구조로 만들었습니다.</p>
+    <p class="org" lang="en">I moved about 300,000 legacy member records, built up over 10+ years, to a new platform, and built scheduled baby food delivery, which changes daily with the child's age, as a date × product × customer structure.</p>
+  <div class="tags mono"><span>PHP</span><span>CodeIgniter</span><span>MySQL</span><span>Elasticsearch</span><span>Cron</span></div>
 
-  <dl class="tl"><div><dt class="mono"><span lang="ko">문제</span><span lang="en">Problem</span></dt><dd><span lang="ko">회원과 콘텐츠 30만 건을 누락과 금액 오차 없이 새 플랫폼으로 옮겨야 했습니다.</span><span lang="en">300,000 member and content records had to move to a new platform with nothing missing and no amount errors.</span></dd></div><div><dt class="mono"><span lang="ko">접근</span><span lang="en">Approach</span></dt><dd><span lang="ko">전수 건수 대조와 샘플 2,000건 대조로 검증하며 이관했습니다.</span><span lang="en">I migrated them while verifying with a full count check and a 2,000-record sample check.</span></dd></div><div><dt class="mono"><span lang="ko">결과</span><span lang="en">Result</span></dt><dd><span lang="ko">건수와 금액 불일치 0건.</span><span lang="en">Zero mismatches in counts and amounts.</span></dd></div></dl>
+  <dl class="tl"><div><dt class="mono"><span lang="ko">문제</span><span lang="en">Problem</span></dt><dd><span lang="ko">이유식은 요일, 식단, 아이 월령에 따라 발송 일정이 매일 달라 일반 정기배송 모델로는 운영할 수 없었고, 레거시 데이터도 새 시스템으로 옮겨야 했습니다.</span><span lang="en">Baby food ships on a schedule that changes daily with weekday, menu and the child's age, which a standard subscription model cannot run, and the legacy data had to move to the new system.</span></dd></div><div><dt class="mono"><span lang="ko">접근</span><span lang="en">Approach</span></dt><dd><span lang="ko">발송을 주문 단위가 아니라 일자 × 상품 × 고객 매트릭스로 관리하게 하고, 레거시 회원 데이터를 이관했습니다.</span><span lang="en">I managed shipments as a date × product × customer matrix instead of per order, and migrated the legacy member data.</span></dd></div><div><dt class="mono"><span lang="ko">결과</span><span lang="en">Result</span></dt><dd><span lang="ko">레거시 회원 약 30만 건 이관, 일별 발송 관리 자동화.</span><span lang="en">About 300,000 legacy members migrated; daily shipment handling automated.</span></dd></div></dl>
 
-  <dl class="facts"><div><dt class="mono"><span lang="ko">역할</span><span lang="en">Role</span></dt><dd><span lang="ko">데이터 이관, 일정 배송</span><span lang="en">Data migration, scheduled delivery</span></dd></div><div><dt class="mono"><span lang="ko">이관</span><span lang="en">Migrated</span></dt><dd><span lang="ko">30만 건</span><span lang="en">300,000 records</span></dd></div><div><dt class="mono"><span lang="ko">샘플 대조</span><span lang="en">Sample check</span></dt><dd><span lang="ko">2,000건</span><span lang="en">2,000 records</span></dd></div><div><dt class="mono"><span lang="ko">불일치</span><span lang="en">Mismatches</span></dt><dd><span lang="ko">0건</span><span lang="en">0</span></dd></div></dl>
+  <dl class="facts"><div><dt class="mono"><span lang="ko">역할</span><span lang="en">Role</span></dt><dd><span lang="ko">데이터 이관, 일정 배송</span><span lang="en">Data migration, scheduled delivery</span></dd></div><div><dt class="mono"><span lang="ko">팀</span><span lang="en">Team</span></dt><dd><span lang="ko">개발자 3명</span><span lang="en">3 developers</span></dd></div><div><dt class="mono"><span lang="ko">이관</span><span lang="en">Migrated</span></dt><dd><span lang="ko">회원 약 30만 건</span><span lang="en">about 300,000 members</span></dd></div><div><dt class="mono"><span lang="ko">투입</span><span lang="en">Allocation</span></dt><dd><span lang="ko">30% (FOLDER MALL 병행)</span><span lang="en">30% (alongside FOLDER MALL)</span></dd></div></dl>
 
-  <figure class="shot"><a href="https://foodcare-cle.com" target="_blank" rel="noopener"><img src="../images/projects/foodcare-cle.jpg" alt="Foodcare CLE build" loading="lazy" /></a><figcaption class="mono"><a href="https://foodcare-cle.com" target="_blank" rel="noopener">foodcare-cle.com ↗</a><span><span lang="ko">현재 운영 중인 화면입니다. 2026년 11월에 캡처했고, 개발 당시와 다를 수 있습니다.</span><span lang="en">The live site, captured in November 2026. It may differ from when I worked on it.</span></span></figcaption></figure>
+  <figure class="shot"><a href="https://foodcare-cle.com" target="_blank" rel="noopener"><img src="../images/projects/foodcare-cle.jpg" alt="Foodcare CLE: legacy migration and scheduled delivery" loading="lazy" /></a><figcaption class="mono"><a href="https://foodcare-cle.com" target="_blank" rel="noopener">foodcare-cle.com ↗</a><span><span lang="ko">현재 운영 중인 화면입니다. 2026년 11월에 캡처했고, 개발 당시와 다를 수 있습니다.</span><span lang="en">The live site, captured in November 2026. It may differ from when I worked on it.</span></span></figcaption></figure>
 
   <section>
     <h2>Service</h2>
@@ -43,8 +43,8 @@
   <section>
     <h2>What I did</h2>
     <dl>
-      <div class="pt"><dt><span lang="ko">회원과 콘텐츠 30만 건 이관, 건수와 금액 대사 불일치 0건</span><span lang="en">300,000 member and content records migrated with zero mismatches</span></dt><dd><span lang="ko">전수 건수 대조와 샘플 2,000건 대조로 검증했습니다.</span><span lang="en">Verified with a full count check and a 2,000-record sample check.</span></dd></div>
-      <div class="pt"><dt><span lang="ko">이유식 일정 배송</span><span lang="en">Scheduled delivery</span></dt><dd><span lang="ko">아이의 월령 단계에 맞춘 이유식을 정해진 일정대로 보내는 일정 배송 기능을 개발했습니다.</span><span lang="en">I built scheduled delivery, which sends baby food matched to the child's age stage on a set schedule.</span></dd></div>
+      <div class="pt"><dt><span lang="ko">레거시 회원 약 30만 건 이관</span><span lang="en">About 300,000 legacy members migrated</span></dt><dd><span lang="ko">10년 넘게 쌓인 기존 시스템의 회원 정보와 콘텐츠 데이터를 새 플랫폼으로 옮겼습니다.</span><span lang="en">I moved member and content data built up over 10+ years in the old system to the new platform.</span></dd></div>
+      <div class="pt"><dt><span lang="ko">이유식 일정 배송 (일자 × 상품 × 고객)</span><span lang="en">Scheduled delivery (date × product × customer)</span></dt><dd><span lang="ko">요일, 식단, 아이 월령에 따라 매일 달라지는 발송 일정을 주문 단위가 아니라 일자 × 상품 × 고객 매트릭스로 관리하는 구조로 구현했습니다. 발송은 Cron으로 돌려 운영팀이 손으로 하던 배송 관리를 자동화했습니다.</span><span lang="en">I modeled shipments that change daily with weekday, menu and the child's age as a date × product × customer matrix rather than per order, and ran dispatch on cron, automating what the operations team had done by hand.</span></dd></div>
       <div class="pt"><dt><span lang="ko">Elasticsearch 검색 연동</span><span lang="en">Elasticsearch search</span></dt><dd><span lang="ko">이관한 콘텐츠를 Elasticsearch로 검색할 수 있게 연동했습니다.</span><span lang="en">I connected the migrated content to Elasticsearch search.</span></dd></div>
       <div class="pt"><dt><span lang="ko">주문 데이터 수집</span><span lang="en">Order data collection</span></dt><dd><span lang="ko">주문 데이터를 주문별, 결제수단별, 상품별로 모으는 기능을 개발해 운영자가 매출을 여러 기준으로 볼 수 있게 했습니다.</span><span lang="en">I built collection of order data by order, by payment method and by product, so operators can look at sales from several angles.</span></dd></div>
       <div class="pt"><dt><span lang="ko">SNS 로그인과 공유</span><span lang="en">Social login and sharing</span></dt><dd><span lang="ko">SNS 로그인과 공유 기능을 연동했습니다.</span><span lang="en">I integrated social login and sharing.</span></dd></div>
@@ -55,12 +55,12 @@
 
   <section>
     <h2>Result</h2>
-    <p lang="ko">30만 건을 건수와 금액 불일치 없이 이관했습니다.</p>
-    <p lang="en">300,000 records were migrated with no mismatch in counts or amounts.</p>
+    <p lang="ko">레거시 회원 약 30만 건을 새 플랫폼으로 이관했고, 일반 이커머스에 없는 일별 스케줄 배송을 시스템으로 풀어 운영팀의 수작업을 줄였습니다.</p>
+    <p lang="en">About 300,000 legacy members moved to the new platform, and daily scheduled delivery, which standard e-commerce lacks, now runs in the system instead of by hand.</p>
   </section>
 
 
-  <nav class="pn" aria-label="Projects"><a href="wegive.html"><span class="mono">← PREV</span><span lang="ko">위기브 기부 모금 플랫폼</span><span lang="en">Wegive donation platform</span></a><a class="nx" href="hl-science-mall.html"><span class="mono">NEXT →</span><span lang="ko">HL SCIENCE MALL 운영</span><span lang="en">HL SCIENCE MALL operations</span></a></nav>
+  <nav class="pn" aria-label="Projects"><a href="wegive.html"><span class="mono">← PREV</span><span lang="ko">위기브 기부 모금 플랫폼</span><span lang="en">Wegive donation platform</span></a><a class="nx" href="hl-science-mall.html"><span class="mono">NEXT →</span><span lang="ko">HL SCIENCE MALL 구축</span><span lang="en">HL SCIENCE MALL build</span></a></nav>
 </div>
 <script>
   // 언어 전환: 메인 페이지와 같은 저장값을 쓴다
