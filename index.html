@@ -74,6 +74,9 @@
   .it li { padding-left: 20px; position: relative; }
   .it li::before { content: "-"; position: absolute; left: 2px; color: var(--faint); }
   .it li b { color: var(--ink); font-weight: 500; }
+  .it .ph { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+  .it .ph img { display: block; width: 100%; height: 200px; object-fit: cover; border: 1px solid var(--line); }
+  @media (max-width: 640px) { .it .ph { grid-template-columns: 1fr; } .it .ph img { height: auto; } }
   .it .tags { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 14px; color: var(--faint); }
   .it .go { position: absolute; right: 0; top: 24px; color: var(--muted); }
   /* 강점: 라벨과 근거, 관련 프로젝트 링크 */
@@ -220,7 +223,7 @@
         <div class="sr"><dt class="mono"><span lang="ko">성능 개선</span><span lang="en">Performance</span></dt><dd><p lang="ko">느린 원인을 수치로 먼저 찾은 뒤 구조를 바꿉니다. e-HR의 핵심 화면 응답을 18초에서 1초로, 폴더몰의 Best 상품 조회를 10초에서 1초로 줄였습니다.</p><p lang="en">I measure where it is slow before changing the structure. I cut key screen response in e-HR from 18 s to 1 s, and best-seller listing at FOLDER MALL from 10 s to 1 s.</p><div class="sl mono"><a href="projects/ehr.html">e-HR ↗</a><a href="projects/eland-folder-mall.html">FOLDER MALL ↗</a></div></dd></div>
         <div class="sr"><dt class="mono"><span lang="ko">결제와 데이터 정합성</span><span lang="en">Payment and data integrity</span></dt><dd><p lang="ko">돈과 데이터가 어긋나지 않게 만듭니다. 일반 결제와 포인트가 섞인 부분 교환·환불에서 결제 수단별 환불 금액과 남은 포인트를 다시 계산하는 정산 흐름을 설계해 4개국 동시 출시했고, 레거시 회원 약 30만 건도 새 플랫폼으로 이관했습니다.</p><p lang="en">I make sure money and data never drift apart. I designed settlement for partial exchanges and refunds of card-and-points payments, recalculating refunds per payment method and the remaining points, and launched in 4 countries at once, and migrated about 300,000 legacy members to a new platform.</p><div class="sl mono"><a href="projects/smilegate-global.html">Smilegate Shop ↗</a><a href="projects/foodcare-cle.html">Foodcare CLE ↗</a></div></dd></div>
         <div class="sr"><dt class="mono"><span lang="ko">인증과 보안 연동</span><span lang="en">Auth and secure integration</span></dt><dd><p lang="ko">AWS와 사내망이 직접 통신하지 않도록 DMZ 중계 게이트웨이를 거쳐 e-HR API를 연결했고, 단일 토큰 인증을 OAuth 2.0/JWT로 바꿔 모든 호출에 호출자 사번을 남겼습니다. e-HR에서는 SSO 통합 로그인 개발의 PL을 맡았습니다.</p><p lang="en">I connected e-HR APIs through a DMZ relay gateway so AWS never talks to the internal network directly, and replaced a single shared token with OAuth 2.0/JWT so every call carries the caller's employee ID. On e-HR, I was project leader for single sign-on development.</p><div class="sl mono"><a href="projects/group-ai-platform.html">Group AI ↗</a><a href="projects/ehr.html">e-HR ↗</a></div></dd></div>
-        <div class="sr"><dt class="mono"><span lang="ko">요청을 범위로 바꿔 빠르게 전달</span><span lang="en">Scoping requests and shipping fast</span></dt><dd><p lang="ko">요청을 그대로 만들지 않고 실제로 필요한 것과 제약을 먼저 확인합니다. "투자심의를 AI로 대체"는 AI 사전 심의와 경영진 결재의 두 단계로 합의했고, 공정거래 준법 에이전트는 요청 메일부터 배포까지 8일이 걸렸습니다.</p><p lang="en">I do not build requests as stated; I first check what is actually needed and what the constraints are. "Replace the investment review with AI" became AI pre-review plus management approval, and the fair-trade compliance agent shipped 8 days after the request email.</p><div class="sl mono"><a href="projects/investment-review-agent.html">Review agent ↗</a><a href="projects/group-ai-platform.html">Group AI ↗</a></div></dd></div>
+        <div class="sr"><dt class="mono"><span lang="ko">요청과 설계를 덜어 내 빠르게 전달</span><span lang="en">Cutting scope and design, shipping fast</span></dt><dd><p lang="ko">요청을 그대로 만들지 않고 실제로 필요한 것과 제약을 먼저 확인합니다. "투자심의를 AI로 대체"는 AI 사전 심의와 경영진 결재의 두 단계로 합의했고, 공정거래 준법 에이전트는 요청 메일부터 배포까지 8일이 걸렸습니다. 투자심의 엔진은 한 달 넘게 만든 검증 코드가 오히려 양식만 채우게 만드는 것을 실측(v2 커밋 111건 중 수정 73건)으로 확인하고 걷어내, 코드를 6,300줄에서 1,615줄로 줄였습니다.</p><p lang="en">I do not build requests as stated; I first check what is actually needed and what the constraints are. "Replace the investment review with AI" became AI pre-review plus management approval, and the fair-trade compliance agent shipped 8 days after the request email. In the investment review engine, measurements (73 fixes among 111 v2 commits) showed a month of validation code was pushing the model to fill in forms, so I removed it and cut the code from 6,300 to 1,615 lines.</p><div class="sl mono"><a href="projects/investment-review-agent.html">Review agent ↗</a><a href="projects/group-ai-platform.html">Group AI ↗</a></div></dd></div>
       </dl>
     </section>
 
@@ -289,18 +292,18 @@
           <p lang="ko">2018년부터 쌓인 Spring·Oracle 레거시 인사 시스템을 단독 운영하며 빌드·배포 체계와 성능, 개인정보 처리를 현대화했습니다.</p>
           <p lang="en">I run a Spring and Oracle HR system, built up since 2018, on my own, and modernized its build and deploy, performance and personal data handling.</p>
           <ul lang="ko">
-            <li>SVN을 GitLab으로 옮기고 Gradle 빌드를 도입, 운영서버와 저장소의 차이 900여 건을 정합화한 뒤 Jenkins로 개발서버 자동 배포와 운영용 WAR 자동 빌드 구성</li>
+            <li>SVN을 GitLab으로 옮기고 Gradle 빌드를 도입, 운영서버와 저장소의 차이 900여 건을 정합화한 뒤 Jenkins로 개발서버 자동 배포와 운영용 WAR 자동 빌드 구성, 기본값 섞인 WAR·업로드 폴더 덮어쓰기를 막는 빌드 가드 추가</li>
             <li>동적 SQL을 정적 SQL로 바꿔 하드파싱을 없애고, 반복 조회를 캐시로 돌리고, 접속 로그를 비동기로 분리해 <b>핵심 화면 응답 18초 → 1초 이내</b></li>
             <li>한 건씩 차례로 처리하던 일괄 결재를 <b>최대 5건 동시 처리</b>로 전환</li>
-            <li>연말정산을 비롯한 법정 패치 20회 이상 적용, 개인정보 마스킹과 해제 로그 공통화</li>
-            <li>SSO 통합 로그인 개발 PL</li>
+            <li>연말정산을 비롯한 법정 패치 20회 이상 적용, 개인정보 마스킹과 해제 로그 공통화, SSO 통합 로그인 개발 PL</li>
+            <li>운영 JVM <b>OutOfMemoryError 장애</b>의 원인을 전 사원·전 기간을 메모리에 올리던 조회로 특정하고, 사번 일치·월 6자리 조건으로 막아 재발 방지</li>
           </ul>
           <ul lang="en">
-            <li>Moved SVN to GitLab, introduced a Gradle build, reconciled 900+ files that had drifted between production and the repository, then set up Jenkins for automatic development-server deploys and production WAR builds</li>
+            <li>Moved SVN to GitLab, introduced a Gradle build, reconciled 900+ files that had drifted between production and the repository, then set up Jenkins for automatic development-server deploys and production WAR builds, with build guards against default-config WARs and overwritten upload folders</li>
             <li>Turned dynamic SQL into static SQL to stop hard parsing, cached repeated lookups and moved access logging off the request path, cutting <b>key screen response from 18 s to under 1 s</b></li>
             <li>Bulk approvals handled one at a time now run <b>up to 5 at once</b></li>
-            <li>Applied 20+ statutory patches including year-end tax settlement, and unified personal data masking and unmask logging</li>
-            <li>Project leader for single sign-on development</li>
+            <li>Applied 20+ statutory patches including year-end tax settlement, unified personal data masking and unmask logging, and led single sign-on development</li>
+            <li>Traced a production JVM <b>OutOfMemoryError outage</b> to a lookup that loaded every employee and period into memory, and prevented a repeat by requiring an exact ID and a 6-digit month</li>
           </ul>
           <div class="tags mono"><span>Java</span><span>Spring</span><span>Oracle</span><span>Gradle</span><span>Jenkins</span><span>JEUS</span></div>
         </article>
@@ -430,6 +433,7 @@
           <h3><span lang="ko">MCP를 오케스트레이터로 활용한 투자심의 에이전트</span><span lang="en">An investment review agent with MCP as the orchestrator</span></h3>
           <p lang="ko">AX REAL 2026 컨퍼런스 발표. 청중 약 300명 앞에서 엔진과 LLM의 역할 분리, 근거 반려 설계를 시연과 함께 공유했습니다.</p>
           <p lang="en">Talk at the AX REAL 2026 conference. I showed about 300 people how the engine and the LLM split the work and how answers without evidence get rejected, with a live demo.</p>
+          <div class="ph"><img src="images/talk-1.jpg" alt="AX REAL 2026 conference hall" loading="lazy" /><img src="images/talk-2.jpg" alt="Presenting at AX REAL 2026" loading="lazy" /></div>
           <div class="tags mono"><span>#talk</span><span>#mcp</span><span>#agent</span></div>
         </article>
         <article class="it rv">
