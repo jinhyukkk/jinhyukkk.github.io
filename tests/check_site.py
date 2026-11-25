@@ -82,11 +82,20 @@ def check_project_values():
                 assert m.group(1) in PROJECTS, f"{folder}/{f.name}: 알 수 없는 project '{m.group(1)}'"
 
 
+def check_entry_points():
+    src = (ROOT / "index.html").read_text(encoding="utf-8")
+    side = re.search(r'<nav aria-label="Sections">.*?</nav>', src, re.S).group(0)
+    dock = re.search(r'<nav class="dock".*?</nav>', src, re.S).group(0)
+    assert 'href="/blog/"' in side and 'href="/log/"' in side, "사이드바에 Blog/Log 링크 없음"
+    assert 'href="/blog/"' in dock, "독에 Blog 링크 없음"
+    assert 'aria-label="Tistory"' in src and 'aria-label="Blog"' not in src, "Tistory 라벨 미수정"
+
+
 def main():
     assert SITE.exists(), "먼저 bundle exec jekyll build 실행"
     for check in (check_existing_untouched, check_not_deployed, check_filenames,
                   check_blog, check_feed, check_log,
-                  check_related, check_project_values):
+                  check_related, check_project_values, check_entry_points):
         check()
     print("OK")
 
