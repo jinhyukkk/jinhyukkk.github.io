@@ -1,0 +1,17 @@
+---
+layout: base
+---
+<div class="when mono">{{ page.date | date: "%Y.%m.%d" }}{% if page.collection == "log" %} · LOG{% endif %}</div>
+<h1><span lang="ko">{{ page.title }}</span><span lang="en">{{ page.title_en | default: page.title }}</span></h1>
+{%- if page.collection == "posts" %}
+{%- if page.summary %}
+<p class="org"><span lang="ko">{{ page.summary }}</span><span lang="en">{{ page.summary_en | default: page.summary }}</span></p>
+{%- endif %}
+{%- if page.tags.size > 0 %}
+<div class="tags mono">{% for t in page.tags %}<span>{{ t }}</span>{% endfor %}</div>
+{%- endif %}
+<p lang="en" class="notice mono">This post is written in Korean.</p>
+{%- endif %}
+<article class="md">
+{{ content }}
+</article>

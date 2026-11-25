@@ -13,6 +13,13 @@ collections:
     output: true
     permalink: /log/:title/
 
+# 상세 페이지 상단 ← 링크 대상
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post, back: /blog/, back_label: BLOG }
+  - scope: { path: "", type: log }
+    values: { layout: post, back: /log/, back_label: LOG }
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap

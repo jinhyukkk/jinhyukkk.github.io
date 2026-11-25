@@ -1,7 +1,31 @@
 {
   "version": "0.0.1",
   "configurations": [
-    { "name": "portfolio", "runtimeExecutable": "python", "runtimeArgs": ["-m", "http.server", "8000", "--bind", "127.0.0.1"], "port": 8000 },
-    { "name": "blog", "runtimeExecutable": "bundle", "runtimeArgs": ["exec", "jekyll", "serve", "--port", "4000", "--host", "127.0.0.1"], "port": 4000 }
+    {
+      "name": "portfolio",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8000",
+        "--bind",
+        "127.0.0.1"
+      ],
+      "port": 8000
+    },
+    {
+      "name": "blog",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8001",
+        "--bind",
+        "127.0.0.1",
+        "--directory",
+        "_site"
+      ],
+      "port": 8001
+    }
   ]
 }

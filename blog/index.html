@@ -1,0 +1,24 @@
+---
+layout: base
+title: Blog
+description: 백엔드 개발자 박진혁의 기술 글
+---
+<div class="when mono">BLOG</div>
+<h1><span lang="ko">기술 글</span><span lang="en">Writing</span></h1>
+<p class="org"><span lang="ko">프로젝트에서 내린 설계 판단과 문제를 푼 과정을 기록합니다.</span><span lang="en">Notes on design decisions and problems solved in my projects.</span></p>
+<ul class="posts">
+{%- for p in site.posts %}
+  <li>
+    <a href="{{ p.url | relative_url }}">
+      <span class="when mono">{{ p.date | date: "%Y.%m.%d" }}</span>
+      <b><span lang="ko">{{ p.title }}</span><span lang="en">{{ p.title_en | default: p.title }}</span></b>
+      {%- if p.summary %}
+      <span class="sum"><span lang="ko">{{ p.summary }}</span><span lang="en">{{ p.summary_en | default: p.summary }}</span></span>
+      {%- endif %}
+    </a>
+    {%- if p.tags.size > 0 %}
+    <div class="tags mono">{% for t in p.tags %}<span>{{ t }}</span>{% endfor %}</div>
+    {%- endif %}
+  </li>
+{%- endfor %}
+</ul>

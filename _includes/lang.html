@@ -1,0 +1,17 @@
+{%- comment -%} 언어 처리: 포트폴리오(projects/*.html)와 같은 localStorage 키 'lang'을 쓴다. part="head"는 <head>, part="toggle"은 </body> 앞에 둔다. {%- endcomment -%}
+{%- if include.part == "head" -%}
+<script>
+  try { var L = localStorage.getItem('lang') || ((navigator.language || 'ko').slice(0, 2) === 'ko' ? 'ko' : 'en');
+    document.documentElement.dataset.lang = L; document.documentElement.lang = L; } catch (e) {}
+</script>
+{%- else -%}
+<script>
+  const setLang = l => {
+    document.documentElement.dataset.lang = document.documentElement.lang = l;
+    document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.l === l));
+    try { localStorage.setItem('lang', l); } catch (e) {}
+  };
+  document.querySelector('.lang').onclick = e => e.target.dataset.l && setLang(e.target.dataset.l);
+  setLang(document.documentElement.dataset.lang);
+</script>
+{%- endif -%}

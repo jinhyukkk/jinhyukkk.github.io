@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{% seo %}
+{% feed_meta %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Noto+Serif+KR:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="{{ '/projects/project.css' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/assets/blog.css' | relative_url }}" />
+{% include lang.html part="head" %}
+</head>
+<body>
+<div class="wrap">
+  <header class="bar mono">
+    <a href="{{ page.back | default: '/' | relative_url }}">← {{ page.back_label | default: 'HOME' }}</a>
+    <div class="lang" role="group" aria-label="Language"><button type="button" data-l="ko">KO</button><span>/</span><button type="button" data-l="en">EN</button></div>
+  </header>
+{{ content }}
+</div>
+{% include lang.html part="toggle" %}
+</body>
+</html>
