@@ -1,0 +1,19 @@
+---
+layout: base
+title: Log
+description: 백엔드 개발자 박진혁의 주요 이력 기록
+---
+<div class="when mono">LOG</div>
+<h1><span lang="ko">이력 로그</span><span lang="en">Log</span></h1>
+<p class="org"><span lang="ko">발표, 출시, 자격증 같은 주요 이벤트를 시간순으로 남깁니다.</span><span lang="en">Milestones such as talks, launches and certifications. Entries are written in Korean.</span></p>
+{%- assign years = site.log | sort: "date" | reverse | group_by_exp: "d", "d.date | date: '%Y'" %}
+{%- for y in years %}
+<section class="year">
+  <h2>{{ y.name }}</h2>
+  <ul class="tl-log">
+  {%- for e in y.items %}
+    <li><span class="mono">{{ e.date | date: "%m.%d" }}</span><a href="{{ e.url | relative_url }}">{{ e.title }}</a></li>
+  {%- endfor %}
+  </ul>
+</section>
+{%- endfor %}

@@ -51,10 +51,17 @@ def check_feed():
     assert "e-HR 응답 18초를 1초로 줄인 과정" in read("feed.xml"), "피드에 샘플 글 없음"
 
 
+def check_log():
+    idx = read("log/index.html")
+    assert "2026" in idx and "기술 블로그와 이력 로그 개설" in idx, "타임라인에 연도·샘플 로그 없음"
+    read("log/blog-launch/index.html")  # URL에 날짜가 붙지 않아야 한다
+    assert "기술 블로그와 이력 로그 개설" not in read("feed.xml"), "로그가 피드에 들어감"
+
+
 def main():
     assert SITE.exists(), "먼저 bundle exec jekyll build 실행"
     for check in (check_existing_untouched, check_not_deployed, check_filenames,
-                  check_blog, check_feed):
+                  check_blog, check_feed, check_log):
         check()
     print("OK")
 
