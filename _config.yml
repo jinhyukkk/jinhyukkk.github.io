@@ -1,0 +1,27 @@
+title: 박진혁
+description: 백엔드 개발자 박진혁의 기술 글과 이력 로그
+url: https://jinhyukkk.github.io
+timezone: Asia/Seoul   # 없으면 오늘 날짜 글이 UTC 기준 미래 글로 빠질 수 있음
+
+markdown: kramdown
+kramdown:
+  input: GFM   # GitHub Pages 기본값과 맞춤
+
+permalink: /blog/:title/
+collections:
+  log:
+    output: true
+    permalink: /log/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - docs
+  - files
+  - tests
+  - README.md
+  - Gemfile
+  - Gemfile.lock
