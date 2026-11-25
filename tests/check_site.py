@@ -58,10 +58,35 @@ def check_log():
     assert "기술 블로그와 이력 로그 개설" not in read("feed.xml"), "로그가 피드에 들어감"
 
 
+PROJECTS = ("ehr", "eland-folder-mall", "foodcare-cle", "group-ai-platform",
+            "hl-science-mall", "investment-review-agent", "smilegate-global", "wegive")
+
+
+def check_related():
+    ehr = read("projects/ehr.html")
+    for needle in ('class="related"', "/blog/ehr-response-time/", "/log/blog-launch/", "LOG"):
+        assert needle in ehr, f"ehr 관련 글에 {needle} 없음"
+    assert 'class="related"' not in read("projects/wegive.html"), "관련 글 없는 페이지에 섹션이 생김"
+    for name in PROJECTS:
+        src = (ROOT / "projects" / f"{name}.html").read_text(encoding="utf-8")
+        h1 = re.search(r"<h1>.*</h1>", src).group(0)
+        assert h1 in read(f"projects/{name}.html"), f"{name} 본문이 바뀜"
+
+
+def check_project_values():
+    # project 오타로 관련 글이 조용히 사라지는 것을 막는다
+    for folder in ("_posts", "_log"):
+        for f in (ROOT / folder).glob("*.md"):
+            m = re.search(r"^project:\s*(\S+)", f.read_text(encoding="utf-8"), re.M)
+            if m:
+                assert m.group(1) in PROJECTS, f"{folder}/{f.name}: 알 수 없는 project '{m.group(1)}'"
+
+
 def main():
     assert SITE.exists(), "먼저 bundle exec jekyll build 실행"
     for check in (check_existing_untouched, check_not_deployed, check_filenames,
-                  check_blog, check_feed, check_log):
+                  check_blog, check_feed, check_log,
+                  check_related, check_project_values):
         check()
     print("OK")
 

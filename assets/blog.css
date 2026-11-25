@@ -46,3 +46,6 @@
 .tl-log .mono { color: var(--faint); padding-top: 4px; }
 .tl-log a { color: var(--ink); }
 .tl-log a:hover { color: var(--accent); }
+
+/* 프로젝트 페이지 관련 글 (project.css의 section 스타일을 따름) */
+.related .tl-log li { grid-template-columns: 96px 1fr; }

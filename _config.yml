@@ -15,6 +15,9 @@ collections:
 
 # 상세 페이지 상단 ← 링크 대상
 defaults:
+  # 전역 permalink가 /로 끝나면 일반 페이지도 폴더형 URL이 되므로 원래 파일명을 유지
+  - scope: { path: "", type: pages }
+    values: { permalink: /:path/:basename:output_ext }
   - scope: { path: "", type: posts }
     values: { layout: post, back: /blog/, back_label: BLOG }
   - scope: { path: "", type: log }

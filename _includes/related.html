@@ -1,0 +1,16 @@
+{%- comment -%} 프로젝트 페이지 하단 관련 글. 사용: {% include related.html project="ehr" %} — 관련 글이 없으면 아무것도 출력하지 않는다 {%- endcomment -%}
+{%- assign tp = site.posts | where: "project", include.project -%}
+{%- assign lp = site.log | where: "project", include.project | sort: "date" | reverse -%}
+{%- if tp.size > 0 or lp.size > 0 %}
+<section class="related">
+  <h2><span lang="ko">관련 글</span><span lang="en">Related posts</span></h2>
+  <ul class="tl-log">
+  {%- for p in tp %}
+    <li><span class="mono">{{ p.date | date: "%Y.%m" }}</span><a href="{{ p.url | relative_url }}"><span lang="ko">{{ p.title }}</span><span lang="en">{{ p.title_en | default: p.title }}</span></a></li>
+  {%- endfor %}
+  {%- for e in lp %}
+    <li><span class="mono">LOG {{ e.date | date: "%Y.%m" }}</span><a href="{{ e.url | relative_url }}">{{ e.title }}</a></li>
+  {%- endfor %}
+  </ul>
+</section>
+{%- endif %}
