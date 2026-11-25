@@ -25,13 +25,35 @@ def check_not_deployed():
         assert not (SITE / rel).exists(), f"{rel} 이(가) 배포됨"
 
 
-def check_filenames():
+def content_files():
+    # 하위 폴더·.markdown까지 모두 검사 대상 (Jekyll은 둘 다 글로 빌드한다)
     for folder in ("_posts", "_log"):
         d = ROOT / folder
-        if not d.exists():
-            continue
-        for f in d.glob("*.md"):
-            assert NAME_RE.match(f.name), f"파일명 규칙 위반: {folder}/{f.name}"
+        if d.exists():
+            yield from (f for f in d.rglob("*") if f.is_file())
+
+
+def front_matter(f: Path) -> dict:
+    # 최상위 키만 단순 파싱 (본문의 코드 블록은 보지 않는다)
+    lines = f.read_text(encoding="utf-8").splitlines()
+    assert lines and lines[0] == "---", f"front matter 없음: {f.name}"
+    end = lines.index("---", 1)
+    data = {}
+    for line in lines[1:end]:
+        m = re.match(r"^([A-Za-z_]\w*):\s*(.*)$", line)
+        if m:
+            data[m.group(1)] = m.group(2).strip().strip("\"'")
+    return data
+
+
+def check_filenames():
+    slugs = {}
+    for f in content_files():
+        assert f.parent.name in ("_posts", "_log") and NAME_RE.match(f.name),             f"파일명 규칙 위반: {f.relative_to(ROOT)}"
+        # 로그·글 URL에는 날짜가 없으므로 같은 slug는 서로 덮어쓴다
+        key = (f.parent.name, f.name[11:])
+        assert key not in slugs, f"slug 중복: {slugs.get(key)} / {f.name}"
+        slugs[key] = f.name
 
 
 def check_blog():
@@ -73,13 +95,17 @@ def check_related():
         assert h1 in read(f"projects/{name}.html"), f"{name} 본문이 바뀜"
 
 
+ALLOWED_KEYS = {"title", "title_en", "summary", "summary_en", "project", "tags", "date", "layout"}
+
+
 def check_project_values():
-    # project 오타로 관련 글이 조용히 사라지는 것을 막는다
-    for folder in ("_posts", "_log"):
-        for f in (ROOT / folder).glob("*.md"):
-            m = re.search(r"^project:\s*(\S+)", f.read_text(encoding="utf-8"), re.M)
-            if m:
-                assert m.group(1) in PROJECTS, f"{folder}/{f.name}: 알 수 없는 project '{m.group(1)}'"
+    # 키·값 오타로 관련 글이 조용히 사라지는 것을 막는다
+    for f in content_files():
+        fm = front_matter(f)
+        unknown = set(fm) - ALLOWED_KEYS
+        assert not unknown, f"{f.name}: 알 수 없는 키 {sorted(unknown)}"
+        if "project" in fm:
+            assert fm["project"] in PROJECTS, f"{f.name}: 알 수 없는 project '{fm['project']}'"
 
 
 def check_entry_points():
